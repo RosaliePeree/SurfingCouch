@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 
 public class MainActivity extends NavigationDrawerActivity {
 
@@ -17,5 +19,6 @@ public class MainActivity extends NavigationDrawerActivity {
         View contentView = inflater.inflate(R.layout.activity_main, null, false);
         drawer.addView(contentView, 0);
         //toolbar.setTitle("");
+        setContentView(R.layout.activity_main);
     }
 }
