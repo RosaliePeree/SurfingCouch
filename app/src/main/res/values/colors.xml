@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorGrey0">#ffffff</color>
+    <color name="colorGrey1">#dddddd</color>
+    <color name="colorGrey2">#aaaaaa</color>
+    <color name="colorGrey3">#888888</color>
+    <color name="colorGrey4">#555555</color>
+    <color name="colorGrey5">#333333</color>
+    <color name="colorGrey6">#000000</color>
+    <color name="colorAccent">#855afc</color>
+</resources>
