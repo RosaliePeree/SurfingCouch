@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "398978402699",
+    "firebase_url": "https://spec-35355.firebaseio.com",
+    "project_id": "spec-35355",
+    "storage_bucket": "spec-35355.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:398978402699:android:7c02e24928c89058",
+        "android_client_info": {
+          "package_name": "com.example.rosalie.surfingcouch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "398978402699-7osb4p4qiq0iue4jtd0ppc3hbm62sm25.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPQg-lGBFxDVk45-ecoGzUBk9ZQmFR3KM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
