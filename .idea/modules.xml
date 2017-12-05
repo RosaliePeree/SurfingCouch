@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SurfingCouch.iml" filepath="$PROJECT_DIR$/SurfingCouch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/SurfingCouch.iml" filepath="$PROJECT_DIR$/.idea/SurfingCouch.iml" />
+      <module fileurl="file://D:\Bureau\SurfingCouch\SurfingCouch.iml" filepath="D:\Bureau\SurfingCouch\SurfingCouch.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\Bureau\SurfingCouch\app\app.iml" filepath="D:\Bureau\SurfingCouch\app\app.iml" />
     </modules>
   </component>
 </project>
