@@ -5,34 +5,37 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/nav_around_me"
+            android:icon="@drawable/ic_around_me"
+            android:title="Offers around me" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_trips"
+            android:icon="@drawable/ic_trips"
+            android:title="My trips" />
     </group>
 
     <item android:title="Communicate">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/nav_message"
+                android:icon="@drawable/ic_mail_outline_black_24dp"
+                android:title="Messages" />
         </menu>
     </item>
+
+
+    <item android:title="My account">
+        <menu>
+            <item
+                android:id="@+id/nav_profile"
+                android:icon="@drawable/ic_profile"
+                android:title="My profile" />
+            <item
+                android:id="@+id/nav_log_ut"
+                android:icon="@drawable/ic_log_out"
+                android:title="Log Out" />
+        </menu>
+    </item>
+
 
 </menu>

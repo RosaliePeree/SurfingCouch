@@ -1,5 +1,6 @@
 package com.example.rosalie.surfingcouch;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,28 +13,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import android.widget.Toast;
 
 public class NavigationDrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    DrawerLayout drawer;
-    Toolbar toolbar;
-    protected FirebaseAuth mAuth;
-    protected DatabaseReference myRef;
-    protected FirebaseDatabase database;
-    protected FirebaseUser user;
+    protected DrawerLayout drawer;
+    protected Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation_drawer);
         toolbar = findViewById(R.id.toolbar);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("");
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -46,7 +39,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
         });
 
         drawer = findViewById(R.id.drawer_layout);
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -54,13 +47,6 @@ public class NavigationDrawerActivity extends AppCompatActivity
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-        //toolbar.setTitle("");
-
-        database = FirebaseDatabase.getInstance(); //Connection to the database
-        mAuth = FirebaseAuth.getInstance();
-        myRef = database.getReference();
-        user = mAuth.getCurrentUser();
     }
 
     @Override
@@ -101,18 +87,21 @@ public class NavigationDrawerActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        if (id == R.id.nav_around_me) {
+            /// Open the profile activity
+            Intent intent = new Intent(this,AroundMe.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_trips) {
+            Intent intent = new Intent(this,TripActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_message) {
+            Intent intent = new Intent(this,MessagesActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_profile) {
+            Intent intent = new Intent(this,ProfileActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_log_ut) {
+            Toast.makeText(this,"Logging out", Toast.LENGTH_LONG).show();
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
