@@ -5,6 +5,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
@@ -17,7 +18,13 @@
         <activity
             android:name=".NavigationDrawerActivity"
             android:label="@string/title_activity_navigation_drawer"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".TripActivity" />
+        <activity android:name=".AroundMe" />
+        <activity android:name=".MessagesActivity" />
+        <activity android:name=".ShopActivity" />
+        <activity android:name=".ListOFUsersActivity"></activity>
     </application>
 
 </manifest>
