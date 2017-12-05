@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "398978402699-jk29hai3pl6s937bvbicun1rhfbhse07.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rosalie.surfingcouch",
+            "certificate_hash": "c54ad861899578a00e56d09f691e82dfa29b7166"
+          }
+        },
+        {
           "client_id": "398978402699-r6rq473fkfgo0v65f82r7ft8q3ui90mt.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
