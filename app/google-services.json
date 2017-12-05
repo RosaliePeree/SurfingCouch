@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "398978402699-r6rq473fkfgo0v65f82r7ft8q3ui90mt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rosalie.surfingcouch",
+            "certificate_hash": "6e97319645b8121be2fed401c254e9eea55e19e3"
+          }
+        },
+        {
           "client_id": "398978402699-7osb4p4qiq0iue4jtd0ppc3hbm62sm25.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "398978402699-7osb4p4qiq0iue4jtd0ppc3hbm62sm25.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
