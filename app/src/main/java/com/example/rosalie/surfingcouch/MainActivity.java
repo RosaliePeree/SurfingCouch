@@ -2,6 +2,7 @@ package com.example.rosalie.surfingcouch;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.VisibleForTesting;
 import android.support.v7.app.AppCompatActivity;
@@ -183,6 +184,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         findViewById(R.id.verify_email_button).setEnabled(true);
 
                         if (task.isSuccessful()) {
+
                             Toast.makeText(MainActivity.this,
                                     "Verification email sent to " + user.getEmail(),
                                     Toast.LENGTH_SHORT).show();
@@ -252,8 +254,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (i == R.id.sign_out_button) {
             signOut();
         } else if (i == R.id.verify_email_button) {
-            sendEmailVerification();
+            //sendEmailVerification();
+            Intent intent = new Intent(this, ChatActivity.class);
+            startActivity(intent);
         }
+    }
+
+    public String getLoggedInUserName() {
+        return mAuth.getCurrentUser().getUid();
     }
 }
 

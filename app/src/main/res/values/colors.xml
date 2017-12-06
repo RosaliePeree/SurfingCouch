@@ -8,4 +8,6 @@
     <color name="colorGrey5">#333333</color>
     <color name="colorGrey6">#000000</color>
     <color name="colorAccent">#855afc</color>
+    <color name="colorBlue1">#2962ff</color>
+    <color name="colorOrange1">#f57f17</color>
 </resources>
