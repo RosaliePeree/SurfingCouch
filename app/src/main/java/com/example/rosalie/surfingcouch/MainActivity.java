@@ -255,7 +255,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             signOut();
         } else if (i == R.id.verify_email_button) {
             //sendEmailVerification();
-            Intent intent = new Intent(this, ChatActivity.class);
+            Intent intent = new Intent(this, ChatListActivity.class);
             startActivity(intent);
         }
     }

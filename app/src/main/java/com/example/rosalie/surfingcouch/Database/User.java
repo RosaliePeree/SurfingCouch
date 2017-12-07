@@ -10,29 +10,37 @@ public class User {
     private String comefrom;
     private String email;
     private String gender;
-    private int id;
     private int numberOfPoints;
     private ArrayList<String>  places;
     private ArrayList<String> reviews;
     private ArrayList<String>  trips;
     private ArrayList<String> unlockedRewards;
     private String username;
+    private ArrayList<String> conversations;
 
     public User() {
     }
 
 
-    public User(String comefrom, String email, String gender, int id, int numberOfPoints, ArrayList<String> places, ArrayList<String> reviews, ArrayList<String> trips, ArrayList<String> unlockedRewards, String username) {
+    public User(String comefrom, String email, String gender, int numberOfPoints, ArrayList<String> places, ArrayList<String> reviews, ArrayList<String> trips, ArrayList<String> unlockedRewards, String username, ArrayList<String> conversations) {
         this.comefrom = comefrom;
         this.email = email;
         this.gender = gender;
-        this.id = id;
         this.numberOfPoints = numberOfPoints;
         this.places = places;
         this.reviews = reviews;
         this.trips = trips;
         this.unlockedRewards = unlockedRewards;
         this.username = username;
+        this.conversations = conversations;
+    }
+
+    public ArrayList<String> getConversations() {
+        return conversations;
+    }
+
+    public void setConversations(ArrayList<String> conversations) {
+        this.conversations = conversations;
     }
 
     public ArrayList<String> getPlaces() {
@@ -81,14 +89,6 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public int getNumberOfPoints() {
