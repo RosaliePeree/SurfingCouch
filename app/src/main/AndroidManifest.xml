@@ -25,6 +25,10 @@
         <activity android:name=".MessagesActivity" />
         <activity android:name=".ShopActivity" />
         <activity android:name=".ListOFUsersActivity"></activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCOvRXkUmK0ZUeaSkAtmHRp--_TEjGbOa0"/>
     </application>
 
 </manifest>

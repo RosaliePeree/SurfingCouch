@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="#ffffff"
     android:orientation="vertical"
-    android:weightSum="4">
+    android:weightSum="5">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,8 +18,7 @@
             android:id="@+id/icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher_foreground"
-            android:contentDescription="TODO" />
+            android:src="@drawable/ic_launcher_foreground"/>
 
         <TextView
             android:id="@+id/title_text"
@@ -33,11 +32,6 @@
             android:text="Signed Out"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"/>
-        <TextView
-            android:id="@+id/detail"
-            tools:text="Firebase User ID: 123456789abc"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"/>
 
     </LinearLayout>
 
@@ -45,7 +39,7 @@
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="2"
         android:background="#e1e1e1"
         android:gravity="center_vertical">
 
@@ -104,9 +98,9 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:orientation="horizontal"
+            android:visibility="gone"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
-            android:visibility="gone"
             android:weightSum="2.0">
 
             <Button
@@ -121,8 +115,69 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.0"
-                android:text="verify email" />
+                android:text="re-send email" />
 
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/create_account_update_data"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <EditText
+                android:id="@+id/field_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="username"
+                android:inputType="text" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/text_city"
+                android:text="Enter your city"/>
+
+            <fragment
+                android:id="@+id/place_autocomplete_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/text_gender"
+                android:text="Enter your gender"/>
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/field_gender"
+                android:orientation="horizontal">
+                <RadioButton android:id="@+id/gender_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male"/>
+                <RadioButton android:id="@+id/gender_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Female"/>
+            </RadioGroup>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/save_data_new_user"
+                android:layout_weight="1"
+                android:text="Save"/>
         </LinearLayout>
 
     </RelativeLayout>
