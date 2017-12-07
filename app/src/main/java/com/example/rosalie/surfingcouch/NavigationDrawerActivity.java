@@ -1,6 +1,8 @@
 package com.example.rosalie.surfingcouch;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,14 +17,26 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.rosalie.surfingcouch.Database.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class NavigationDrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     protected DrawerLayout drawer;
     protected Toolbar toolbar;
+    protected DatabaseReference mReferenceUser;
+    protected static User mCurrentUser;
+
+    public static SharedPreferences getSharedPreferences(Context ctxt) {
+        return ctxt.getSharedPreferences("FILE", 0);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +44,22 @@ public class NavigationDrawerActivity extends AppCompatActivity
         setContentView(R.layout.activity_navigation_drawer);
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("");
+
+        mReferenceUser= FirebaseDatabase.getInstance().getReference().child("User/" + FirebaseAuth.getInstance().getCurrentUser().getUid());
+        mReferenceUser.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                User use = dataSnapshot.getValue(User.class);
+                //Log.i(use.getName(), " user");
+                mCurrentUser = use;
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -102,6 +132,9 @@ public class NavigationDrawerActivity extends AppCompatActivity
             startActivity(intent);
         } else if (id == R.id.nav_profile) {
             Intent intent = new Intent(this,ProfileActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_settings) {
+            Intent intent = new Intent(this,SettingsActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_log_ut) {
             Toast.makeText(getApplicationContext(),"Logging out", Toast.LENGTH_LONG).show();

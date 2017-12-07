@@ -25,6 +25,7 @@
         <activity android:name=".TripActivity" />
         <activity android:name=".AroundMe" />
         <activity android:name=".MessagesActivity" />
+        <activity android:name=".SettingsActivity" />
         <activity android:name=".ShopActivity" />
         <activity android:name=".ListOfUsersActivity" />
         <activity android:name=".ChatActivity" />
