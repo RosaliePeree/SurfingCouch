@@ -24,12 +24,10 @@
         <activity android:name=".ProfileActivity" />
         <activity android:name=".TripActivity" />
         <activity android:name=".AroundMe" />
-        <activity android:name=".MessagesActivity" />
         <activity android:name=".ShopActivity" />
         <activity android:name=".ListOFUsersActivity" />
         <activity android:name=".ChatActivity" />
-        <activity android:name=".ChatListActivity"></activity>
-        <activity android:name=".ListOFUsersActivity"></activity>
+        <activity android:name=".MessagesActivity"></activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

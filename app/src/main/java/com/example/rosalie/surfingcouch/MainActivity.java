@@ -1,7 +1,6 @@
 package com.example.rosalie.surfingcouch;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.VisibleForTesting;
@@ -9,12 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,7 +17,6 @@ import android.widget.Toast;
 import com.example.rosalie.surfingcouch.Database.User;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.Place;
-import com.google.android.gms.location.places.ui.PlaceAutocomplete;
 import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
 import com.google.android.gms.location.places.ui.PlaceSelectionListener;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -284,9 +278,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (i == R.id.sign_out_button) {
             signOut();
         } else if (i == R.id.verify_email_button) {
-            sendEmailVerification();
-            //Intent intent = new Intent(this, ChatActivity.class);
-            //startActivity(intent);
+            //sendEmailVerification();
+            Intent intent = new Intent(this, MessagesActivity.class);
+            startActivity(intent);
         } else if ( i == R.id.save_data_new_user) {
             if(mUsernameField.getText().toString().trim().length() == 0
                     || mGenderField.getCheckedRadioButtonId() == -1

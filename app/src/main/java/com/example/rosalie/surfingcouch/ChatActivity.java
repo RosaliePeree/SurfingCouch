@@ -1,5 +1,6 @@
 package com.example.rosalie.surfingcouch;
 
+import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -31,13 +32,14 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-public class ChatActivity extends AppCompatActivity {
+public class ChatActivity extends NavigationDrawerActivity {
 
     String loggedInUserName;
     ListView listView;
     ImageView sendButton;
     EditText sendText;
     User lul;
+    String chatName;
 
 
     @Override
@@ -47,6 +49,9 @@ public class ChatActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.list);
         sendButton = (ImageView) findViewById(R.id.sendButton);
         sendText = (EditText) findViewById(R.id.messageArea);
+
+        Intent intent = getIntent();
+        chatName = intent.getStringExtra("chatName");
 
         showAllOldMessages();
 
@@ -77,13 +82,13 @@ public class ChatActivity extends AppCompatActivity {
                     Toast.makeText(ChatActivity.this, "You can't send an empty text", Toast.LENGTH_SHORT).show();
                 } else {
                     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy - HH:mm", Locale.FRANCE);
-                    String currentDateandTime = sdf.format(new Date());
-                    FirebaseDatabase.getInstance().getReference().child("Conversation/Conversation1/listOfMessages").push().setValue(new Message
+                    String currentDateAndTime = sdf.format(new Date());
+                    FirebaseDatabase.getInstance().getReference().child("Conversation/" + chatName + "/listOfMessages").push().setValue(new Message
                             (
                             FirebaseAuth.getInstance().getCurrentUser().getUid()
                             , lul.getUsername()
                             , sendText.getText().toString()
-                            , currentDateandTime
+                            , currentDateAndTime
                             )
                     );
                     sendText.setText("");
@@ -97,7 +102,7 @@ public class ChatActivity extends AppCompatActivity {
         Log.d("Main", "user id: " + loggedInUserName);
 
 
-        ListAdapter adapter = new MessageAdapter(this, Message.class, R.layout.item_message_sender, FirebaseDatabase.getInstance().getReference().getRoot().child("Conversation/Conversation1/listOfMessages"));
+        ListAdapter adapter = new MessageAdapter(this, Message.class, R.layout.item_message_sender, FirebaseDatabase.getInstance().getReference().getRoot().child("Conversation/" + chatName +"/listOfMessages"));
 
         listView.setAdapter(adapter);
     }
