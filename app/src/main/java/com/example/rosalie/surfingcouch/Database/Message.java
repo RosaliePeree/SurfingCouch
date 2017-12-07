@@ -9,14 +9,12 @@ import java.util.Date;
  */
 
 public class Message {
-    private int id;
     protected String senderID;
     private String senderName;
     private String text;
     private String timestamp;
 
-    public Message(int id, String senderID, String senderName, String text, String timestamp) {
-        this.id = id;
+    public Message(String senderID, String senderName, String text, String timestamp) {
         this.senderID = senderID;
         this.senderName = senderName;
         this.text = text;
@@ -26,13 +24,6 @@ public class Message {
     public Message() {
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getSenderID() {
         return senderID;

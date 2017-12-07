@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.rosalie.surfingcouch">
 
-
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -28,7 +27,8 @@
         <activity android:name=".MessagesActivity" />
         <activity android:name=".ShopActivity" />
         <activity android:name=".ListOFUsersActivity" />
-        <activity android:name=".ChatActivity"></activity>
+        <activity android:name=".ChatActivity" />
+        <activity android:name=".ChatListActivity"></activity>
     </application>
 
 </manifest>
