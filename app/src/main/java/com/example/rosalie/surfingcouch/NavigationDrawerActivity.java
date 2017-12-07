@@ -15,6 +15,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class NavigationDrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -101,7 +104,10 @@ public class NavigationDrawerActivity extends AppCompatActivity
             Intent intent = new Intent(this,ProfileActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_log_ut) {
-            Toast.makeText(this,"Logging out", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Logging out", Toast.LENGTH_LONG).show();
+            FirebaseAuth.getInstance().signOut();
+            Intent intent = new Intent (NavigationDrawerActivity.this, MainActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

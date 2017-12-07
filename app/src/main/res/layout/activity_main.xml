@@ -97,28 +97,40 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:visibility="gone"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:weightSum="2.0">
 
             <Button
-                android:id="@+id/sign_out_button"
-                android:layout_width="0dp"
+                android:id="@+id/updateIU_button"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.0"
-                android:text="sign out" />
+                android:text="I have verified my email" />
 
-            <Button
-                android:id="@+id/verify_email_button"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:text="re-send email" />
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:layout_weight="1.0">
+                <Button
+                    android:id="@+id/sign_out_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:text="sign out" />
 
+                <Button
+                    android:id="@+id/verify_email_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:text="re-send email" />
+            </LinearLayout>
         </LinearLayout>
-
 
         <LinearLayout
             android:layout_width="match_parent"

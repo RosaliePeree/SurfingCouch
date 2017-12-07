@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.sign_out_button).setOnClickListener(this);
         findViewById(R.id.verify_email_button).setOnClickListener(this);
         findViewById(R.id.save_data_new_user).setOnClickListener(this);
+        findViewById(R.id.updateIU_button).setOnClickListener(this);
 
         // [START initialize_auth]
         mAuth = FirebaseAuth.getInstance();
@@ -86,7 +87,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
     }
-
 
     // [START on_start_check_user]
     @Override
@@ -167,11 +167,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
+                        if (task.isSuccessful() ) {
                             // Sign in success, update UI with the signed-in user's information
                             Toast.makeText(getApplicationContext(), "signInWithEmail:success",Toast.LENGTH_SHORT).show();
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
+                            updateUI(mAuth.getCurrentUser());
                         } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(getApplicationContext(), "signInWithEmail:failure" + task.getException(), Toast.LENGTH_SHORT).show();
@@ -250,17 +249,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void updateUI(FirebaseUser user) {
         hideProgressDialog();
         if (user != null) {
-            mStatusTextView.setText(getString(R.string.emailpassword_status_fmt,
+            if (!user.isEmailVerified()) {
+                mStatusTextView.setText(getString(R.string.emailpassword_status_fmt,
                     user.getEmail(), user.isEmailVerified()));
-            if (!user.isEmailVerified()){
-                user.sendEmailVerification();
+
+                mStatusTextView.setText(user.getEmail() + " - Please verify your email to continue");
+
+                findViewById(R.id.email_password_buttons).setVisibility(View.GONE);
+                findViewById(R.id.email_password_fields).setVisibility(View.GONE);
+                findViewById(R.id.signed_in_buttons).setVisibility(View.VISIBLE);
+                findViewById(R.id.create_account_update_data).setVisibility(View.GONE);
+
+                findViewById(R.id.verify_email_button).setEnabled(!user.isEmailVerified());
+            } else {
+                Intent intent = new Intent(this,ProfileActivity.class);
+                startActivity(intent);
             }
-
-            findViewById(R.id.email_password_buttons).setVisibility(View.GONE);
-            findViewById(R.id.email_password_fields).setVisibility(View.GONE);
-            findViewById(R.id.signed_in_buttons).setVisibility(View.VISIBLE);
-
-            findViewById(R.id.verify_email_button).setEnabled(!user.isEmailVerified());
         } else {
             mStatusTextView.setText("Signed out");
 
@@ -281,11 +285,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             signOut();
         } else if (i == R.id.verify_email_button) {
             sendEmailVerification();
-
             //Intent intent = new Intent(this, ChatActivity.class);
             //startActivity(intent);
         } else if ( i == R.id.save_data_new_user) {
-            saveNewUser(mUsernameField.getText().toString(), mEmailField.getText().toString(), mGenderField.getCheckedRadioButtonId(),mPlaceField.getName().toString());
+            if(mUsernameField.getText().toString().trim().length() == 0
+                    || mGenderField.getCheckedRadioButtonId() == -1
+                    || mPlaceField.getName().toString().trim().length() == 0)
+                Toast.makeText(getApplicationContext(),"Please fill in all the fields", Toast.LENGTH_SHORT).show();
+            else
+                saveNewUser(mUsernameField.getText().toString(), mEmailField.getText().toString(), mGenderField.getCheckedRadioButtonId(),mPlaceField.getName().toString());
+        } else if ( i == R.id.updateIU_button) {
+            mAuth.getCurrentUser().reload();
+            if(mAuth.getCurrentUser().isEmailVerified()) {
+                Toast.makeText(this,"test",Toast.LENGTH_SHORT).show();
+                findViewById(R.id.updateIU_button).setEnabled(false);
+                Intent intent = new Intent(this, ProfileActivity.class);
+                startActivity(intent);
+            } else {
+                Toast.makeText(this,mAuth.getCurrentUser().getEmail() + " _ " + mAuth.getCurrentUser().isEmailVerified(),Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
@@ -300,13 +318,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ArrayList<String> dummyList = new ArrayList<>();
         dummyList.add("undefined");
         User newUser = new User(placeName,mEmailField.getText().toString(),null, 0, dummyList, dummyList, dummyList, dummyList, username,dummyList);
-        if(radiobuttonId == 0)
+        if(radiobuttonId == R.id.gender_male)
             newUser.setGender("Male");
         else
             newUser.setGender("Female");
 
         FirebaseUser user = mAuth.getCurrentUser();
         FirebaseDatabase.getInstance().getReference().child("User").child(user.getUid()).setValue(newUser);
+        user.sendEmailVerification();
         updateUI(user);
     }
 
