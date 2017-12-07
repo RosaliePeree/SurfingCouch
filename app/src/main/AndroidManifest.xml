@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"  android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,10 +26,9 @@
         <activity android:name=".AroundMe" />
         <activity android:name=".MessagesActivity" />
         <activity android:name=".ShopActivity" />
-        <activity android:name=".ListOFUsersActivity" />
+        <activity android:name=".ListOfUsersActivity" />
         <activity android:name=".ChatActivity" />
         <activity android:name=".ChatListActivity"></activity>
-        <activity android:name=".ListOFUsersActivity"></activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

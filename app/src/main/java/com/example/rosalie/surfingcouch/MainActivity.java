@@ -301,6 +301,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 findViewById(R.id.updateIU_button).setEnabled(false);
                 Intent intent = new Intent(this, ProfileActivity.class);
                 startActivity(intent);
+                this.finish();
             } else {
                 Toast.makeText(this,mAuth.getCurrentUser().getEmail() + " _ " + mAuth.getCurrentUser().isEmailVerified(),Toast.LENGTH_SHORT).show();
             }

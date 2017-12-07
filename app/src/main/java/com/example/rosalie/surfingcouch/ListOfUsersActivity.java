@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 
-public class ListOFUsersActivity extends NavigationDrawerActivity {
+public class ListOfUsersActivity extends NavigationDrawerActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
