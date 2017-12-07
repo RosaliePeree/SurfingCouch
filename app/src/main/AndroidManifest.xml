@@ -29,6 +29,11 @@
         <activity android:name=".ListOFUsersActivity" />
         <activity android:name=".ChatActivity" />
         <activity android:name=".ChatListActivity"></activity>
+        <activity android:name=".ListOFUsersActivity"></activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCOvRXkUmK0ZUeaSkAtmHRp--_TEjGbOa0"/>
     </application>
 
 </manifest>
