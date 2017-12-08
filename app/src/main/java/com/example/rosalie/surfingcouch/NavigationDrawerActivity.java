@@ -132,6 +132,9 @@ public class NavigationDrawerActivity extends AppCompatActivity
             startActivity(intent);
         } else if (id == R.id.nav_profile) {
             Intent intent = new Intent(this,ProfileActivity.class);
+            Bundle b = new Bundle();
+            b.putString ("userID", mCurrentUser.); //Your id
+            intent.putExtras(b); //Put your id to your next Intent
             startActivity(intent);
         } else if (id == R.id.nav_settings) {
             Intent intent = new Intent(this,SettingsActivity.class);

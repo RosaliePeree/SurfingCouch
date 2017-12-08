@@ -16,8 +16,17 @@ public class ProfileActivity extends NavigationDrawerActivity {
         super.onCreate(savedInstanceState);
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
+
+        Bundle b = getIntent().getExtras();
+        String value = ""; // or other values
+        if(b != null)
+            value = b.getString("userID");
+        else
+            value = mCurrentUser.getID();
+
         //inflate your activity layout here!
         View contentView = inflater.inflate(R.layout.activity_profile, null, false);
         drawer.addView(contentView, 0);
+
     }
 }
