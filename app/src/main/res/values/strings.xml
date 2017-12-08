@@ -42,7 +42,19 @@
     <string name="settings_title_account">Account</string>
     <string name="settings_title_notifications">Notification settings</string>
     <string name="main_failed">failed</string>
+    
+    <!-- PROFILE SCREEN STRINGS -->
+    <string name="profile_username_label">Username:</string>
+    <string name="profile_username">Username</string>
+    <string name="profile_come_from_label">City:</string>
+    <string name="profile_come_from">City</string>
+    <string name="profile_gender_label">Gender:</string>
+    <string name="profile_gender">Gender</string>
+    <string name="profile_score_label">Score:</string>
+    <string name="profile_reviews_label">Reviews:</string>
+    <string name="profile_places_label">Places:</string>
 
+    
     <!-- CHAT ACTIVITY STRINGS -->
 
     <string name="chat_empty_text"> You can\'t send an empty text </string>

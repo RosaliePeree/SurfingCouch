@@ -1,10 +1,12 @@
 package com.example.rosalie.surfingcouch;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.EditText;
@@ -45,7 +47,11 @@ public class ChatActivity extends NavigationDrawerActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chat);
+        LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        //inflate your activity layout here!
+        View contentView = inflater.inflate(R.layout.activity_chat, null, false);
+        drawer.addView(contentView, 0);
         listView = (ListView) findViewById(R.id.list);
         sendButton = (ImageView) findViewById(R.id.sendButton);
         sendText = (EditText) findViewById(R.id.messageArea);
