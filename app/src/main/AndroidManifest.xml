@@ -32,7 +32,9 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCOvRXkUmK0ZUeaSkAtmHRp--_TEjGbOa0"/>
+            android:value="AIzaSyCOvRXkUmK0ZUeaSkAtmHRp--_TEjGbOa0" />
+
+        <activity android:name=".AddHostingPlaceActivity"></activity>
     </application>
 
 </manifest>
