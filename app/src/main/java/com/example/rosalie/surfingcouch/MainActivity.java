@@ -173,7 +173,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                         // [START_EXCLUDE]
                         if (!task.isSuccessful()) {
-                            mStatusTextView.setText("failed");
+                            mStatusTextView.setText(R.string.main_failed);
                         }
                         hideProgressDialog();
                         // [END_EXCLUDE]
@@ -260,7 +260,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
             }
         } else {
-            mStatusTextView.setText("Signed out");
+            mStatusTextView.setText(R.string.main_signed_out);
 
             findViewById(R.id.email_password_buttons).setVisibility(View.VISIBLE);
             findViewById(R.id.email_password_fields).setVisibility(View.VISIBLE);

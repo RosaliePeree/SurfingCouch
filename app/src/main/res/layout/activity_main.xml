@@ -25,11 +25,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/activity_vertical_margin"
-            android:text="CONNECTION MENU" />
+            android:text="@string/main_connection_menu" />
 
         <TextView
             android:id="@+id/status"
-            android:text="Signed Out"
+            android:text="@string/main_signed_out"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"/>
 
@@ -56,7 +56,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="email"
+                android:hint="@string/main_email"
                 android:inputType="textEmailAddress" />
 
             <EditText
@@ -64,7 +64,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="password"
+                android:hint="@string/main_password"
                 android:inputType="textPassword" />
         </LinearLayout>
 
@@ -82,14 +82,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Sign in" />
+                android:text="@string/main_sign_in" />
 
             <Button
                 android:id="@+id/email_create_account_button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="sign up" />
+                android:text="@string/main_sign_up" />
         </LinearLayout>
 
         <LinearLayout
@@ -108,7 +108,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.0"
-                android:text="I have verified my email" />
+                android:text="@string/main_have_verified_email" />
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -121,14 +121,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.0"
-                    android:text="sign out" />
+                    android:text="@string/main_sign_out" />
 
                 <Button
                     android:id="@+id/verify_email_button"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.0"
-                    android:text="re-send email" />
+                    android:text="@string/main_re_send_email" />
             </LinearLayout>
         </LinearLayout>
 
@@ -146,14 +146,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="username"
+                android:hint="@string/main_username"
                 android:inputType="text" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/text_city"
-                android:text="Enter your city"/>
+                android:text="@string/main_enter_city"/>
 
             <fragment
                 android:id="@+id/place_autocomplete_fragment"
@@ -167,7 +167,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/text_gender"
-                android:text="Enter your gender"/>
+                android:text="@string/main_enter_gender"/>
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="fill_parent"
@@ -177,11 +177,11 @@
                 <RadioButton android:id="@+id/gender_male"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Male"/>
+                    android:text="@string/main_male"/>
                 <RadioButton android:id="@+id/gender_female"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Female"/>
+                    android:text="@string/main_female"/>
             </RadioGroup>
 
             <Button
@@ -189,7 +189,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/save_data_new_user"
                 android:layout_weight="1"
-                android:text="Save"/>
+                android:text="@string/main_save"/>
         </LinearLayout>
 
     </RelativeLayout>

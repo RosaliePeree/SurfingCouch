@@ -43,6 +43,7 @@ public class SettingsActivity extends NavigationDrawerActivity {
             sharedPreferences = getActivity().getBaseContext().getSharedPreferences(MY_PREFS_NAME, Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString("username", mCurrentUser.getUsername()); //This is just an example, you could also put boolean, long, int or floats
+            editor.putString("location", mCurrentUser.getComefrom()); //This is just an example, you could also put boolean, long, int or floats
             editor.putString("email", mCurrentUser.getEmail());
             editor.commit();
 
@@ -50,6 +51,8 @@ public class SettingsActivity extends NavigationDrawerActivity {
             etp.setSummary(mCurrentUser.getUsername());
             Preference etp2 = findPreference("email");
             etp2.setSummary(mCurrentUser.getEmail());
+            Preference etp3 = findPreference("location");
+            etp3.setSummary(mCurrentUser.getComefrom());
             onSharedPreferenceChanged(null, "");
         }
 
