@@ -278,9 +278,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (i == R.id.sign_out_button) {
             signOut();
         } else if (i == R.id.verify_email_button) {
-            //sendEmailVerification();
-            Intent intent = new Intent(this, MessagesActivity.class);
-            startActivity(intent);
+            sendEmailVerification();
+            //Intent intent = new Intent(this, MessagesActivity.class); Debug purpose
+            //startActivity(intent);
         } else if ( i == R.id.save_data_new_user) {
             if(mUsernameField.getText().toString().trim().length() == 0
                     || mGenderField.getCheckedRadioButtonId() == -1

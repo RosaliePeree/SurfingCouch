@@ -60,7 +60,7 @@ public class MessagesActivity extends NavigationDrawerActivity {
                     }
 
                     if(allChats == null) {
-                        Toast.makeText(getApplicationContext(), "Nothing to show here" ,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), R.string.message_empty ,Toast.LENGTH_SHORT).show();
                     }else{
                         listOfChats.setAdapter(adapter);
                     }
@@ -69,7 +69,7 @@ public class MessagesActivity extends NavigationDrawerActivity {
 
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
-                    Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.message_error, Toast.LENGTH_SHORT).show();
                 }
             });
 

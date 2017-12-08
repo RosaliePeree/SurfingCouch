@@ -79,7 +79,7 @@ public class ChatActivity extends NavigationDrawerActivity {
             @Override
             public void onClick(View view) {
                 if (sendText.getText().toString().trim().length() == 0) {
-                    Toast.makeText(ChatActivity.this, "You can't send an empty text", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ChatActivity.this, R.string.chat_empty_text, Toast.LENGTH_SHORT).show();
                 } else {
                     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy - HH:mm", Locale.FRANCE);
                     String currentDateAndTime = sdf.format(new Date());
