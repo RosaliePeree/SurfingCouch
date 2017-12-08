@@ -310,15 +310,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void saveNewUser(String username, String email, int radiobuttonId, String placeName){
+        FirebaseUser user = mAuth.getCurrentUser();
         ArrayList<String> dummyList = new ArrayList<>();
         dummyList.add("undefined");
-        User newUser = new User(placeName,mEmailField.getText().toString(),null, 0, dummyList, dummyList, dummyList, dummyList, username,dummyList);
+        User newUser = new User(placeName,mEmailField.getText().toString(),null, user.getUid(), 0, dummyList, dummyList, dummyList, dummyList, username,dummyList);
         if(radiobuttonId == R.id.gender_male)
             newUser.setGender("Male");
         else
             newUser.setGender("Female");
 
-        FirebaseUser user = mAuth.getCurrentUser();
+
         FirebaseDatabase.getInstance().getReference().child("User").child(user.getUid()).setValue(newUser);
         user.sendEmailVerification();
         updateUI(user);

@@ -66,4 +66,12 @@
 
     <string name="message_layout_send"> Send a message</string>
 
+    <!-- ADD HOSTING PLACE STRINGS -->
+
+    <string name="add_hosting_place_service1"> Shower </string>
+    <string name="add_hosting_place_service2"> Sleeping</string>
+    <string name="add_hosting_place_service3"> Laundry</string>
+    <string name="add_hosting_place_servicetext"> Choose which services can be provided by this place</string>
+    <string name="add_hosting_place_numberppltext"> How much people maximum can stay at the same time ?</string>
+
 </resources>

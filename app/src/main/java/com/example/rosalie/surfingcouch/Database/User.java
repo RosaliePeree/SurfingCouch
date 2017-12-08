@@ -10,6 +10,7 @@ public class User {
     private String comefrom;
     private String email;
     private String gender;
+    private String id;
     private int numberOfPoints;
     private ArrayList<String>  places;
     private ArrayList<String> reviews;
@@ -21,11 +22,11 @@ public class User {
     public User() {
     }
 
-
-    public User(String comefrom, String email, String gender, int numberOfPoints, ArrayList<String> places, ArrayList<String> reviews, ArrayList<String> trips, ArrayList<String> unlockedRewards, String username, ArrayList<String> conversations) {
+    public User(String comefrom, String email, String gender, String id, int numberOfPoints, ArrayList<String> places, ArrayList<String> reviews, ArrayList<String> trips, ArrayList<String> unlockedRewards, String username, ArrayList<String> conversations) {
         this.comefrom = comefrom;
         this.email = email;
         this.gender = gender;
+        this.id = id;
         this.numberOfPoints = numberOfPoints;
         this.places = places;
         this.reviews = reviews;
@@ -33,6 +34,14 @@ public class User {
         this.unlockedRewards = unlockedRewards;
         this.username = username;
         this.conversations = conversations;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public ArrayList<String> getConversations() {
