@@ -4,70 +4,53 @@
     android:layout_height="wrap_content">
 
     <PreferenceCategory
-        android:title="string/title_account"
+        android:title="@string/settings_title_account"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <Preference
-            android:title="string/content_username"
+            android:title="@string/settings_username"
             android:summary="Username"
             android:key="username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <Preference
-            android:title="tring/content_mail"
+            android:title="@string/settings_email"
             android:summary="Something@gmail.com"
             android:key="email"
+            android:defaultValue=" "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Preference
+            android:title="@string/setting_location"
+            android:summary="Location"
+            android:key="Location"
             android:defaultValue=" "
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="string/title_notifications"
+        android:title="@string/settings_title_notifications"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <SwitchPreference
-            android:title="string/content_push_notifications"
-            android:summary="string/content_push_notification_summary_activated"
+            android:title="@string/settings_notification_push"
+            android:summary="@string/settings_notification_push_activated"
             android:key="push_notification"
             android:defaultValue="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <SwitchPreference
-            android:title="string/content_notifications_email"
-            android:summary="string/not_implemented"
+            android:title="@string/settings_notification_email"
+            android:summary="@string/settings_notification_email_not_activated"
             android:key="email_notification"
             android:defaultValue="false"
             android:selectable="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="string/title_speed"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <EditTextPreference
-            android:key="lowest_speed"
-            android:title="string/content_minimal_speed"
-            android:summary="string/content_minimal_speed_summary"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:defaultValue="5"/>
-
-        <EditTextPreference
-            android:key="highest_speed"
-            android:title="string/content_maximal_speed"
-            android:summary="string/content_maximal_speed_summary"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:defaultValue="80"/>
-    </PreferenceCategory>
-
 </PreferenceScreen>

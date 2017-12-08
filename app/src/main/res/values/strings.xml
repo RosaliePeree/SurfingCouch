@@ -12,4 +12,15 @@
 
     <!-- SETTINGS SCREEN STRINGS -->
     <string name="action_settings">Settings</string>
+    <string name="settings_username">Username</string>
+    <string name="settings_email">Email address</string>
+    <string name="setting_location">Location</string>
+    <string name="settings_notification_push">Get push notifications?</string>
+    <string name="settings_notification_push_activated">Push notifications activated</string>
+    <string name="settings_notification_push_not_activated">Push notifications not activated</string>
+    <string name="settings_notification_email">Get email notifications?</string>
+    <string name="settings_notification_email_activated">Email notifications activated</string>
+    <string name="settings_notification_email_not_activated">Email notifications not activated</string>
+    <string name="settings_title_account">Account</string>
+    <string name="settings_title_notifications">Notification settings</string>
 </resources>
