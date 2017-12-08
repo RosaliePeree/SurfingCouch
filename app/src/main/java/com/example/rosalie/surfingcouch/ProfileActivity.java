@@ -35,15 +35,6 @@ public class ProfileActivity extends NavigationDrawerActivity {
             getLoggedUserProfile();
     }
 
-    private void displayUser(User user){
-        TextView username = findViewById(R.id.profile_username);
-        username.setText(user.getUsername());
-        TextView city = findViewById(R.id.profile_city);
-        city.setText(user.getComefrom());
-        TextView gender = findViewById(R.id.profile_gender);
-        gender.setText(user.getGender());
-    }
-
     private void getLoggedUserProfile(){
         mReferenceUser = FirebaseDatabase.getInstance().getReference().child("User/" + FirebaseAuth.getInstance().getCurrentUser().getUid());
         mReferenceUser.addValueEventListener(new ValueEventListener() {
@@ -84,5 +75,13 @@ public class ProfileActivity extends NavigationDrawerActivity {
         });
     }
 
+    private void displayUser(User user){
+        TextView username = findViewById(R.id.profile_username);
+        username.setText(user.getUsername());
+        TextView city = findViewById(R.id.profile_city);
+        city.setText(user.getComefrom());
+        TextView gender = findViewById(R.id.profile_gender);
+        gender.setText(user.getGender());
+    }
 
 }

@@ -21,7 +21,7 @@ public class ListOfUsersActivity extends NavigationDrawerActivity {
         //Intent tu use when we have to display a users profile (when the Users will be created and displayed)
         Intent intent = new Intent(this,ProfileActivity.class);
         Bundle b = new Bundle();
-        b.putString ("userID", "yPBmQOC7GEN6h4uhkaWa0SMydto2"); //Your id
+        b.putString ("userID", "yPBmQOC7GEN6h4uhkaWa0SMydto2"); //Test id, to be replaced by the id of the user that is clicked
         intent.putExtras(b); //Put your id to your next Intent*/
         startActivity(intent);
     }
