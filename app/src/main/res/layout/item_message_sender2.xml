@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:text="Name of the sender :"
+        android:text="@string/message_sender_name2"
         android:textStyle="bold"
         android:textAppearance="@style/TextAppearance.AppCompat.Notification.Title"
         android:background="@android:color/transparent"
@@ -23,7 +23,7 @@
         android:layout_below="@+id/message_username"
         android:layout_marginTop="5dp"
         android:layout_alignParentRight="true"
-        android:text="Content of the message that will be replaced at some point"
+        android:text="@string/message_sender_text2"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/white"
         android:background="@android:color/transparent"
@@ -34,6 +34,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/message_text"
-        android:text="Actual date of the message"
+        android:text="@string/message_sender_date2"
         android:background="@android:color/transparent"/>
 </RelativeLayout>

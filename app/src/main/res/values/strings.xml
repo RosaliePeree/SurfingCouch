@@ -12,4 +12,28 @@
 
     <!-- SETTINGS SCREEN STRINGS -->
     <string name="action_settings">Settings</string>
+
+    <!-- CHAT ACTIVITY STRINGS -->
+
+    <string name="chat_empty_text"> You can\'t send an empty text </string>
+
+    <!-- MESSAGE ACTIVITY STRINGS -->
+
+    <string name="message_empty"> Nothing to show here </string>
+    <string name="message_error"> Error while retrieving data </string>
+
+    <!-- MESSAGE SENDERS STRINGS -->
+
+    <string name="message_sender_text"> This part will be replaced at one point</string>
+    <string name="message_sender_name"> Name</string>
+    <string name="message_sender_date"> 01/01/1990</string>
+
+    <string name="message_sender_text2"> This part will also be replaced at one point</string>
+    <string name="message_sender_name2"> Name2</string>
+    <string name="message_sender_date2"> 02/01/1990</string>
+
+    <!-- MESSAGE LAYOUT STRINGS -->
+
+    <string name="message_layout_send"> Send a message</string>
+
 </resources>
