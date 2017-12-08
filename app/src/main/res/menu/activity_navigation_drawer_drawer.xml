@@ -20,6 +20,10 @@
                 android:id="@+id/nav_message"
                 android:icon="@drawable/ic_mail_outline_black_24dp"
                 android:title="Messages" />
+            <item
+            android:id="@+id/nav_all_users"
+            android:icon="@drawable/ic_list_pf_users"
+            android:title="All users" />
         </menu>
     </item>
 
