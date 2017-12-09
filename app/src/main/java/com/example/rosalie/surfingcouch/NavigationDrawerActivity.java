@@ -118,7 +118,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
             Intent intent = new Intent(this,AroundMe.class);
             startActivity(intent);
         } else if (id == R.id.nav_trips) {
-            Intent intent = new Intent(this,AddHostingPlaceActivity.class);
+            Intent intent = new Intent(this,AddingReviewActivity.class); //debug
             startActivity(intent);
         } else if (id == R.id.nav_all_users) {
             Intent intent = new Intent(this,ListOfUsersActivity.class);
