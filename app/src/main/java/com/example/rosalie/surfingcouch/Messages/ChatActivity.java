@@ -1,25 +1,22 @@
-package com.example.rosalie.surfingcouch;
+package com.example.rosalie.surfingcouch.Messages;
 
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.example.rosalie.surfingcouch.Database.Message;
 import com.example.rosalie.surfingcouch.Database.User;
-import com.firebase.client.Firebase;
+import com.example.rosalie.surfingcouch.NavigationDrawerActivity;
+import com.example.rosalie.surfingcouch.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -27,12 +24,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Locale;
-import java.util.Map;
 
 public class ChatActivity extends NavigationDrawerActivity {
 
@@ -69,8 +63,6 @@ public class ChatActivity extends NavigationDrawerActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 lul = dataSnapshot.getValue(User.class);
-
-
             }
 
             @Override
@@ -78,8 +70,6 @@ public class ChatActivity extends NavigationDrawerActivity {
 
             }
         });
-
-
 
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override

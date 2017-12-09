@@ -27,6 +27,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "MainActivity";
@@ -275,7 +276,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             signOut();
         } else if (i == R.id.verify_email_button) {
             sendEmailVerification();
-            //Intent intent = new Intent(this, MessagesActivity.class); Debug purpose
+            //Intent intent = new Intent(this, ProfileActivity.class); // Debug purpose
             //startActivity(intent);
         } else if (i == R.id.save_data_new_user) {
             if (mUsernameField.getText().toString().trim().length() == 0
@@ -306,9 +307,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void saveNewUser(String username, String email, int radiobuttonId, String placeName) {
         FirebaseUser user = mAuth.getCurrentUser();
-        //ArrayList<String> dummyList = new ArrayList<>();
-        //dummyList.add("undefined");
-        User newUser = new User(placeName, mEmailField.getText().toString(), null, user.getUid(), 0, null, null, null, null, username, null);
+        HashMap<String,String> dummyList = new HashMap<>();
+        dummyList.put("undefined","undefined");
+        User newUser = new User(placeName, mEmailField.getText().toString(), null, user.getUid(), 0, dummyList, dummyList, dummyList, dummyList, username, dummyList);
         if (radiobuttonId == R.id.gender_male)
             newUser.setGender("Male");
         else

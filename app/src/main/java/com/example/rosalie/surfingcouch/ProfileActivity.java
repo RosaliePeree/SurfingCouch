@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.rosalie.surfingcouch.Database.HostingPlace;
+import com.example.rosalie.surfingcouch.Database.Service;
 import com.example.rosalie.surfingcouch.Database.User;
 import com.example.rosalie.surfingcouch.NavigationDrawerActivity;
 import com.example.rosalie.surfingcouch.R;
@@ -39,7 +40,7 @@ public class ProfileActivity extends NavigationDrawerActivity {
         View contentView = inflater.inflate(R.layout.activity_profile, null, false);
         drawer.addView(contentView, 0);
 
-        placesListView = findViewById(R.id.list_of_users_view);
+        placesListView = findViewById(R.id.profile_places_list);
         placeList = new ArrayList<>();
 
         Bundle b = getIntent().getExtras();
@@ -57,7 +58,10 @@ public class ProfileActivity extends NavigationDrawerActivity {
                 User use = dataSnapshot.getValue(User.class);
                 //Log.i(use.getName(), " user");
                 displayedUser = mCurrentUser = use;
-                displayUser(mCurrentUser);
+                if(mCurrentUser.getPlaces().size() >= 1)
+                    getPlacesLinked();
+                else
+                    displayUser(displayedUser);
             }
 
             @Override
@@ -80,8 +84,11 @@ public class ProfileActivity extends NavigationDrawerActivity {
                 for(User id : mUserList)
                     if(value.equals(id.getId())) {
                         displayedUser = id;
-                        displayUser(id);
                     }
+                if(mCurrentUser.getPlaces().size() >= 1)
+                    getPlacesLinked();
+                else
+                    displayUser(displayedUser);
             }
 
             @Override
@@ -92,16 +99,20 @@ public class ProfileActivity extends NavigationDrawerActivity {
     }
 
     private void getPlacesLinked(){
-        mReferenceUser = FirebaseDatabase.getInstance().getReference().child("Place");
+        mReferenceUser = FirebaseDatabase.getInstance().getReference().child("HostingPlace");
         mReferenceUser.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot child : dataSnapshot.getChildren()) {
                     HostingPlace place = child.getValue(HostingPlace.class);
                     if(place.getUserID().equals(displayedUser.getId()))
-                        placeList.add(child.getValue(HostingPlace.class));
+                        placeList.add(place);
                 }
                 //Log.i(use.getName(), " user");
+
+                ProfileActivity.PlacesAdapter myAdapter = new ProfileActivity.PlacesAdapter(getApplicationContext(),R.layout.list_view_places,placeList);
+                placesListView.setAdapter(myAdapter);
+
                 displayUser(mCurrentUser);
             }
 
@@ -118,9 +129,6 @@ public class ProfileActivity extends NavigationDrawerActivity {
         city.setText(user.getComefrom());
         TextView gender = findViewById(R.id.profile_gender);
         gender.setText(user.getGender());
-
-        ProfileActivity.PlacesAdapter myAdapter = new ProfileActivity.PlacesAdapter(getApplicationContext(),R.layout.list_view_places,placeList);
-        placesListView.setAdapter(myAdapter);
     }
 
     class PlacesAdapter extends ArrayAdapter<HostingPlace> {
@@ -142,9 +150,14 @@ public class ProfileActivity extends NavigationDrawerActivity {
 
             View v = convertView;
             LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            v = inflater.inflate(R.layout.list_view_places, null);
-            TextView textView = (TextView) v.findViewById(R.id.list_user_item_text);
-            textView.setText(placeArrayList.get(position).getListService().toString() + " (" + placeArrayList.get(position).getNumberOfPossiblePeople() + ")");
+            v = inflater.inflate(R.layout.list_view_places, parent, false);
+            TextView textView = v.findViewById(R.id.list_places);
+            String servicesProvided = "";
+            for(Service service : placeArrayList.get(position).getListService())
+                servicesProvided += service.getName() + " ";
+            textView.setText("Property name: " + placeArrayList.get(position).getPlacename() + " " +
+                    "(can host " + placeArrayList.get(position).getNumberOfPossiblePeople() + "people) \n" +
+                    "Services provided: " +  servicesProvided);
             return v;
         }
     }

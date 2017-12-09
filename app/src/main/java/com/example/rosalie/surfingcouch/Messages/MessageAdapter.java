@@ -1,13 +1,13 @@
-package com.example.rosalie.surfingcouch;
+package com.example.rosalie.surfingcouch.Messages;
 
 import android.app.Activity;
 import android.support.annotation.Nullable;
-import android.text.format.DateFormat;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.rosalie.surfingcouch.Database.Message;
+import com.example.rosalie.surfingcouch.R;
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.Query;

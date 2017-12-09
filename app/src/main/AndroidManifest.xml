@@ -24,17 +24,18 @@
         <activity android:name=".ProfileActivity" />
         <activity android:name=".TripActivity" />
         <activity android:name=".AroundMe" />
-        <activity android:name=".MessagesActivity" />
+        <activity android:name=".Messages.MessagesActivity" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".ShopActivity" />
         <activity android:name=".ListOfUsersActivity" />
-        <activity android:name=".ChatActivity" />
+        <activity android:name=".Messages.ChatActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCOvRXkUmK0ZUeaSkAtmHRp--_TEjGbOa0" />
 
-        <activity android:name=".AddHostingPlaceActivity"></activity>
+        <activity android:name=".AddHostingPlaceActivity" />
+        <activity android:name=".DisplayPlaceActivity"></activity>
     </application>
 
 </manifest>

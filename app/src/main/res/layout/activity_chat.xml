@@ -10,7 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:layout_marginTop="?attr/actionBarSize"
     android:orientation="vertical"
-    tools:context="com.example.rosalie.surfingcouch.ChatActivity">
+    tools:context="com.example.rosalie.surfingcouch.Messages.ChatActivity">
 
 
 
