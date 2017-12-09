@@ -1,38 +1,42 @@
 package com.example.rosalie.surfingcouch.Database;
 
+import java.util.ArrayList;
+
 /**
  * Created by infer on 05/12/2017.
  */
 
 public class HostingPlace {
 
-    private String[] booking;
-    private Service[] listService;
+
+    private ArrayList<Service> listService;
+    private String location;
     private int numberOfPossiblePeople;
-    private int placeID;
-    private int userID;
+    private String placename;
+    private String userID;
 
-    public HostingPlace(String[] booking, Service[] listService, int numberOfPossiblePeople, int placeID, int userID) {
-        this.booking = booking;
+    public HostingPlace(ArrayList<Service> listService, String location ,int numberOfPossiblePeople, String placename, String userID) {
+        this.placename = placename;
         this.listService = listService;
+        this.location = location;
         this.numberOfPossiblePeople = numberOfPossiblePeople;
-        this.placeID = placeID;
         this.userID = userID;
+
     }
 
-    public String[] getBooking() {
-        return booking;
+    public String getPlacename() {
+        return placename;
     }
 
-    public void setBooking(String[] booking) {
-        this.booking = booking;
+    public void setPlacename(String placename) {
+        this.placename = placename;
     }
 
-    public Service[] getListService() {
+    public ArrayList<Service> getListService() {
         return listService;
     }
 
-    public void setListService(Service[] listService) {
+    public void setListService(ArrayList<Service> listService) {
         this.listService = listService;
     }
 
@@ -44,19 +48,19 @@ public class HostingPlace {
         this.numberOfPossiblePeople = numberOfPossiblePeople;
     }
 
-    public int getPlaceID() {
-        return placeID;
-    }
-
-    public void setPlaceID(int placeID) {
-        this.placeID = placeID;
-    }
-
-    public int getUserID() {
+    public String getUserID() {
         return userID;
     }
 
-    public void setUserID(int userID) {
+    public void setUserID(String userID) {
         this.userID = userID;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 }

@@ -71,7 +71,12 @@
     <string name="add_hosting_place_service1"> Shower </string>
     <string name="add_hosting_place_service2"> Sleeping</string>
     <string name="add_hosting_place_service3"> Laundry</string>
-    <string name="add_hosting_place_servicetext"> Choose which services can be provided by this place</string>
+    <string name="add_hosting_place_servicetext"> Choose which services can be provided by this place (You need at least one)</string>
     <string name="add_hosting_place_numberppltext"> How much people maximum can stay at the same time ?</string>
+    <string name="add_hosting_place_empty"> Please fill out the form correctly </string>
+    <string name="add_hosting_place_pplhint"> Number of people…</string>
+    <string name="add_hosting_place_send">Add Hosting Place</string>
+    <string name="enter_placename">Enter a name for your place</string>
+    <string name="input_placename">Place name…</string>
 
 </resources>

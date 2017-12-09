@@ -6,47 +6,46 @@
     android:layout_height="match_parent"
     tools:context="com.example.rosalie.surfingcouch.AddHostingPlaceActivity">
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
-        android:text="@string/add_hosting_place_service1" />
-
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/checkBox"
-        android:text="@string/add_hosting_place_service2" />
-
-    <CheckBox
-        android:id="@+id/checkBox3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/checkBox2"
-
-        android:text="@string/add_hosting_place_service3" />
-
     <TextView
-        android:id="@+id/text_city"
+        android:id="@+id/text_nameplace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:text="@string/enter_placename" />
+
+    <EditText
+        android:id="@+id/input_placename"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="76dp"
-        android:text="@string/main_enter_city" />
+        android:layout_below="@+id/text_nameplace"
+        android:ems="25"
+        android:textColorHint="#CFD8DC"
+        android:textColor="#000000"
+        android:inputType="textPersonName"
+        android:hint="@string/input_placename"
+        />
+
+
+    <TextView
+        android:id="@+id/text_city2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/main_enter_city"
+        android:layout_below="@+id/input_placename"/>
 
     <fragment
-        android:id="@+id/place_autocomplete_fragment"
+        android:id="@+id/addplace_autocomplete_fragment"
         android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/text_city"
+        android:layout_below="@+id/text_city2"
         android:layout_weight="1" />
+
+
 
     <TextView
         android:id="@+id/textView2"
@@ -54,35 +53,62 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/place_autocomplete_fragment"
+        android:layout_below="@+id/addplace_autocomplete_fragment"
         android:text="@string/add_hosting_place_servicetext" />
+
+    <CheckBox
+        android:id="@+id/checkBoxShower"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:text="@string/add_hosting_place_service1" />
+
+    <CheckBox
+        android:id="@+id/checkBoxSleeping"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBoxShower"
+        android:text="@string/add_hosting_place_service2" />
+
+    <CheckBox
+        android:id="@+id/checkBoxLaundry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBoxSleeping"
+
+        android:text="@string/add_hosting_place_service3" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:layout_below="@+id/checkBox3"
+        android:layout_below="@+id/checkBoxLaundry"
         android:layout_centerHorizontal="true"
 
         android:text="@string/add_hosting_place_numberppltext" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/numberpeople"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView3"
-        android:ems="10"
+        android:ems="2"
+        android:textColorHint="#CFD8DC"
+        android:textColor="#000000"
         android:inputType="number"
+        android:hint="@string/add_hosting_place_pplhint"
         />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/addhost"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText"
+        android:layout_below="@+id/numberpeople"
         android:layout_centerHorizontal="true"
-        android:text="Button" />
+        android:text="@string/add_hosting_place_send"
+        android:onClick="addPlace"
+/>
 </RelativeLayout>
