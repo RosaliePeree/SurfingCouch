@@ -50,6 +50,8 @@ public class ChatActivity extends NavigationDrawerActivity {
         sendButton = (ImageView) findViewById(R.id.sendButton);
         sendText = (EditText) findViewById(R.id.messageArea);
 
+        fab.setVisibility(View.GONE);
+
         Intent intent = getIntent();
         chatName = intent.getStringExtra("chatName");
 

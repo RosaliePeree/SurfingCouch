@@ -36,6 +36,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
     protected static DatabaseReference mReferenceUser;
     protected static User mCurrentUser;
     protected static ArrayList<User> mUserList;
+    protected FloatingActionButton fab;
 
     public static SharedPreferences getSharedPreferences(Context ctxt) {
         return ctxt.getSharedPreferences("FILE", 0);
@@ -53,7 +54,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
 
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
+        fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -40,12 +40,12 @@ public class AddHostingPlaceActivity extends NavigationDrawerActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_hosting_place);
 
-        numberOfPeople = (EditText) findViewById(R.id.numberpeople);
-        placenameText = (EditText) findViewById(R.id.input_placename);
-        showerService = (CheckBox) findViewById(R.id.checkBoxShower);
-        laundryService = (CheckBox) findViewById(R.id.checkBoxLaundry);
-        sleepService = (CheckBox) findViewById(R.id.checkBoxSleeping);
-        addPlace = (Button) findViewById(R.id.addhost);
+        numberOfPeople = findViewById(R.id.numberpeople);
+        placenameText = findViewById(R.id.input_placename);
+        showerService = findViewById(R.id.checkBoxShower);
+        laundryService = findViewById(R.id.checkBoxLaundry);
+        sleepService = findViewById(R.id.checkBoxSleeping);
+        addPlace = findViewById(R.id.addhost);
 
         PlaceAutocompleteFragment autocompleteFragment = (PlaceAutocompleteFragment)
                 getFragmentManager().findFragmentById(R.id.addplace_autocomplete_fragment);

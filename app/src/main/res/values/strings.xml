@@ -54,6 +54,17 @@
     <string name="profile_reviews_label">Reviews:</string>
     <string name="profile_places_label">Places:</string>
 
+    <!-- PLACE SCREEN STRINGS -->
+    <string name="place_place_name_label">Place name:</string>
+    <string name="place_place_name">Place name</string>
+    <string name="place_location_label">Location:</string>
+    <string name="place_location">Location</string>
+    <string name="place_number_people_label">Number of people:</string>
+    <string name="place_number_people">Number of people</string>
+    <string name="place_user_label">Username:</string>
+    <string name="place_user">Username</string>
+    <string name="place_services">Services:</string>
+
     <!-- CHAT ACTIVITY STRINGS -->
 
     <string name="chat_empty_text"> You can\'t send an empty text </string>
