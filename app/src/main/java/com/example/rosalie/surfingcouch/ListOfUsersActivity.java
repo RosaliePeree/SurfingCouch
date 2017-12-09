@@ -54,6 +54,17 @@ public class ListOfUsersActivity extends NavigationDrawerActivity {
                 UserAdapter myAdapter=new UserAdapter(getApplicationContext(),R.layout.list_view_users,userList);
                 userListView.setAdapter(myAdapter);
 
+                userListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        Intent intent = new Intent(getApplicationContext(),ProfileActivity.class);
+                        Bundle b = new Bundle();
+                        User use = (User)adapterView.getItemAtPosition(i);
+                        b.putString("userID", use.getId());
+                        intent.putExtras(b); //Put your id to your next Intent*/
+                        startActivity(intent);
+                    }
+                });
             }
 
             @Override
@@ -63,7 +74,7 @@ public class ListOfUsersActivity extends NavigationDrawerActivity {
         });
     }
 
-    public class UserAdapter extends ArrayAdapter<User> {
+    class UserAdapter extends ArrayAdapter<User> {
         ArrayList<User> userArrayList;
 
         public UserAdapter(Context context, int textViewResourceId, ArrayList<User> objects) {

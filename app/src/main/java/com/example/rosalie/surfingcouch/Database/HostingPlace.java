@@ -9,14 +9,12 @@ public class HostingPlace {
     private String[] booking;
     private Service[] listService;
     private int numberOfPossiblePeople;
-    private int placeID;
-    private int userID;
+    private String userID;
 
-    public HostingPlace(String[] booking, Service[] listService, int numberOfPossiblePeople, int placeID, int userID) {
+    public HostingPlace(String[] booking, Service[] listService, int numberOfPossiblePeople, String userID) {
         this.booking = booking;
         this.listService = listService;
         this.numberOfPossiblePeople = numberOfPossiblePeople;
-        this.placeID = placeID;
         this.userID = userID;
     }
 
@@ -44,19 +42,11 @@ public class HostingPlace {
         this.numberOfPossiblePeople = numberOfPossiblePeople;
     }
 
-    public int getPlaceID() {
-        return placeID;
-    }
-
-    public void setPlaceID(int placeID) {
-        this.placeID = placeID;
-    }
-
-    public int getUserID() {
+    public String getUserID() {
         return userID;
     }
 
-    public void setUserID(int userID) {
+    public void setUserID(String userID) {
         this.userID = userID;
     }
 }
