@@ -1,6 +1,7 @@
 package com.example.rosalie.surfingcouch.Database;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 /**
  * Created by infer on 05/12/2017.
@@ -12,17 +13,18 @@ public class User {
     private String gender;
     private String id;
     private int numberOfPoints;
-    private ArrayList<String>  places;
-    private ArrayList<String> reviews;
-    private ArrayList<String>  trips;
-    private ArrayList<String> unlockedRewards;
+    private Map<String, String> places;
+    private Map<String, String> reviews;
+    private Map<String, String>  trips;
+    private Map<String, String> unlockedRewards;
     private String username;
-    private ArrayList<String> conversations;
+    private Map<String, String> conversations;
 
     public User() {
     }
 
-    public User(String comefrom, String email, String gender, String id, int numberOfPoints, ArrayList<String> places, ArrayList<String> reviews, ArrayList<String> trips, ArrayList<String> unlockedRewards, String username, ArrayList<String> conversations) {
+
+    public User(String comefrom, String email, String gender, String id, int numberOfPoints, Map<String, String> places, Map<String, String> reviews, Map<String, String> trips, Map<String, String> unlockedRewards, String username, Map<String, String> conversations) {
         this.comefrom = comefrom;
         this.email = email;
         this.gender = gender;
@@ -36,6 +38,38 @@ public class User {
         this.conversations = conversations;
     }
 
+    public Map<String, String> getConversations() {
+        return conversations;
+    }
+
+    public void setConversations(Map<String, String> conversations) {
+        this.conversations = conversations;
+    }
+
+    public Map<String, String> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(Map<String, String> reviews) {
+        this.reviews = reviews;
+    }
+
+    public Map<String, String> getTrips() {
+        return trips;
+    }
+
+    public void setTrips(Map<String, String> trips) {
+        this.trips = trips;
+    }
+
+    public Map<String, String> getUnlockedRewards() {
+        return unlockedRewards;
+    }
+
+    public void setUnlockedRewards(Map<String, String> unlockedRewards) {
+        this.unlockedRewards = unlockedRewards;
+    }
+
     public String getId() {
         return id;
     }
@@ -44,45 +78,15 @@ public class User {
         this.id = id;
     }
 
-    public ArrayList<String> getConversations() {
-        return conversations;
-    }
 
-    public void setConversations(ArrayList<String> conversations) {
-        this.conversations = conversations;
-    }
-
-    public ArrayList<String> getPlaces() {
+    public Map<String, String> getPlaces() {
         return places;
     }
 
-    public void setPlaces(ArrayList<String> places) {
+    public void setPlaces(Map<String, String> places) {
         this.places = places;
     }
 
-    public ArrayList<String> getReviews() {
-        return reviews;
-    }
-
-    public void setReviews(ArrayList<String> reviews) {
-        this.reviews = reviews;
-    }
-
-    public ArrayList<String> getTrips() {
-        return trips;
-    }
-
-    public void setTrips(ArrayList<String> trips) {
-        this.trips = trips;
-    }
-
-    public ArrayList<String> getUnlockedRewards() {
-        return unlockedRewards;
-    }
-
-    public void setUnlockedRewards(ArrayList<String> unlockedRewards) {
-        this.unlockedRewards = unlockedRewards;
-    }
 
     public String getComefrom() {
         return comefrom;

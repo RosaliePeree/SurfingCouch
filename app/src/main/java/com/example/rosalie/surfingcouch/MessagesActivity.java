@@ -54,14 +54,15 @@ public class MessagesActivity extends NavigationDrawerActivity {
                 public void onDataChange(DataSnapshot dataSnapshot) {
 
                     user = dataSnapshot.getValue(User.class);
-                    allChats = user.getConversations();
-                    for(String object: allChats) {
-                        adapter.add(object);
+                    for(String value : user.getConversations().values()) {
+                        allChats.add(value);
                     }
+
 
                     if(allChats == null) {
                         Toast.makeText(getApplicationContext(), R.string.message_empty ,Toast.LENGTH_SHORT).show();
                     }else{
+
                         listOfChats.setAdapter(adapter);
                     }
 
