@@ -129,8 +129,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            Toast.makeText(getApplicationContext(), "createUserWithEmail:success", Toast.LENGTH_SHORT).show();
                             saveNewUser(mUsernameField.getText().toString(), mEmailField.getText().toString(), mGenderField.getCheckedRadioButtonId(), mPlaceField.getName().toString());
+                            Toast.makeText(getApplicationContext(), "createUserWithEmail:success", Toast.LENGTH_SHORT).show();
+
                         } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(getApplicationContext(), "signInWithEmail:failure" + task.getException(), Toast.LENGTH_SHORT).show();
@@ -284,9 +285,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     || mPlaceField.getName().toString().trim().length() == 0)
                 Toast.makeText(getApplicationContext(), "Please fill in all the fields", Toast.LENGTH_SHORT).show();
             else
-            {
                 createAccount(mEmailField.getText().toString(), mPasswordField.getText().toString());
-            }
         } else if (i == R.id.updateIU_button) {
             mAuth.getCurrentUser().reload();
             if (mAuth.getCurrentUser().isEmailVerified()) {

@@ -12,17 +12,27 @@ public class HostingPlace {
     private int numberOfPossiblePeople;
     private String placename;
     private String userID;
+    private String placeID;
+
 
     public HostingPlace() {
     }
 
-    public HostingPlace(ArrayList<Service> listService, String location , int numberOfPossiblePeople, String placename, String userID) {
-        this.placename = placename;
+    public HostingPlace(ArrayList<Service> listService, String location, int numberOfPossiblePeople, String placename, String userID, String placeID) {
         this.listService = listService;
         this.location = location;
         this.numberOfPossiblePeople = numberOfPossiblePeople;
+        this.placename = placename;
         this.userID = userID;
+        this.placeID = placeID;
+    }
 
+    public String getPlaceID() {
+        return placeID;
+    }
+
+    public void setPlaceID(String placeID) {
+        this.placeID = placeID;
     }
 
     public String getPlacename() {
