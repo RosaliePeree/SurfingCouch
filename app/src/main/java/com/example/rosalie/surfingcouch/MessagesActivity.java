@@ -55,7 +55,7 @@ public class MessagesActivity extends NavigationDrawerActivity {
 
                     user = dataSnapshot.getValue(User.class);
                     for(String value : user.getConversations().values()) {
-                        allChats.add(value);
+                        allChats.add(value); //This also add in adapter at the same time 
                     }
 
 
