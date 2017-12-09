@@ -13,7 +13,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.rosalie.surfingcouch.Database.User;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class SettingsActivity extends NavigationDrawerActivity {
 
@@ -40,20 +45,24 @@ public class SettingsActivity extends NavigationDrawerActivity {
 
             addPreferencesFromResource(R.xml.user_settings);
 
-            sharedPreferences = getActivity().getBaseContext().getSharedPreferences(MY_PREFS_NAME, Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putString("username", mCurrentUser.getUsername()); //This is just an example, you could also put boolean, long, int or floats
-            editor.putString("location", mCurrentUser.getComefrom()); //This is just an example, you could also put boolean, long, int or floats
-            editor.putString("email", mCurrentUser.getEmail());
-            editor.commit();
 
-            Preference etp = findPreference("username");
-            etp.setSummary(mCurrentUser.getUsername());
-            Preference etp2 = findPreference("email");
-            etp2.setSummary(mCurrentUser.getEmail());
-            Preference etp3 = findPreference("location");
-            etp3.setSummary(mCurrentUser.getComefrom());
-            onSharedPreferenceChanged(null, "");
+            mReferenceUser = FirebaseDatabase.getInstance().getReference().child("User/" + FirebaseAuth.getInstance().getCurrentUser().getUid());
+            mReferenceUser.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    User use = dataSnapshot.getValue(User.class);
+                    //Log.i(use.getName(), " user");
+                    mCurrentUser = use;
+                    storeIntoPref(mCurrentUser);
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+
+
         }
 
         @Override
@@ -73,6 +82,23 @@ public class SettingsActivity extends NavigationDrawerActivity {
             if (key.equals("switch_preference")) {
                 Toast.makeText(getActivity(), "Switch", Toast.LENGTH_LONG).show();
             }
+        }
+
+        public void storeIntoPref(User user){
+            sharedPreferences = getActivity().getBaseContext().getSharedPreferences(MY_PREFS_NAME, Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("username", user.getUsername()); //This is just an example, you could also put boolean, long, int or floats
+            editor.putString("location", user.getComefrom());
+            editor.putString("email", user.getEmail());
+            editor.commit();
+
+            Preference etp = findPreference("username");
+            etp.setSummary(user.getUsername());
+            Preference etp2 = findPreference("email");
+            etp2.setSummary(user.getEmail());
+            Preference etp3 = findPreference("location");
+            etp3.setSummary(user.getComefrom());
+            onSharedPreferenceChanged(null, "");
         }
     }
 }

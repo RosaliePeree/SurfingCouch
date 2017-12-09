@@ -7,15 +7,16 @@ import java.util.ArrayList;
  */
 
 public class HostingPlace {
-
-
     private ArrayList<Service> listService;
     private String location;
     private int numberOfPossiblePeople;
     private String placename;
     private String userID;
 
-    public HostingPlace(ArrayList<Service> listService, String location ,int numberOfPossiblePeople, String placename, String userID) {
+    public HostingPlace() {
+    }
+
+    public HostingPlace(ArrayList<Service> listService, String location , int numberOfPossiblePeople, String placename, String userID) {
         this.placename = placename;
         this.listService = listService;
         this.location = location;

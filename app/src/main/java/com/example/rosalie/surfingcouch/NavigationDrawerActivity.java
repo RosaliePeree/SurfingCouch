@@ -18,21 +18,24 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.rosalie.surfingcouch.Database.User;
+import com.example.rosalie.surfingcouch.Messages.MessagesActivity;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class NavigationDrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     protected DrawerLayout drawer;
     protected Toolbar toolbar;
-    protected DatabaseReference mReferenceUser;
+    protected static DatabaseReference mReferenceUser;
     protected static User mCurrentUser;
+    protected static ArrayList<User> mUserList;
 
     public static SharedPreferences getSharedPreferences(Context ctxt) {
         return ctxt.getSharedPreferences("FILE", 0);
@@ -44,21 +47,9 @@ public class NavigationDrawerActivity extends AppCompatActivity
         setContentView(R.layout.activity_navigation_drawer);
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("");
+        mUserList = new ArrayList<>();
 
-        mReferenceUser= FirebaseDatabase.getInstance().getReference().child("User/" + FirebaseAuth.getInstance().getCurrentUser().getUid());
-        mReferenceUser.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                User use = dataSnapshot.getValue(User.class);
-                //Log.i(use.getName(), " user");
-                mCurrentUser = use;
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
+        loadData();
 
         setSupportActionBar(toolbar);
 
@@ -80,6 +71,8 @@ public class NavigationDrawerActivity extends AppCompatActivity
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        if(mUserList.size() > 0)
+            Toast.makeText(this, mUserList.get(0).toString(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -127,11 +120,17 @@ public class NavigationDrawerActivity extends AppCompatActivity
         } else if (id == R.id.nav_trips) {
             Intent intent = new Intent(this,AddHostingPlaceActivity.class);
             startActivity(intent);
+        } else if (id == R.id.nav_all_users) {
+            Intent intent = new Intent(this,ListOfUsersActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_message) {
             Intent intent = new Intent(this,MessagesActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_profile) {
             Intent intent = new Intent(this,ProfileActivity.class);
+            /*Bundle b = new Bundle();
+            b.putString ("userID", mCurrentUser.getId()); //Your id
+            intent.putExtras(b); //Put your id to your next Intent*/
             startActivity(intent);
         } else if (id == R.id.nav_settings) {
             Intent intent = new Intent(this,SettingsActivity.class);
@@ -146,5 +145,22 @@ public class NavigationDrawerActivity extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void loadData(){
+        mReferenceUser = FirebaseDatabase.getInstance().getReference().child("User");
+        mReferenceUser.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot child : dataSnapshot.getChildren()) {
+                    mUserList.add(child.getValue(User.class));
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 }
