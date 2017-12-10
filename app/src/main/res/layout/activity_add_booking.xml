@@ -36,7 +36,7 @@
         android:layout_alignBaseline="@+id/checkBoxLaundryBooking"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:text="holder1"
+        android:text="@string/add_hosting_place_service1"
         android:id="@+id/checkBoxShowerBooking" />
 
     <CheckBox
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/checkBoxSleepingBooking"
         android:layout_centerHorizontal="true"
-        android:text="holder2" />
+        android:text="@string/add_hosting_place_service3" />
 
     <CheckBox
         android:id="@+id/checkBoxSleepingBooking"
@@ -55,7 +55,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/checkservice"
         android:layout_marginTop="16dp"
-        android:text="holder2" />
+        android:text="@string/add_hosting_place_service2" />
 
     <Button
         android:layout_width="match_parent"
@@ -63,6 +63,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:text="@string/booking_send"/>
+        android:text="@string/booking_send"
+        android:onClick="addBooking"/>
 
 </RelativeLayout>
