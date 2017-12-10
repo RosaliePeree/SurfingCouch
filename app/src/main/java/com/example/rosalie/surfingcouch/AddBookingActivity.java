@@ -61,7 +61,7 @@ public class AddBookingActivity extends AppCompatActivity {
                 String key = FirebaseDatabase.getInstance().getReference().push().getKey();
                 Booking booking = new Booking(key,curDate,currentUser, receivingUser, actualPlace, false);
                 FirebaseDatabase.getInstance().getReference().child("Booking").child(key).setValue(booking);
-                FirebaseDatabase.getInstance().getReference().child("Place/"+ choosedPlace +"/booking").child(key).setValue(booking);
+                FirebaseDatabase.getInstance().getReference().child("Place/"+ choosedPlace +"/booking").child(key);
 
                 Intent intent = new Intent(this,ProfileActivity.class);
                 Toast.makeText(getApplicationContext(),"Booking added, waiting for confirmation", Toast.LENGTH_LONG).show();
