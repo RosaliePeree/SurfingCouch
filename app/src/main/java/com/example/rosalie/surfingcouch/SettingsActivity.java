@@ -7,8 +7,10 @@ package com.example.rosalie.surfingcouch;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.EditTextPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
@@ -45,7 +47,6 @@ public class SettingsActivity extends NavigationDrawerActivity {
 
             addPreferencesFromResource(R.xml.user_settings);
 
-
             mReference = FirebaseDatabase.getInstance().getReference().child("User/" + FirebaseAuth.getInstance().getCurrentUser().getUid());
             mReference.addValueEventListener(new ValueEventListener() {
                 @Override
@@ -53,16 +54,13 @@ public class SettingsActivity extends NavigationDrawerActivity {
                     User use = dataSnapshot.getValue(User.class);
                     //Log.i(use.getName(), " user");
                     mCurrentUser = use;
-                    storeIntoPref(mCurrentUser);
+                    updateFromPref(mCurrentUser);
                 }
-
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
 
                 }
             });
-
-
         }
 
         @Override
@@ -79,12 +77,13 @@ public class SettingsActivity extends NavigationDrawerActivity {
 
         @Override
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-            if (key.equals("switch_preference")) {
-                Toast.makeText(getActivity(), "Switch", Toast.LENGTH_LONG).show();
+            if (key.equals("username")) {
+                mReference = FirebaseDatabase.getInstance().getReference().child("User/" + FirebaseAuth.getInstance().getCurrentUser().getUid());
+                mReference.child("username").setValue(sharedPreferences.getString("username",""));
             }
         }
 
-        public void storeIntoPref(User user){
+        public void updateFromPref(User user){
             sharedPreferences = getActivity().getBaseContext().getSharedPreferences(MY_PREFS_NAME, Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString("username", user.getUsername()); //This is just an example, you could also put boolean, long, int or floats
