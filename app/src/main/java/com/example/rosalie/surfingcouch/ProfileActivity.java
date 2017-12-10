@@ -19,6 +19,8 @@ import com.example.rosalie.surfingcouch.Database.HostingPlace;
 import com.example.rosalie.surfingcouch.Database.Reviews;
 import com.example.rosalie.surfingcouch.Database.Service;
 import com.example.rosalie.surfingcouch.Database.User;
+import com.example.rosalie.surfingcouch.Messages.CheckConversationActivity;
+import com.example.rosalie.surfingcouch.Messages.MessagesActivity;
 import com.google.android.gms.location.places.Place;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -148,6 +150,8 @@ public class ProfileActivity extends NavigationDrawerActivity {
                     if(place.getUserID().equals(displayedUser.getId()))
                         placeList.add(place);
                 }
+                //Log.i(use.getName(), " user");
+
                 ProfileActivity.PlacesAdapter myAdapter = new ProfileActivity.PlacesAdapter(getApplicationContext(),R.layout.list_view_places,placeList);
                 placesListView.setAdapter(myAdapter);
 
@@ -206,6 +210,11 @@ public class ProfileActivity extends NavigationDrawerActivity {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    Intent intent = new Intent(getApplicationContext(), CheckConversationActivity.class);
+                    intent.putExtra("currentUser", mCurrentUser);
+                    intent.putExtra("displayedUser", displayedUser);
+                    intent.putExtra("userID", displayedUser.getId());
+                    startActivity(intent);
                     /* GREGOIRE add action here */
                 }
             });

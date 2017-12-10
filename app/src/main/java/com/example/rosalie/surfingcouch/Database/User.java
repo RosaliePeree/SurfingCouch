@@ -1,5 +1,6 @@
 package com.example.rosalie.surfingcouch.Database;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -7,7 +8,7 @@ import java.util.Map;
  * Created by infer on 05/12/2017.
  */
 
-public class User {
+public class User implements Serializable {
     private String comefrom;
     private String email;
     private String gender;

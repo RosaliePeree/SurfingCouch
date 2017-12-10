@@ -38,6 +38,8 @@
         <activity android:name=".DisplayPlaceActivity" />
         <activity android:name=".AddingReviewActivity" />
         <activity android:name=".DisplayReviewActivity"></activity>
+        <activity android:name=".AddingReviewActivity" />
+        <activity android:name=".Messages.CheckConversationActivity"></activity>
     </application>
 
 </manifest>

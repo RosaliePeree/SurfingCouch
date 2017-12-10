@@ -37,6 +37,7 @@ public class ListOfUsersActivity extends NavigationDrawerActivity {
 
         userListView = findViewById(R.id.list_of_users_view);
         userList = new ArrayList<>();
+        userListView.setAdapter(null);
 
         getAllUsersProfile();
     }
