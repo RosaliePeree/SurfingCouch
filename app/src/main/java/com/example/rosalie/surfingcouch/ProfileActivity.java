@@ -3,6 +3,7 @@ package com.example.rosalie.surfingcouch;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,10 +13,13 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.rosalie.surfingcouch.Database.HostingPlace;
+import com.example.rosalie.surfingcouch.Database.Reviews;
 import com.example.rosalie.surfingcouch.Database.Service;
 import com.example.rosalie.surfingcouch.Database.User;
+import com.google.android.gms.location.places.Place;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,7 +30,9 @@ import java.util.ArrayList;
 
 public class ProfileActivity extends NavigationDrawerActivity {
     private ListView placesListView;
+    private ListView reviewsListView;
     private ArrayList<HostingPlace> placeList;
+    private ArrayList<Reviews> reviewsList;
     private ArrayList<User> mUserList;
     private User displayedUser;
 
@@ -40,6 +46,7 @@ public class ProfileActivity extends NavigationDrawerActivity {
         drawer.addView(contentView, 0);
 
         placesListView = findViewById(R.id.profile_places_list);
+        placesListView.setAdapter(null);
         placesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -51,8 +58,25 @@ public class ProfileActivity extends NavigationDrawerActivity {
                 startActivity(intent);
             }
         });
+
+        reviewsListView = findViewById(R.id.profile_reviews_list);
+        reviewsListView.setAdapter(null);
+        reviewsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(getApplicationContext(),"test reviews",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(),DisplayReviewActivity.class);
+                Bundle b = new Bundle();
+                Reviews review = (Reviews) adapterView.getItemAtPosition(i);
+                b.putString("reviewID", review.getId());
+                intent.putExtras(b); //Put your id to your next Intent*/
+                startActivity(intent);
+            }
+        });
+
         placeList = new ArrayList<>();
         mUserList = new ArrayList<>();
+        reviewsList = new ArrayList<>();
 
         Bundle b = getIntent().getExtras();
         if(b != null) {
@@ -69,10 +93,12 @@ public class ProfileActivity extends NavigationDrawerActivity {
                 User use = dataSnapshot.getValue(User.class);
                 //Log.i(use.getName(), " user");
                 displayedUser = mCurrentUser = use;
-                if(mCurrentUser.getPlaces().size() >= 1)
+                if(mCurrentUser.getPlaces().size() >= 1) {
                     getPlacesLinked();
-                else
-                    displayUser(displayedUser);
+                    if (mCurrentUser.getReviews() != null)
+                        getReviewsLinked();
+                }
+                displayUser(displayedUser);
             }
 
             @Override
@@ -96,8 +122,11 @@ public class ProfileActivity extends NavigationDrawerActivity {
                     if(value.equals(id.getId())) {
                         displayedUser = id;
                     }
-                if(displayedUser.getPlaces().size() >= 1)
+                if(displayedUser.getPlaces().size() >= 1) {
                     getPlacesLinked();
+                    if (displayedUser.getReviews() != null)
+                        getReviewsLinked();
+                }
                 else
                     displayUser(displayedUser);
             }
@@ -119,10 +148,32 @@ public class ProfileActivity extends NavigationDrawerActivity {
                     if(place.getUserID().equals(displayedUser.getId()))
                         placeList.add(place);
                 }
-                //Log.i(use.getName(), " user");
-
                 ProfileActivity.PlacesAdapter myAdapter = new ProfileActivity.PlacesAdapter(getApplicationContext(),R.layout.list_view_places,placeList);
                 placesListView.setAdapter(myAdapter);
+
+                if (displayedUser.getReviews() == null)
+                    displayUser(displayedUser);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+    }
+
+    private void getReviewsLinked(){
+        mReference = FirebaseDatabase.getInstance().getReference().child("Reviews");
+        mReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot child : dataSnapshot.getChildren()) {
+                    Reviews review = child.getValue(Reviews.class);
+                    if(review.getReceivingID().equals(displayedUser.getId()))
+                        reviewsList.add(review);
+                }
+
+                ProfileActivity.ReviewsAdapter myAdapter = new ReviewsAdapter(getApplicationContext(), R.layout.list_view_reviews, reviewsList);
+                reviewsListView.setAdapter(myAdapter);
 
                 displayUser(displayedUser);
             }
@@ -188,6 +239,33 @@ public class ProfileActivity extends NavigationDrawerActivity {
             textView.setText("Property name: " + placeArrayList.get(position).getPlacename() + " " +
                     "(can host " + placeArrayList.get(position).getNumberOfPossiblePeople() + "people) \n" +
                     "Services provided: " +  servicesProvided);
+            return v;
+        }
+    }
+
+    class ReviewsAdapter extends ArrayAdapter<Reviews> {
+        ArrayList<Reviews> reviewsArrayList;
+
+        public ReviewsAdapter(Context context, int textViewResourceId, ArrayList<Reviews> objects) {
+            super(context, textViewResourceId, objects);
+            reviewsArrayList = new ArrayList<>();
+            reviewsArrayList = objects;
+        }
+
+        @Override
+        public int getCount() {
+            return super.getCount();
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+
+            View v = convertView;
+            LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            v = inflater.inflate(R.layout.list_view_reviews, parent, false);
+            TextView textView = v.findViewById(R.id.list_reviews_text);
+            textView.setText("Grade: " + reviewsArrayList.get(position).getGrade() + " \n " +
+                    "Message title: " +  reviewsArrayList.get(position).getTitle());
             return v;
         }
     }

@@ -65,6 +65,16 @@
     <string name="place_user">Username</string>
     <string name="place_services">Services:</string>
 
+    <!-- REVIEW SCREEN STRINGS -->
+    <string name="review_grade_label">Grade:</string>
+    <string name="review_grade">Grade</string>
+    <string name="review_title_label">Title:</string>
+    <string name="review_title">Title</string>
+    <string name="review_content_label">Content:</string>
+    <string name="review_content">Content</string>
+    <string name="review_user_label">Username:</string>
+    <string name="review_user">Username</string>
+
     <!-- CHAT ACTIVITY STRINGS -->
 
     <string name="chat_empty_text"> You can\'t send an empty text </string>

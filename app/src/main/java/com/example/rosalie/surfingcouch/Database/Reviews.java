@@ -12,6 +12,9 @@ public class Reviews {
     private String receivingID;
     private String title;
 
+    public Reviews() {
+    }
+
     public Reviews(String content, int grade, String id, String posterID, String receivingID, String title) {
         this.content = content;
         this.grade = grade;

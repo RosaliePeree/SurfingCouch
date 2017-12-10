@@ -36,7 +36,8 @@
 
         <activity android:name=".AddHostingPlaceActivity" />
         <activity android:name=".DisplayPlaceActivity" />
-        <activity android:name=".AddingReviewActivity"></activity>
+        <activity android:name=".AddingReviewActivity" />
+        <activity android:name=".DisplayReviewActivity"></activity>
     </application>
 
 </manifest>
