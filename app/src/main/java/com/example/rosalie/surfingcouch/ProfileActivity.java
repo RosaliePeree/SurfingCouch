@@ -141,7 +141,7 @@ public class ProfileActivity extends NavigationDrawerActivity {
         TextView gender = findViewById(R.id.profile_gender);
         gender.setText(user.getGender());
         Button button = findViewById(R.id.profile_button);
-        if(displayedUser == mCurrentUser){
+        if(displayedUser == mCurrentUser || displayedUser.getId().equals(mCurrentUser.getId())){
             button.setText("Add place");
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
