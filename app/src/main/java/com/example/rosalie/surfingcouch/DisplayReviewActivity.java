@@ -47,9 +47,7 @@ public class DisplayReviewActivity extends NavigationDrawerActivity {
                     Reviews review = child.getValue(Reviews.class);
                     if (value.equals(review.getId())) {
                         mCurrentReview = review;
-                        break;
                     }
-                    break;
                 }
                 displayReview(mCurrentReview);
             }

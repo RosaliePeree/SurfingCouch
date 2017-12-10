@@ -1,110 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:layout_marginTop="?attr/actionBarSize"
-    tools:context="com.example.rosalie.surfingcouch.ProfileActivity">
-
-    <ImageView
+    android:layout_marginTop="?attr/actionBarSize">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginTop="?attr/actionBarSize"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:src="@mipmap/profile_user_image"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/profile_username_label"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        style="@style/Base.TextAppearance.AppCompat.Widget.ActionBar.Title"
-        />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/profile_username"
-        android:id="@+id/profile_username"
-        />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        style="@style/Base.TextAppearance.AppCompat.Widget.ActionBar.Title"
-        android:text="@string/profile_come_from_label"
-        />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/profile_come_from"
-        android:id="@+id/profile_city"
-        />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        style="@style/Base.TextAppearance.AppCompat.Widget.ActionBar.Title"
-        android:text="@string/profile_gender_label"
-        />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/profile_gender"
-        android:id="@+id/profile_gender"
-        />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:text="@string/profile_score_label"
-        style="@style/Base.TextAppearance.AppCompat.Widget.ActionBar.Title"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/profile_reviews_label"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        style="@style/Base.TextAppearance.AppCompat.Widget.ActionBar.Title"/>
-
-    <ListView
-        android:id="@+id/profile_reviews_list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:divider="#000"
-        android:dividerHeight="1dp">
-    </ListView>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/profile_places_label"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        style="@style/Base.TextAppearance.AppCompat.Widget.ActionBar.Title"/>
-        <ListView
-            android:id="@+id/profile_places_list"
+        >
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:divider="#000"
-            android:dividerHeight="1dp">
-        </ListView>
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            tools:context="com.example.rosalie.surfingcouch.ProfileActivity">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/profile_button"
-        android:text=""/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@mipmap/profile_user_image"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/profile_username_label"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                style="@style/Base.TextAppearance.AppCompat.Widget.ActionBar.Title"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/profile_username"
+                android:id="@+id/profile_username"
+                />
+
+            <TextView
+                style="@style/Base.TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:text="@string/profile_come_from_label" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/profile_come_from"
+                android:id="@+id/profile_city"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                style="@style/Base.TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:text="@string/profile_gender_label"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/profile_gender"
+                android:id="@+id/profile_gender"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:text="@string/profile_score_label"
+                style="@style/Base.TextAppearance.AppCompat.Widget.ActionBar.Title"/>
+
+            <RatingBar
+                android:id="@+id/profile_rating_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:isIndicator="true"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/profile_reviews_label"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                style="@style/Base.TextAppearance.AppCompat.Widget.ActionBar.Title"/>
+
+            <ListView
+                android:id="@+id/profile_reviews_list"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_weight="1"
+                android:divider="#000"
+                android:dividerHeight="1dp">
+            </ListView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/profile_places_label"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                style="@style/Base.TextAppearance.AppCompat.Widget.ActionBar.Title"/>
+
+            <ListView
+                android:id="@+id/profile_places_list"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_weight="1"
+                android:divider="#000"
+                android:dividerHeight="1dp">
+            </ListView>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/profile_button"
+                android:text=""
+                />
+        </LinearLayout>
+
+    </ScrollView>
+
 </LinearLayout>

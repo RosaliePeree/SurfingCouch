@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +38,7 @@ public class ProfileActivity extends NavigationDrawerActivity {
     private ArrayList<Reviews> reviewsList;
     private ArrayList<User> mUserList;
     private User displayedUser;
+    private float gradeAverage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +49,9 @@ public class ProfileActivity extends NavigationDrawerActivity {
         View contentView = inflater.inflate(R.layout.activity_profile, null, false);
         drawer.addView(contentView, 0);
 
+        gradeAverage = 0;
+
         placesListView = findViewById(R.id.profile_places_list);
-        placesListView.setAdapter(null);
         placesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -62,7 +65,6 @@ public class ProfileActivity extends NavigationDrawerActivity {
         });
 
         reviewsListView = findViewById(R.id.profile_reviews_list);
-        reviewsListView.setAdapter(null);
         reviewsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -145,6 +147,7 @@ public class ProfileActivity extends NavigationDrawerActivity {
         mReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                placesListView.invalidateViews();
                 for (DataSnapshot child : dataSnapshot.getChildren()) {
                     HostingPlace place = child.getValue(HostingPlace.class);
                     if(place.getUserID().equals(displayedUser.getId()))
@@ -170,14 +173,21 @@ public class ProfileActivity extends NavigationDrawerActivity {
         mReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                reviewsListView.invalidateViews();
                 for (DataSnapshot child : dataSnapshot.getChildren()) {
                     Reviews review = child.getValue(Reviews.class);
-                    if(review.getReceivingID().equals(displayedUser.getId()))
+                    if(review.getReceivingID().equals(displayedUser.getId())) {
                         reviewsList.add(review);
+                        gradeAverage += review.getGrade();
+                    }
                 }
+                gradeAverage = gradeAverage / reviewsList.size();
 
                 ProfileActivity.ReviewsAdapter myAdapter = new ReviewsAdapter(getApplicationContext(), R.layout.list_view_reviews, reviewsList);
                 reviewsListView.setAdapter(myAdapter);
+
+                RatingBar rating = findViewById(R.id.profile_rating_bar);
+                rating.setRating(gradeAverage);
 
                 displayUser(displayedUser);
             }
@@ -215,7 +225,6 @@ public class ProfileActivity extends NavigationDrawerActivity {
                     intent.putExtra("displayedUser", displayedUser);
                     intent.putExtra("userID", displayedUser.getId());
                     startActivity(intent);
-                    /* GREGOIRE add action here */
                 }
             });
         }
