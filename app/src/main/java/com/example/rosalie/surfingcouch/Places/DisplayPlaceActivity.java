@@ -46,6 +46,7 @@ public class DisplayPlaceActivity extends NavigationDrawerActivity {
         getAllPlaces(b);
 
         Button button = findViewById(R.id.place_booking_button);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
