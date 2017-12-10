@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.rosalie.surfingcouch.AddingReviewActivity">
+    tools:context="com.example.rosalie.surfingcouch.Reviews.AddingReviewActivity">
 
     <Button
         android:id="@+id/button_adding_review"

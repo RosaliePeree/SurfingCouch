@@ -1,23 +1,19 @@
-package com.example.rosalie.surfingcouch;
+package com.example.rosalie.surfingcouch.Reviews;
 
 import android.content.Intent;
-import android.media.Rating;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.Toast;
 
-import com.example.rosalie.surfingcouch.Database.HostingPlace;
 import com.example.rosalie.surfingcouch.Database.Reviews;
-import com.google.android.gms.location.places.Place;
+import com.example.rosalie.surfingcouch.ProfileActivity;
+import com.example.rosalie.surfingcouch.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.ArrayList;
 
 public class AddingReviewActivity extends AppCompatActivity {
 
@@ -44,16 +40,13 @@ public class AddingReviewActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String receivingUser; //= intent.getStringExtra("receiverID");
         receivingUser = "tOeyT5B5hMeDqZz7K2We6tGb1Ie2";
-        if (reviewTitle.getText().toString().trim().length() == 0 || reviewText.getText().toString().trim().length() == 0 || rate.getNumStars() == 0 || receivingUser == null) {
-
+        if (reviewTitle.getText().toString().trim().length() == 0 ||
+                reviewText.getText().toString().trim().length() == 0 ||
+                rate.getNumStars() == 0 || receivingUser == null) {
             Toast.makeText(AddingReviewActivity.this, R.string.add_hosting_place_empty, Toast.LENGTH_SHORT).show();
-
         } else {
 
             String currentUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
-
-
-
 
             String key = FirebaseDatabase.getInstance().getReference().push().getKey();
             Reviews review = new Reviews(reviewText.getText().toString(),rate.getNumStars(), key, currentUser, receivingUser, reviewTitle.getText().toString(), username );

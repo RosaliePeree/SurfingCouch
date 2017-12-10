@@ -64,6 +64,7 @@
     <string name="place_user_label">Username:</string>
     <string name="place_user">Username</string>
     <string name="place_services">Services:</string>
+    <string name="place_button">Book</string>
 
     <!-- REVIEW SCREEN STRINGS -->
     <string name="review_grade_label">Grade:</string>

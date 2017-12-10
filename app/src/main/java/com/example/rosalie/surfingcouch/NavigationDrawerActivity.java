@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.example.rosalie.surfingcouch.Database.User;
 import com.example.rosalie.surfingcouch.Messages.MessagesActivity;
+import com.example.rosalie.surfingcouch.Reviews.AddingReviewActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
