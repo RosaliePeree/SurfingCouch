@@ -16,6 +16,8 @@ import android.widget.TextView;
 import com.example.rosalie.surfingcouch.Database.HostingPlace;
 import com.example.rosalie.surfingcouch.Database.Service;
 import com.example.rosalie.surfingcouch.Database.User;
+import com.example.rosalie.surfingcouch.Messages.CheckConversationActivity;
+import com.example.rosalie.surfingcouch.Messages.MessagesActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -40,6 +42,7 @@ public class ProfileActivity extends NavigationDrawerActivity {
         drawer.addView(contentView, 0);
 
         placesListView = findViewById(R.id.profile_places_list);
+        placesListView.setAdapter(null);
         placesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -155,6 +158,11 @@ public class ProfileActivity extends NavigationDrawerActivity {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    Intent intent = new Intent(getApplicationContext(), CheckConversationActivity.class);
+                    intent.putExtra("currentUser", mCurrentUser);
+                    intent.putExtra("displayedUser", displayedUser);
+                    intent.putExtra("userID", displayedUser.getId());
+                    startActivity(intent);
                     /* GREGOIRE add action here */
                 }
             });

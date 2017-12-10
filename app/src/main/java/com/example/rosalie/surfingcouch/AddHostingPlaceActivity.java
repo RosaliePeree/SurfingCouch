@@ -1,10 +1,12 @@
 package com.example.rosalie.surfingcouch;
 
+import android.content.Context;
 import android.content.Intent;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -38,7 +40,14 @@ public class AddHostingPlaceActivity extends NavigationDrawerActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_hosting_place);
+
+
+        LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        //inflate your activity layout here!
+        View contentView = inflater.inflate(R.layout.activity_add_hosting_place, null, false);
+        drawer.addView(contentView, 0);
+
 
         numberOfPeople = findViewById(R.id.numberpeople);
         placenameText = findViewById(R.id.input_placename);

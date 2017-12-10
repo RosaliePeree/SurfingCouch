@@ -50,18 +50,16 @@ public class MessagesActivity extends NavigationDrawerActivity {
                 public void onDataChange(DataSnapshot dataSnapshot) {
 
                     user = dataSnapshot.getValue(User.class);
-                    for(String value : user.getConversations().values()) {
-                        allChats.add(value); //This also add in adapter at the same time 
+                    if (user.getConversations() == null) {
+                        Toast.makeText(getApplicationContext(), R.string.message_empty, Toast.LENGTH_SHORT).show();
+
+                    } else {
+                        for (String value : user.getConversations().values()) {
+                            allChats.add(value); //This also add in adapter at the same time
+                            listOfChats.setAdapter(adapter);
+                        }
+
                     }
-
-
-                    if(allChats == null) {
-                        Toast.makeText(getApplicationContext(), R.string.message_empty ,Toast.LENGTH_SHORT).show();
-                    }else{
-
-                        listOfChats.setAdapter(adapter);
-                    }
-
                 }
 
                 @Override
