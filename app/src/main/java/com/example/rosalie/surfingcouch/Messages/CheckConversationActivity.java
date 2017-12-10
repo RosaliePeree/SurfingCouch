@@ -15,6 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class CheckConversationActivity extends AppCompatActivity {
 
@@ -43,19 +44,24 @@ public class CheckConversationActivity extends AppCompatActivity {
         intent = new Intent(getApplicationContext(), ChatActivity.class);
 
         if(currentUser.getConversations() != null || displayedUser.getConversations() != null) {
-            for (String conv : currentUser.getConversations().values()) {
-                for (String conv2 : displayedUser.getConversations().values()) {
-                    if (conv == conv2 && conv != "undefined") {
+            loop:
+            {
+                for (String conv : currentUser.getConversations().values()) {
+                    for (String conv2 : displayedUser.getConversations().values()) {
+                        if (Objects.equals(conv, conv2) && !Objects.equals(conv, "undefined")) {
 
-                        intent.putExtra("chatName", conv2);
-                        startActivity(intent);
+                            intent.putExtra("chatName", conv2);
+                            startActivity(intent);
+                            break loop;
+                        }
                     }
                 }
+
+                ref.child(currentUser.getUsername() + " - " + displayedUser.getUsername()).setValue(currentUser.getUsername() + " - " + displayedUser.getUsername());
+                ref2.child(currentUser.getUsername() + " - " + displayedUser.getUsername()).setValue(currentUser.getUsername() + " - " + displayedUser.getUsername());
+                intent.putExtra("chatName", currentUser.getUsername() + " - " + displayedUser.getUsername());
+                startActivity(intent);
             }
-            ref.child(currentUser.getUsername() + " - " + displayedUser.getUsername()).setValue(currentUser.getUsername() + " - " + displayedUser.getUsername());
-            ref2.child(currentUser.getUsername() + " - " + displayedUser.getUsername()).setValue(currentUser.getUsername() + " - " + displayedUser.getUsername());
-            intent.putExtra("chatName", currentUser.getUsername() + " - " + displayedUser.getUsername() );
-            startActivity(intent);
 
         }else {
             ref.child(currentUser.getUsername() + " - " + displayedUser.getUsername()).setValue(currentUser.getUsername() + " - " + displayedUser.getUsername());
