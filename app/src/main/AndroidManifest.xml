@@ -38,7 +38,7 @@
         <activity android:name=".Places.DisplayPlaceActivity" />
         <activity android:name=".Reviews.AddingReviewActivity" />
         <activity android:name=".Messages.CheckConversationActivity" />
-        <activity android:name=".AddBookingActivity"></activity>
+        <activity android:name=".AddBookingActivity" />
     </application>
 
 </manifest>

@@ -32,6 +32,20 @@ public class AddBookingActivity extends AppCompatActivity {
         laundryService = (CheckBox) findViewById(R.id.checkBoxLaundryBooking);
         showerService = (CheckBox) findViewById(R.id.checkBoxShowerBooking);
         sleepService = (CheckBox) findViewById(R.id.checkBoxSleepingBooking);
+        boolean isShower = getIntent().getExtras().getBoolean("Shower");
+        boolean isLaundry = getIntent().getExtras().getBoolean("Shower");
+        boolean isSleep = getIntent().getExtras().getBoolean("Sleep");
+
+        if(!isShower){
+            showerService.setEnabled(false);
+        }
+
+        if(!isLaundry){
+            laundryService.setEnabled(false);
+        }
+        if(!isSleep){
+            sleepService.setEnabled(false);
+        }
 
         //String place = getIntent().get
         curDate = null;
@@ -54,14 +68,14 @@ public class AddBookingActivity extends AppCompatActivity {
             } else {
 
                 String currentUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                String receivingUser = getIntent().getExtras().getString("receivingUser");
-                String actualPlace = getIntent().getExtras().getString("place");
-                String choosedPlace = getIntent().getExtras().getString("choosedPlace");
+                String receivingUser = getIntent().getExtras().getString("placeOwnerID");
+                String actualPlace = getIntent().getExtras().getString("placeName");
+                String choosedPlace = getIntent().getExtras().getString("placeID");
 
                 String key = FirebaseDatabase.getInstance().getReference().push().getKey();
                 Booking booking = new Booking(key,curDate,currentUser, receivingUser, actualPlace, false);
                 FirebaseDatabase.getInstance().getReference().child("Booking").child(key).setValue(booking);
-                FirebaseDatabase.getInstance().getReference().child("Place/"+ choosedPlace +"/booking").child(key).setValue(booking);
+                FirebaseDatabase.getInstance().getReference().child("Place/"+ choosedPlace +"/booking").child(key);
 
                 Intent intent = new Intent(this,ProfileActivity.class);
                 Toast.makeText(getApplicationContext(),"Booking added, waiting for confirmation", Toast.LENGTH_LONG).show();

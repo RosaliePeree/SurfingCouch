@@ -22,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class DisplayPlaceActivity extends NavigationDrawerActivity {
     private ListView mServiceListView;
@@ -57,6 +58,21 @@ public class DisplayPlaceActivity extends NavigationDrawerActivity {
                 intent.putExtra("placeOwnerID", mCurrentPlace.getUserID());
                 intent.putExtra("placeName", mCurrentPlace.getPlacename());
                 intent.putExtra("placeID", mCurrentPlace.getPlaceID());
+                intent.putExtra("Shower", false);
+                intent.putExtra("Laundry", false);
+                intent.putExtra("Sleep", false);
+                for(Service serv : mCurrentPlace.getListService()){
+                    if(Objects.equals(serv.getName(), "Shower")){
+                        intent.putExtra("Shower", true);
+                    }
+                    if(Objects.equals(serv.getName(), "Laundry")){
+                        intent.putExtra("Laundry", true);
+                    }
+                    if(Objects.equals(serv.getName(), "Sleep")){
+                        intent.putExtra("Sleep", true);
+                    }
+
+                }
                 startActivity(intent);
                 }
         });
