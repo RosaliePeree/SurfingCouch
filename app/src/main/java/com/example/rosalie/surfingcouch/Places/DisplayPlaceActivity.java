@@ -47,7 +47,11 @@ public class DisplayPlaceActivity extends NavigationDrawerActivity {
         getAllPlaces(b);
 
         Button button = findViewById(R.id.place_booking_button);
-        button.setOnClickListener(new View.OnClickListener() {
+
+        if(mCurrentUser.getId() == mCurrentPlace.getUserID())
+            button.setVisibility(View.GONE);
+        else
+            button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), AddBookingActivity.class);
@@ -70,7 +74,7 @@ public class DisplayPlaceActivity extends NavigationDrawerActivity {
 
                 }
                 startActivity(intent);
-            }
+                }
         });
     }
 

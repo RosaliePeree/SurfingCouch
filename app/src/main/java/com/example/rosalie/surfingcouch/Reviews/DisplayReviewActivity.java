@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.example.rosalie.surfingcouch.Database.HostingPlace;
@@ -62,8 +63,8 @@ public class DisplayReviewActivity extends NavigationDrawerActivity {
     }
 
     private void displayReview(Reviews review) {
-        TextView grade = findViewById(R.id.review_grade);
-        grade.setText(review.getGrade() + "");
+        RatingBar grade = findViewById(R.id.review_grade);
+        grade.setRating(review.getGrade());
         TextView title = findViewById(R.id.review_title);
         title.setText(review.getTitle());
         TextView content = findViewById(R.id.review_content);

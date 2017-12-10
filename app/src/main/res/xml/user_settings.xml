@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <Preference
+        <EditTextPreference
             android:title="@string/settings_username"
             android:summary="Username"
             android:key="username"
@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <Preference
+        <EditTextPreference
             android:title="@string/setting_location"
             android:summary="Location"
             android:key="location"
