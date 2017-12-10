@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.rosalie.surfingcouch.Database.User;
@@ -26,16 +27,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
-
 public class NavigationDrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     protected DrawerLayout drawer;
     protected Toolbar toolbar;
-    protected static DatabaseReference mReferenceUser;
+    protected static DatabaseReference mReference;
     protected static User mCurrentUser;
-    protected static ArrayList<User> mUserList;
     protected FloatingActionButton fab;
 
     public static SharedPreferences getSharedPreferences(Context ctxt) {
@@ -48,9 +46,6 @@ public class NavigationDrawerActivity extends AppCompatActivity
         setContentView(R.layout.activity_navigation_drawer);
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("");
-        mUserList = new ArrayList<>();
-
-        loadData();
 
         setSupportActionBar(toolbar);
 
@@ -72,8 +67,6 @@ public class NavigationDrawerActivity extends AppCompatActivity
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        if(mUserList.size() > 0)
-            Toast.makeText(this, mUserList.get(0).toString(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -88,10 +81,12 @@ public class NavigationDrawerActivity extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.navigation_drawer, menu);
+        // Load the data here
+        loadData();
         return true;
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -114,11 +109,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_around_me) {
-            /// Open the profile activity
-            Intent intent = new Intent(this,AroundMe.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_trips) {
+        if (id == R.id.nav_trips) {
             Intent intent = new Intent(this,AddHostingPlaceActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_all_users) {
@@ -149,13 +140,18 @@ public class NavigationDrawerActivity extends AppCompatActivity
     }
 
     private void loadData(){
-        mReferenceUser = FirebaseDatabase.getInstance().getReference().child("User");
-        mReferenceUser.addValueEventListener(new ValueEventListener() {
+        mReference = FirebaseDatabase.getInstance().getReference().child("User/" + FirebaseAuth.getInstance().getCurrentUser().getUid());
+        mReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot child : dataSnapshot.getChildren()) {
-                    mUserList.add(child.getValue(User.class));
+                User use = dataSnapshot.getValue(User.class);
+                if(use != null) {
+                    TextView label = findViewById(R.id.navdraw_number_points_label);
+                    label.setText(use.getUsername());
+                    TextView points = findViewById(R.id.navdraw_number_points);
+                    points.setText("Points: " + use.getNumberOfPoints());
                 }
+                //Toast.makeText(getApplicationContext(),"_" + use.getNumberOfPoints(),Toast.LENGTH_SHORT).show();
             }
 
             @Override

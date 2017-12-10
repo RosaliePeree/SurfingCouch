@@ -1,9 +1,7 @@
 package com.example.rosalie.surfingcouch;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,9 +11,8 @@ import android.widget.TextView;
 
 import com.example.rosalie.surfingcouch.Database.HostingPlace;
 import com.example.rosalie.surfingcouch.Database.Service;
-import com.example.rosalie.surfingcouch.NavigationDrawerActivity;
-import com.google.android.gms.location.places.Place;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
@@ -25,16 +22,12 @@ public class DisplayPlaceActivity extends NavigationDrawerActivity {
 
     private ListView mServiceListView;
     private ArrayList<HostingPlace> mPlacesList;
-    private HostingPlace mDisplayedPlace;
+    private ArrayList<Service> mServiceList;
+    private HostingPlace mCurrentPlace;
 
-    public DisplayPlaceActivity() {
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-
         super.onCreate(savedInstanceState);
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -45,94 +38,69 @@ public class DisplayPlaceActivity extends NavigationDrawerActivity {
         mServiceListView = findViewById(R.id.list_services);
 
         mPlacesList = new ArrayList<>();
+        mServiceList = new ArrayList<>();
         Bundle b = getIntent().getExtras();
         getAllPlaces(b);
     }
 
 
-    private void getAllPlaces(Bundle b){
+    private void getAllPlaces(Bundle b) {
         final String value = b.getString("placeID");
-        mReferenceUser = FirebaseDatabase.getInstance().getReference().child("HostingPlace");
-        mReferenceUser.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot child : dataSnapshot.getChildren()) {
-                    mPlacesList.add(child.getValue(HostingPlace.class));
-                    Log.d("userlist",child.toString());
-                }
-                for(HostingPlace place :mPlacesList)
-                    if(value.equals(place.getId())) {
-                        mDisplayedPlace =
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-    }
-
-    private void getServicesLinked(){
-        mReferenceUser = FirebaseDatabase.getInstance().getReference().child("HostingPlace");
-        mReferenceUser.addValueEventListener(new ValueEventListener() {
+        mReference = FirebaseDatabase.getInstance().getReference().child("HostingPlace");
+        mReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot child : dataSnapshot.getChildren()) {
                     HostingPlace place = child.getValue(HostingPlace.class);
-                    if(place.getUserID().equals(displayedUser.getId()))
-                        placeList.add(place);
+                    if (value.equals(place.getPlaceID())) {
+                        mCurrentPlace = place;
+                        for(Service serv : mCurrentPlace.getListService())
+                            mServiceList.add(serv);
+                    }
+                    displayPlace(place);
                 }
-                //Log.i(use.getName(), " user");
-
-                ProfileActivity.PlacesAdapter myAdapter = new ProfileActivity.PlacesAdapter(getApplicationContext(),R.layout.list_view_places,placeList);
-                placesListView.setAdapter(myAdapter);
-
-                displayUser(mCurrentUser);
+                DisplayPlaceActivity.ServicesAdapter myAdapter = new DisplayPlaceActivity.ServicesAdapter(getApplicationContext(), R.layout.list_view_services, mServiceList);
+                mServiceListView.setAdapter(myAdapter);
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
+
             }
         });
     }
 
-
-
-    private void displayPlace(HostingPlace place){
+    private void displayPlace(HostingPlace place) {
         TextView placeName = findViewById(R.id.place_name);
         placeName.setText(place.getPlacename());
         TextView location = findViewById(R.id.place_location);
         location.setText(place.getLocation());
         TextView numberPeople = findViewById(R.id.place_number_people);
-        numberPeople.setText(place.getNumberOfPossiblePeople());;
-    }
-}
-
-class ServicesAdapter extends ArrayAdapter<Service> {
-    ArrayList<Service> serviceArrayList;
-
-    public ServicesAdapter(Context context, int textViewResourceId, ArrayList<Service> objects) {
-        super(context, textViewResourceId, objects);
-        serviceArrayList = new ArrayList<>();
-        serviceArrayList = objects;
+        numberPeople.setText(place.getNumberOfPossiblePeople() + "");
     }
 
-    @Override
-    public int getCount() {
-        return super.getCount();
-    }
+    class ServicesAdapter extends ArrayAdapter<Service> {
+        ArrayList<Service> serviceArrayList;
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+        public ServicesAdapter(Context context, int textViewResourceId, ArrayList<Service> objects) {
+            super(context, textViewResourceId, objects);
+            serviceArrayList = new ArrayList<>();
+            serviceArrayList = objects;
+        }
 
-        View v = convertView;
-        LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        v = inflater.inflate(R.layout.list_view_services, parent, false);
-        TextView textView = v.findViewById(R.id.list_services);
-        String servicesProvided = "";
-        for(Service service : serviceArrayList)
-            servicesProvided += service.getName() + " \n";
-        textView.setText(servicesProvided);
-        return v;
+        @Override
+        public int getCount() {
+            return super.getCount();
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View v = convertView;
+            LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            v = inflater.inflate(R.layout.list_view_services, parent, false);
+            TextView textView = v.findViewById(R.id.list_services_text);
+            textView.setText(mServiceList.get(position).getName());
+            return v;
+        }
     }
 }

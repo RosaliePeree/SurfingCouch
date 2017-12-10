@@ -97,4 +97,10 @@
         android:divider="#000"
         android:dividerHeight="1dp">
     </ListView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/profile_button"
+        android:text=""/>
 </LinearLayout>

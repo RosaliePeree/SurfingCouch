@@ -2,7 +2,6 @@ package com.example.rosalie.surfingcouch;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -43,8 +42,8 @@ public class ListOfUsersActivity extends NavigationDrawerActivity {
     }
 
     public void getAllUsersProfile(){
-        mReferenceUser = FirebaseDatabase.getInstance().getReference().child("User");
-        mReferenceUser.addValueEventListener(new ValueEventListener() {
+        mReference = FirebaseDatabase.getInstance().getReference().child("User");
+        mReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot child : dataSnapshot.getChildren()) {

@@ -46,8 +46,8 @@ public class SettingsActivity extends NavigationDrawerActivity {
             addPreferencesFromResource(R.xml.user_settings);
 
 
-            mReferenceUser = FirebaseDatabase.getInstance().getReference().child("User/" + FirebaseAuth.getInstance().getCurrentUser().getUid());
-            mReferenceUser.addValueEventListener(new ValueEventListener() {
+            mReference = FirebaseDatabase.getInstance().getReference().child("User/" + FirebaseAuth.getInstance().getCurrentUser().getUid());
+            mReference.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     User use = dataSnapshot.getValue(User.class);
