@@ -7,12 +7,12 @@ package com.example.rosalie.surfingcouch.Database;
 public class Reviews {
     private String content;
     private int grade;
-    private int id;
-    private int posterID;
-    private int receivingID;
+    private String id;
+    private String posterID;
+    private String receivingID;
     private String title;
 
-    public Reviews(String content, int grade, int id, int posterID, int receivingID, String title) {
+    public Reviews(String content, int grade, String id, String posterID, String receivingID, String title) {
         this.content = content;
         this.grade = grade;
         this.id = id;
@@ -37,35 +37,35 @@ public class Reviews {
         this.grade = grade;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getPosterID() {
-        return posterID;
-    }
-
-    public void setPosterID(int posterID) {
-        this.posterID = posterID;
-    }
-
-    public int getReceivingID() {
-        return receivingID;
-    }
-
-    public void setReceivingID(int receivingID) {
-        this.receivingID = receivingID;
-    }
-
     public String getTitle() {
         return title;
     }
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getPosterID() {
+        return posterID;
+    }
+
+    public void setPosterID(String posterID) {
+        this.posterID = posterID;
+    }
+
+    public String getReceivingID() {
+        return receivingID;
+    }
+
+    public void setReceivingID(String receivingID) {
+        this.receivingID = receivingID;
     }
 }

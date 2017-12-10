@@ -35,7 +35,8 @@
             android:value="AIzaSyCOvRXkUmK0ZUeaSkAtmHRp--_TEjGbOa0" />
 
         <activity android:name=".AddHostingPlaceActivity" />
-        <activity android:name=".DisplayPlaceActivity"></activity>
+        <activity android:name=".DisplayPlaceActivity" />
+        <activity android:name=".AddingReviewActivity"></activity>
     </application>
 
 </manifest>

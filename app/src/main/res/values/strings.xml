@@ -101,4 +101,11 @@
     <string name="enter_placename">Enter a name for your place</string>
     <string name="input_placename">Place name…</string>
 
+    <!-- ADD REVIEW STRINGS -->
+
+    <string name="review_titletext"> Title : </string>
+    <string name="review_titleholder"> Enter a Title…</string>
+    <string name="review_text"> Review :</string>
+    <string name="review_textcontent"> Enter a Review…</string>
+    <string name="review_send"> SEND REVIEW</string>
 </resources>
