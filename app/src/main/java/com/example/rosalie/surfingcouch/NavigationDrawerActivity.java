@@ -110,7 +110,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_trips) {
-            Intent intent = new Intent(this,AddHostingPlaceActivity.class);
+            Intent intent = new Intent(this,AddingReviewActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_all_users) {
             Intent intent = new Intent(this,ListOfUsersActivity.class);

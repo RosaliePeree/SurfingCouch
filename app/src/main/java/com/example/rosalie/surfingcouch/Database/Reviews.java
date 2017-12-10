@@ -11,16 +11,27 @@ public class Reviews {
     private String posterID;
     private String receivingID;
     private String title;
+    private String name;
 
-    public Reviews(String content, int grade, String id, String posterID, String receivingID, String title) {
+
+
+    public Reviews(String content, int grade, String id, String posterID, String receivingID, String title, String name) {
+
         this.content = content;
         this.grade = grade;
         this.id = id;
         this.posterID = posterID;
         this.receivingID = receivingID;
         this.title = title;
+        this.name = name;
+    }
+    public String getName() {
+        return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
     public String getContent() {
         return content;
     }

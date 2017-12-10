@@ -25,6 +25,7 @@ public class AddingReviewActivity extends AppCompatActivity {
     private Button addReview;
     private RatingBar rate;
     private String TAG = "AddingReviewPlaceActivity";
+    private String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,7 @@ public class AddingReviewActivity extends AppCompatActivity {
         reviewTitle = (EditText) findViewById(R.id.review_edittitle);
         addReview = (Button) findViewById(R.id.button_adding_review);
         rate = (RatingBar) findViewById(R.id.ratingBar);
-
+        username = getIntent().getExtras().getString("username");
 
     }
 
@@ -55,7 +56,7 @@ public class AddingReviewActivity extends AppCompatActivity {
 
 
             String key = FirebaseDatabase.getInstance().getReference().push().getKey();
-            Reviews review = new Reviews(reviewText.getText().toString(),rate.getNumStars(), key, currentUser, receivingUser, reviewTitle.getText().toString() );
+            Reviews review = new Reviews(reviewText.getText().toString(),rate.getNumStars(), key, currentUser, receivingUser, reviewTitle.getText().toString(), username );
             FirebaseDatabase.getInstance().getReference().child("Reviews").child(key).setValue(review);
             FirebaseDatabase.getInstance().getReference().child("User/"+receivingUser+"/reviews").child(key).setValue(key);
 
