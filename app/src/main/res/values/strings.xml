@@ -108,4 +108,11 @@
     <string name="review_text"> Review :</string>
     <string name="review_textcontent"> Enter a Review…</string>
     <string name="review_send"> SEND REVIEW</string>
+
+    <!-- ADD BOOKING STRINGS -->
+
+    <string name="choose_date"> Please choose a date of booking</string>
+    <string name="booking_send"> SEND BOOKING</string>
+    <string name="service_to_check"> Check the desired services</string>
+
 </resources>

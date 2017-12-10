@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.rosalie.surfingcouch.AddBookingActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="63dp"
+        android:text="@string/choose_date"
+        android:id="@+id/textView4" />
+
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView4"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/service_to_check"
+        android:id="@+id/checkservice"
+        android:layout_below="@+id/calendarView"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/checkBoxLaundryBooking"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="holder1"
+        android:id="@+id/checkBoxShowerBooking" />
+
+    <CheckBox
+        android:id="@+id/checkBoxLaundryBooking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/checkBoxSleepingBooking"
+        android:layout_centerHorizontal="true"
+        android:text="holder2" />
+
+    <CheckBox
+        android:id="@+id/checkBoxSleepingBooking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/checkservice"
+        android:layout_marginTop="16dp"
+        android:text="holder2" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="@string/booking_send"/>
+
+</RelativeLayout>
