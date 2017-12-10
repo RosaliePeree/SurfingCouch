@@ -1,16 +1,21 @@
-package com.example.rosalie.surfingcouch;
+package com.example.rosalie.surfingcouch.Places;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.rosalie.surfingcouch.AddBookingActivity;
 import com.example.rosalie.surfingcouch.Database.HostingPlace;
 import com.example.rosalie.surfingcouch.Database.Service;
+import com.example.rosalie.surfingcouch.NavigationDrawerActivity;
+import com.example.rosalie.surfingcouch.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -19,12 +24,10 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class DisplayPlaceActivity extends NavigationDrawerActivity {
-
     private ListView mServiceListView;
     private ArrayList<HostingPlace> mPlacesList;
     private ArrayList<Service> mServiceList;
     private HostingPlace mCurrentPlace;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +44,18 @@ public class DisplayPlaceActivity extends NavigationDrawerActivity {
         mServiceList = new ArrayList<>();
         Bundle b = getIntent().getExtras();
         getAllPlaces(b);
+
+        Button button = findViewById(R.id.place_booking_button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), AddBookingActivity.class);
+                intent.putExtra("placeOwnerID", mCurrentPlace.getUserID());
+                intent.putExtra("placeName", mCurrentPlace.getPlacename());
+                intent.putExtra("placeID", mCurrentPlace.getPlaceID());
+                startActivity(intent);
+            }
+        });
     }
 
 

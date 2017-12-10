@@ -34,9 +34,9 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCOvRXkUmK0ZUeaSkAtmHRp--_TEjGbOa0" />
 
-        <activity android:name=".AddHostingPlaceActivity" />
-        <activity android:name=".DisplayPlaceActivity" />
-        <activity android:name=".AddingReviewActivity" />
+        <activity android:name=".Places.AddHostingPlaceActivity" />
+        <activity android:name=".Places.DisplayPlaceActivity" />
+        <activity android:name=".Reviews.AddingReviewActivity" />
         <activity android:name=".Messages.CheckConversationActivity" />
         <activity android:name=".AddBookingActivity"></activity>
     </application>

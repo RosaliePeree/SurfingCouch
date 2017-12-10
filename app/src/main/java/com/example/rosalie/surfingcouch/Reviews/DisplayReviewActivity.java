@@ -1,4 +1,4 @@
-package com.example.rosalie.surfingcouch;
+package com.example.rosalie.surfingcouch.Reviews;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +11,8 @@ import android.widget.TextView;
 import com.example.rosalie.surfingcouch.Database.HostingPlace;
 import com.example.rosalie.surfingcouch.Database.Reviews;
 import com.example.rosalie.surfingcouch.Database.Service;
+import com.example.rosalie.surfingcouch.NavigationDrawerActivity;
+import com.example.rosalie.surfingcouch.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -67,6 +69,7 @@ public class DisplayReviewActivity extends NavigationDrawerActivity {
         TextView content = findViewById(R.id.review_content);
         content.setText(review.getContent());
         TextView user = findViewById(R.id.review_user);
-        user.setText(review.getPosterID());
+        user.setText(review.getName());
+
     }
 }
