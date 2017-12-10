@@ -58,6 +58,8 @@ public class NavigationDrawerActivity extends AppCompatActivity
             }
         });
 
+        fab.setVisibility(View.GONE);
+
         drawer = findViewById(R.id.drawer_layout);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(

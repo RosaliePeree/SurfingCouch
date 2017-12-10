@@ -13,6 +13,8 @@ public class Reviews {
     private String title;
     private String name;
 
+    public Reviews() {
+    }
 
 
     public Reviews(String content, int grade, String id, String posterID, String receivingID, String title, String name) {
