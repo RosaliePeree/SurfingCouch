@@ -47,6 +47,7 @@ public class ListOfUsersActivity extends NavigationDrawerActivity {
         mReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                userList.clear();
                 for (DataSnapshot child : dataSnapshot.getChildren()) {
                     userList.add(child.getValue(User.class));
                     Log.d("userlist",child.toString());

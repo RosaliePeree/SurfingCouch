@@ -59,6 +59,7 @@ public class DisplayPlaceActivity extends NavigationDrawerActivity {
         mReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                mServiceList.clear();
                 for (DataSnapshot child : dataSnapshot.getChildren()) {
                     HostingPlace place = child.getValue(HostingPlace.class);
                     if (value.equals(place.getPlaceID())) {

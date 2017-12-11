@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.example.rosalie.surfingcouch.Database.Booking;
 import com.example.rosalie.surfingcouch.Places.DisplayPlaceActivity;
 
-public class BookingDisplayActivity extends AppCompatActivity {
+public class BookingDisplayActivity extends NavigationDrawerActivity {
     Booking actualBooking;
     TextView placeName, date, isApproved;
     Button goToPlace;

@@ -64,6 +64,8 @@ public class ProfileActivity extends NavigationDrawerActivity {
             }
         });
 
+
+
         reviewsListView = findViewById(R.id.profile_reviews_list);
         reviewsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -77,6 +79,7 @@ public class ProfileActivity extends NavigationDrawerActivity {
                 startActivity(intent);
             }
         });
+
 
         placeList = new ArrayList<>();
         mUserList = new ArrayList<>();
@@ -118,6 +121,7 @@ public class ProfileActivity extends NavigationDrawerActivity {
         mReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                mUserList.clear();
                 for (DataSnapshot child : dataSnapshot.getChildren()) {
                     mUserList.add(child.getValue(User.class));
                     Log.d("userlist",child.toString());
@@ -148,6 +152,7 @@ public class ProfileActivity extends NavigationDrawerActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 placesListView.invalidateViews();
+                placeList.clear();
                 for (DataSnapshot child : dataSnapshot.getChildren()) {
                     HostingPlace place = child.getValue(HostingPlace.class);
                     if(place.getUserID().equals(displayedUser.getId()))
@@ -160,6 +165,8 @@ public class ProfileActivity extends NavigationDrawerActivity {
 
                 if (displayedUser.getReviews() == null)
                     displayUser(displayedUser);
+
+
             }
 
             @Override
@@ -174,6 +181,7 @@ public class ProfileActivity extends NavigationDrawerActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 reviewsListView.invalidateViews();
+                reviewsList.clear();
                 for (DataSnapshot child : dataSnapshot.getChildren()) {
                     Reviews review = child.getValue(Reviews.class);
                     if(review.getReceivingID().equals(displayedUser.getId())) {

@@ -56,6 +56,7 @@ public class TripActivity extends NavigationDrawerActivity {
         mReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                listBooking.clear();
                 for (DataSnapshot child : dataSnapshot.getChildren()) {
                     Booking book = child.getValue(Booking.class);
                     if(book.getUserIDbooking().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())) {
