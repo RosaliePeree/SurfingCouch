@@ -38,8 +38,7 @@ public class AddingReviewActivity extends AppCompatActivity {
 
     public void addReview(View view) {
         Intent intent = getIntent();
-        String receivingUser; //= intent.getStringExtra("receiverID");
-        receivingUser = "tOeyT5B5hMeDqZz7K2We6tGb1Ie2";
+        String receivingUser = intent.getStringExtra("receiverID");
         if (reviewTitle.getText().toString().trim().length() == 0 ||
                 reviewText.getText().toString().trim().length() == 0 ||
                 rate.getNumStars() == 0 || receivingUser == null) {

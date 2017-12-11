@@ -1,5 +1,7 @@
 package com.example.rosalie.surfingcouch;
 
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -33,9 +35,14 @@ public class RefuseBookingActivity extends NavigationDrawerActivity {
 
         book = (Booking) b.getSerializable("booking");
 
-        FirebaseDatabase.getInstance().getReference().child("Booking/" + book.getId() ).removeValue();
-        FirebaseDatabase.getInstance().getReference().child("User/" + book.getUserIDreceiving() + "/booking/" + book.getId()).removeValue();
-        FirebaseDatabase.getInstance().getReference().child("HostingPlace/" + book.getId()).removeValue();
+        FirebaseDatabase.getInstance().getReference().child("Booking/" + book.getId() ).setValue(null);
+        FirebaseDatabase.getInstance().getReference().child("User/" + book.getUserIDbooking() + "/booking/" + book.getId()).setValue(null);
+        FirebaseDatabase.getInstance().getReference().child("HostingPlace/" + book.getPlaceID() + "/booking/" + book.getId()).removeValue();
+
+        NotificationManager notificationManager =
+                (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
+        notificationManager.cancel(0);
 
     }
 }

@@ -31,6 +31,7 @@ import com.example.rosalie.surfingcouch.Messages.ChatActivity;
 import com.example.rosalie.surfingcouch.Messages.CheckConversationActivity;
 import com.example.rosalie.surfingcouch.Places.AddHostingPlaceActivity;
 import com.example.rosalie.surfingcouch.Places.DisplayPlaceActivity;
+import com.example.rosalie.surfingcouch.Reviews.AddingReviewActivity;
 import com.example.rosalie.surfingcouch.Reviews.DisplayReviewActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -217,7 +218,7 @@ public class ProfileActivity extends NavigationDrawerActivity {
         });
     }
 
-    private void displayUser(User user){
+    private void displayUser(User user) {
         TextView username = findViewById(R.id.profile_username);
         username.setText(user.getUsername());
         TextView city = findViewById(R.id.profile_city);
@@ -225,17 +226,19 @@ public class ProfileActivity extends NavigationDrawerActivity {
         TextView gender = findViewById(R.id.profile_gender);
         gender.setText(user.getGender());
         Button button = findViewById(R.id.profile_button);
-        if(displayedUser == mCurrentUser || displayedUser.getId().equals(mCurrentUser.getId())){
+        Button button2 = findViewById(R.id.profile_button2);
+        if (displayedUser == mCurrentUser || displayedUser.getId().equals(mCurrentUser.getId())) {
             button.setText("Add place");
             checkingForNotif();
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(getApplicationContext(),AddHostingPlaceActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), AddHostingPlaceActivity.class);
                     startActivity(intent);
                 }
             });
         } else {
+
             button.setText("Send a message");
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -244,6 +247,17 @@ public class ProfileActivity extends NavigationDrawerActivity {
                     intent.putExtra("currentUser", mCurrentUser);
                     intent.putExtra("displayedUser", displayedUser);
                     intent.putExtra("userID", displayedUser.getId());
+                    startActivity(intent);
+                }
+            });
+            button2.setVisibility(View.VISIBLE);
+            button2.setText("Send a Review");
+            button2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getApplicationContext(), AddingReviewActivity.class);
+                    intent.putExtra("username", mCurrentUser.getUsername());
+                    intent.putExtra("receiverID", displayedUser.getId());
                     startActivity(intent);
                 }
             });
@@ -359,6 +373,8 @@ public class ProfileActivity extends NavigationDrawerActivity {
 // prepare intent which is triggered if the
 // notification is selected
 
+        int flag = Notification.FLAG_AUTO_CANCEL;
+
         Intent yesIntent = new Intent(this, AcceptBookingActivity.class);
         yesIntent.putExtra("value", value);
         yesIntent.putExtra("beforeValue", mCurrentUser.getNumberOfPoints());
@@ -368,8 +384,8 @@ public class ProfileActivity extends NavigationDrawerActivity {
         noIntent.putExtra("beforeValue", mCurrentUser.getNumberOfPoints());
         noIntent.putExtra("booking", book);
 // use System.currentTimeMillis() to have a unique ID for the pending intent
-        PendingIntent pIntent1 = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), yesIntent, 0);
-        PendingIntent pIntent2 = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), noIntent, 0);
+        PendingIntent pIntent1 = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), yesIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+        PendingIntent pIntent2 = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), noIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 // build notification
 // the addAction re-use the same intent to keep the example short
         Notification n  = new Notification.Builder(this)
@@ -377,9 +393,10 @@ public class ProfileActivity extends NavigationDrawerActivity {
                 .setContentText(placename + " has a request to be booked on the " + date + " for " + value + " coins")
                 .setSmallIcon(R.drawable.ic_valise)
                 .setAutoCancel(true)
-                .addAction(R.drawable.ic_done, "Accept", pIntent1)
-                .addAction(R.drawable.ic_cross, "Refuse", pIntent2).setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)).build();
-
+                .addAction(R.drawable.ic_done, "Accept", pIntent1).setAutoCancel(true)
+                .addAction(R.drawable.ic_cross, "Refuse", pIntent2).setAutoCancel(true)
+                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)).build();
+        n.flags = flag;
 
 
         NotificationManager notificationManager =

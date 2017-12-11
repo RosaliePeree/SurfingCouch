@@ -1,5 +1,6 @@
 package com.example.rosalie.surfingcouch;
 
+import android.app.NotificationManager;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -36,6 +37,11 @@ public class AcceptBookingActivity extends NavigationDrawerActivity {
 
         FirebaseDatabase.getInstance().getReference().child("Booking/"+ book.getId() + "/bookingEffectued").setValue(true);
         FirebaseDatabase.getInstance().getReference().child("User/"+ book.getUserIDreceiving() + "/numberOfPoints").setValue(b.getInt("value") + b.getInt("beforeValue"));
+
+        NotificationManager notificationManager =
+                (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
+        notificationManager.cancel(0);
 
 
 
