@@ -19,5 +19,6 @@ public class TripActivity extends NavigationDrawerActivity {
         //inflate your activity layout here!
         View contentView = inflater.inflate(R.layout.activity_trip, null, false);
         drawer.addView(contentView, 0);
+
     }
 }
