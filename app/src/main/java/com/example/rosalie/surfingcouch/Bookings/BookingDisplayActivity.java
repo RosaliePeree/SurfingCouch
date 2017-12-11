@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.rosalie.surfingcouch.Database.Booking;
+import com.example.rosalie.surfingcouch.NavigationDrawerActivity;
 import com.example.rosalie.surfingcouch.Places.DisplayPlaceActivity;
 import com.example.rosalie.surfingcouch.R;
 

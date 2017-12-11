@@ -8,11 +8,16 @@ public class Rewards {
     private boolean availability;
     private int cost;
     private String name;
+    private int id;
 
-    public Rewards(boolean availability, int cost, String name) {
+    public Rewards() {
+    }
+
+    public Rewards(boolean availability, int cost, String name, int id) {
         this.availability = availability;
         this.cost = cost;
         this.name = name;
+        this.id = id;
     }
 
     public void setAvailability(boolean availability) {
@@ -27,6 +32,8 @@ public class Rewards {
         this.name = name;
     }
 
+    public void setID(int id) { this.id = id; }
+
     public boolean isAvailability() {
         return availability;
     }
@@ -38,4 +45,6 @@ public class Rewards {
     public String getName() {
         return name;
     }
+
+    public int getID(){ return id; }
 }

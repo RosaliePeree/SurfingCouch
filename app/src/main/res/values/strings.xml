@@ -76,6 +76,13 @@
     <string name="review_user_label">Username:</string>
     <string name="review_user">Username</string>
 
+    <!-- REWARD SCREEN STRINGS -->
+    <string name="reward_name_label">Name:</string>
+    <string name="reward_name">Name</string>
+    <string name="reward_price_label">Price:</string>
+    <string name="reward_price">Price</string>
+    <string name="reward_button">Confirm the purchase:</string>
+
     <!-- CHAT ACTIVITY STRINGS -->
 
     <string name="chat_empty_text"> You can\'t send an empty text </string>
@@ -135,7 +142,6 @@
 
     <!-- TRIP STRINGS -->
     <string name="trip_list"> List of your bookings :</string>
-
 
 
     <string name="calendar"> Pick a correct date please</string>

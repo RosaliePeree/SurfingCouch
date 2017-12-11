@@ -1,8 +1,12 @@
 package com.example.rosalie.surfingcouch;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.TaskStackBuilder;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,9 +23,11 @@ import com.example.rosalie.surfingcouch.Database.HostingPlace;
 import com.example.rosalie.surfingcouch.Database.Reviews;
 import com.example.rosalie.surfingcouch.Database.Service;
 import com.example.rosalie.surfingcouch.Database.User;
+import com.example.rosalie.surfingcouch.Messages.ChatActivity;
 import com.example.rosalie.surfingcouch.Messages.CheckConversationActivity;
 import com.example.rosalie.surfingcouch.Places.AddHostingPlaceActivity;
 import com.example.rosalie.surfingcouch.Places.DisplayPlaceActivity;
+import com.example.rosalie.surfingcouch.Reviews.AddingReviewActivity;
 import com.example.rosalie.surfingcouch.Reviews.DisplayReviewActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -223,7 +229,19 @@ public class ProfileActivity extends NavigationDrawerActivity {
                     startActivity(intent);
                 }
             });
+            findViewById(R.id.profile_button_add_review).setVisibility(View.GONE);
         } else {
+            Button buttonAddReview = findViewById(R.id.profile_button_add_review);
+            buttonAddReview.setText("Add a review");
+            buttonAddReview.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getApplicationContext(), AddingReviewActivity.class);
+                    intent.putExtra("receiverID", displayedUser.getId());
+                    intent.putExtra("username", mCurrentUser.getUsername());
+                    startActivity(intent);
+                }
+            });
             button.setText("Send a message");
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -267,6 +285,40 @@ public class ProfileActivity extends NavigationDrawerActivity {
                     "Services provided: " +  servicesProvided);
             return v;
         }
+    }
+    private void getNotification(){
+        // The id of the channel.
+        String CHANNEL_ID = "my_channel_01";
+        NotificationCompat.Builder mBuilder =
+                new NotificationCompat.Builder(this, CHANNEL_ID)
+                        .setSmallIcon(R.drawable.ic_menu_camera)
+                        .setContentTitle("New message")
+                        .setContentText("You got a new message!");
+        // Creates an explicit intent for an Activity in your app
+        Intent resultIntent = new Intent(this, ChatActivity.class);
+
+        // The stack builder object will contain an artificial back stack for the
+        // started Activity.
+        // This ensures that navigating backward from the Activity leads out of
+        // your app to the Home screen.
+        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
+        // Adds the back stack for the Intent (but not the Intent itself)
+        stackBuilder.addParentStack(ProfileActivity.class);
+        // Adds the Intent that starts the Activity to the top of the stack
+        stackBuilder.addNextIntent(resultIntent);
+        PendingIntent resultPendingIntent =
+                stackBuilder.getPendingIntent(
+                        0,
+                        PendingIntent.FLAG_UPDATE_CURRENT
+                );
+        mBuilder.setContentIntent(resultPendingIntent);
+        NotificationManager mNotificationManager =
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+        // mNotificationId is a unique integer your app uses to identify the
+        // notification. For example, to cancel the notification, you can pass its ID
+        // number to NotificationManager.cancel().
+        mNotificationManager.notify(0,mBuilder.build());
     }
 
     class ReviewsAdapter extends ArrayAdapter<Reviews> {

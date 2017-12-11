@@ -8,6 +8,10 @@
             android:id="@+id/nav_trips"
             android:icon="@drawable/ic_trips"
             android:title="My trips" />
+        <item
+            android:id="@+id/nav_shop"
+            android:icon="@drawable/ic_shop"
+            android:title="Go to the shop" />
     </group>
 
     <item android:title="Communicate">

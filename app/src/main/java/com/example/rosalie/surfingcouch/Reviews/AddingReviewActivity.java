@@ -33,13 +33,12 @@ public class AddingReviewActivity extends AppCompatActivity {
         addReview = (Button) findViewById(R.id.button_adding_review);
         rate = (RatingBar) findViewById(R.id.ratingBar);
         username = getIntent().getExtras().getString("username");
-
     }
 
     public void addReview(View view) {
         Intent intent = getIntent();
-        String receivingUser; //= intent.getStringExtra("receiverID");
-        receivingUser = "tOeyT5B5hMeDqZz7K2We6tGb1Ie2";
+        String receivingUser = intent.getStringExtra("receiverID");
+        //receivingUser = "tOeyT5B5hMeDqZz7K2We6tGb1Ie2";
         if (reviewTitle.getText().toString().trim().length() == 0 ||
                 reviewText.getText().toString().trim().length() == 0 ||
                 rate.getNumStars() == 0 || receivingUser == null) {

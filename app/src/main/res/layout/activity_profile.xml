@@ -120,6 +120,13 @@
                 android:id="@+id/profile_button"
                 android:text=""
                 />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/profile_button_add_review"
+                android:text=""
+                />
         </LinearLayout>
 
     </ScrollView>

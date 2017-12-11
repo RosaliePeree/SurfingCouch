@@ -26,7 +26,6 @@
         <activity android:name=".AroundMe" />
         <activity android:name=".Messages.MessagesActivity" />
         <activity android:name=".SettingsActivity" />
-        <activity android:name=".ShopActivity" />
         <activity android:name=".ListOfUsersActivity" />
         <activity android:name=".Messages.ChatActivity" />
         <activity android:name=".Places.AddHostingPlaceActivity" />
@@ -38,13 +37,13 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCOvRXkUmK0ZUeaSkAtmHRp--_TEjGbOa0" />
-
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/colorAccent" />
-        <activity android:name=".Bookings.BookingDisplayActivity"></activity>
+
+        <activity android:name=".Bookings.BookingDisplayActivity" />
+        <activity android:name=".Shop.ShopActivity" />
+        <activity android:name=".Shop.DisplayItemShopActivity"></activity>
     </application>
-
-
 
 </manifest>

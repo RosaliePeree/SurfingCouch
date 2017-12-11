@@ -26,6 +26,7 @@ import android.widget.Toast;
 import com.example.rosalie.surfingcouch.Bookings.AddBookingActivity;
 import com.example.rosalie.surfingcouch.Database.User;
 import com.example.rosalie.surfingcouch.Messages.MessagesActivity;
+import com.example.rosalie.surfingcouch.Shop.*;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -124,7 +125,10 @@ public class NavigationDrawerActivity extends AppCompatActivity
             Intent intent = new Intent(this,ListOfUsersActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_message) {
-            Intent intent = new Intent(this,MessagesActivity.class);
+            Intent intent = new Intent(this, MessagesActivity.class);
+            startActivity(intent);
+        }else if (id == R.id.nav_shop){
+            Intent intent = new Intent(this, ShopActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_profile) {
             Intent intent = new Intent(this,ProfileActivity.class);
