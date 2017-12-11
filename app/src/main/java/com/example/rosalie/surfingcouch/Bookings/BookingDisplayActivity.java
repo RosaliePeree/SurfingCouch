@@ -11,7 +11,7 @@ import com.example.rosalie.surfingcouch.Database.Booking;
 import com.example.rosalie.surfingcouch.Places.DisplayPlaceActivity;
 import com.example.rosalie.surfingcouch.R;
 
-public class BookingDisplayActivity extends AppCompatActivity {
+public class BookingDisplayActivity extends NavigationDrawerActivity {
     Booking actualBooking;
     TextView placeName, date, isApproved;
     Button goToPlace;

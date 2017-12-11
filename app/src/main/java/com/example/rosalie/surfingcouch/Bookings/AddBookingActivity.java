@@ -10,17 +10,24 @@ import android.widget.CheckBox;
 import android.widget.Toast;
 
 import com.example.rosalie.surfingcouch.Database.Booking;
+import com.example.rosalie.surfingcouch.NavigationDrawerActivity;
 import com.example.rosalie.surfingcouch.ProfileActivity;
 import com.example.rosalie.surfingcouch.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class AddBookingActivity extends AppCompatActivity {
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+
+public class AddBookingActivity extends NavigationDrawerActivity {
 
     CalendarView calendar;
     CheckBox laundryService, showerService, sleepService;
     Button addBooking;
     String curDate;
+    int dayT, monthT, yearT, curDayT, curMonthT, curYearT;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,24 +52,44 @@ public class AddBookingActivity extends AppCompatActivity {
         if(!isSleep){
             sleepService.setEnabled(false);
         }
+        Calendar c = Calendar.getInstance();
+        System.out.println("Current time => " + c.getTime());
+
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        String formattedDate = df.format(c.getTime());
+
+        String[] tokens = formattedDate.split("-");
+        curDayT = Integer.parseInt(tokens[0]);
+        curMonthT = Integer.parseInt(tokens[1]);
+        curYearT = Integer.parseInt(tokens[2]);
 
         //String place = getIntent().get
         curDate = null;
+
         calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
 
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month,
                                             int dayOfMonth) {
-                curDate = String.valueOf(dayOfMonth) + "/" + String.valueOf(month) + "/" + String.valueOf(year);
+
+                curDate = String.valueOf(dayOfMonth) + "/" + String.valueOf(month+1) + "/" + String.valueOf(year);
+                dayT = dayOfMonth;
+                monthT = month + 1; // I don't know but january is 0 and december is 12
+                yearT = year;
+
             }
         });
     }
 
         public void addBooking(View view) {
 
-            if ( curDate == null  || (!showerService.isChecked() && !sleepService.isChecked() && !laundryService.isChecked())) {
+            if ( curDate == null   || (!showerService.isChecked() && !sleepService.isChecked() && !laundryService.isChecked())) {
 
                 Toast.makeText(AddBookingActivity.this, R.string.add_hosting_place_empty, Toast.LENGTH_SHORT).show();
+
+            }else if(yearT < curYearT || (monthT < curMonthT && yearT >= curYearT ) || (dayT < curDayT && monthT >= curMonthT && yearT >= curYearT) ){
+
+                Toast.makeText(AddBookingActivity.this, R.string.calendar, Toast.LENGTH_SHORT).show();
 
             } else {
 
