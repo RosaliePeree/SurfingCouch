@@ -38,13 +38,13 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCOvRXkUmK0ZUeaSkAtmHRp--_TEjGbOa0" />
-
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/colorAccent" />
-        <activity android:name=".Bookings.BookingDisplayActivity"></activity>
+
+        <activity android:name=".Bookings.BookingDisplayActivity" />
+        <activity android:name=".AcceptBookingActivity" />
+        <activity android:name=".RefuseBookingActivity"></activity>
     </application>
-
-
 
 </manifest>
