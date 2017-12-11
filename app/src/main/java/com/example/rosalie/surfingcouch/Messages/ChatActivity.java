@@ -73,6 +73,7 @@ public class ChatActivity extends NavigationDrawerActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 lul = dataSnapshot.getValue(User.class);
+
             }
 
             @Override
@@ -107,8 +108,11 @@ public class ChatActivity extends NavigationDrawerActivity {
         loggedInUserName = FirebaseAuth.getInstance().getCurrentUser().getUid();
         Log.d("Main", "user id: " + loggedInUserName);
 
-        ListAdapter adapter = new MessageAdapter(this, Message.class, R.layout.item_message_sender, FirebaseDatabase.getInstance().getReference().getRoot().child("Conversation/" + chatName + "/listOfMessages"));
+        ListAdapter adapter = new MessageAdapter(this, Message.class, R.layout.item_message_sender, FirebaseDatabase.getInstance().getReference().getRoot().child("Conversation/" + chatName +"/listOfMessages"));
 
         listView.setAdapter(adapter);
     }
+
+
+
 }

@@ -44,6 +44,9 @@
         <activity android:name=".Bookings.BookingDisplayActivity" />
         <activity android:name=".Shop.ShopActivity" />
         <activity android:name=".Shop.DisplayItemShopActivity"></activity>
+
+        <activity android:name=".AcceptBookingActivity" />
+        <activity android:name=".RefuseBookingActivity"></activity>
     </application>
 
 </manifest>

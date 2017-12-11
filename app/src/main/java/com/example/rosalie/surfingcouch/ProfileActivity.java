@@ -2,8 +2,13 @@ package com.example.rosalie.surfingcouch;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
@@ -19,6 +24,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.rosalie.surfingcouch.Database.Booking;
 import com.example.rosalie.surfingcouch.Database.HostingPlace;
 import com.example.rosalie.surfingcouch.Database.Reviews;
 import com.example.rosalie.surfingcouch.Database.Service;
@@ -43,6 +49,7 @@ public class ProfileActivity extends NavigationDrawerActivity {
     private ArrayList<HostingPlace> placeList;
     private ArrayList<Reviews> reviewsList;
     private ArrayList<User> mUserList;
+    private ArrayList<Booking> bookingList;
     private User displayedUser;
     private float gradeAverage;
 
@@ -90,6 +97,7 @@ public class ProfileActivity extends NavigationDrawerActivity {
         placeList = new ArrayList<>();
         mUserList = new ArrayList<>();
         reviewsList = new ArrayList<>();
+        bookingList = new ArrayList<>();
 
         Bundle b = getIntent().getExtras();
         if(b != null) {
@@ -212,7 +220,7 @@ public class ProfileActivity extends NavigationDrawerActivity {
         });
     }
 
-    private void displayUser(User user){
+    private void displayUser(User user) {
         TextView username = findViewById(R.id.profile_username);
         username.setText(user.getUsername());
         TextView city = findViewById(R.id.profile_city);
@@ -220,17 +228,20 @@ public class ProfileActivity extends NavigationDrawerActivity {
         TextView gender = findViewById(R.id.profile_gender);
         gender.setText(user.getGender());
         Button button = findViewById(R.id.profile_button);
-        if(displayedUser == mCurrentUser || displayedUser.getId().equals(mCurrentUser.getId())){
+        Button button2 = findViewById(R.id.profile_button2);
+        if (displayedUser == mCurrentUser || displayedUser.getId().equals(mCurrentUser.getId())) {
             button.setText("Add place");
+            checkingForNotif();
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(getApplicationContext(),AddHostingPlaceActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), AddHostingPlaceActivity.class);
                     startActivity(intent);
                 }
             });
             findViewById(R.id.profile_button_add_review).setVisibility(View.GONE);
         } else {
+
             Button buttonAddReview = findViewById(R.id.profile_button_add_review);
             buttonAddReview.setText("Add a review");
             buttonAddReview.setOnClickListener(new View.OnClickListener() {
@@ -253,8 +264,21 @@ public class ProfileActivity extends NavigationDrawerActivity {
                     startActivity(intent);
                 }
             });
+            button2.setVisibility(View.VISIBLE);
+            button2.setText("Send a Review");
+            button2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getApplicationContext(), AddingReviewActivity.class);
+                    intent.putExtra("username", mCurrentUser.getUsername());
+                    intent.putExtra("receiverID", displayedUser.getId());
+                    startActivity(intent);
+                }
+            });
         }
     }
+
+
 
     class PlacesAdapter extends ArrayAdapter<HostingPlace> {
         ArrayList<HostingPlace> placeArrayList;
@@ -286,40 +310,6 @@ public class ProfileActivity extends NavigationDrawerActivity {
             return v;
         }
     }
-    private void getNotification(){
-        // The id of the channel.
-        String CHANNEL_ID = "my_channel_01";
-        NotificationCompat.Builder mBuilder =
-                new NotificationCompat.Builder(this, CHANNEL_ID)
-                        .setSmallIcon(R.drawable.ic_menu_camera)
-                        .setContentTitle("New message")
-                        .setContentText("You got a new message!");
-        // Creates an explicit intent for an Activity in your app
-        Intent resultIntent = new Intent(this, ChatActivity.class);
-
-        // The stack builder object will contain an artificial back stack for the
-        // started Activity.
-        // This ensures that navigating backward from the Activity leads out of
-        // your app to the Home screen.
-        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
-        // Adds the back stack for the Intent (but not the Intent itself)
-        stackBuilder.addParentStack(ProfileActivity.class);
-        // Adds the Intent that starts the Activity to the top of the stack
-        stackBuilder.addNextIntent(resultIntent);
-        PendingIntent resultPendingIntent =
-                stackBuilder.getPendingIntent(
-                        0,
-                        PendingIntent.FLAG_UPDATE_CURRENT
-                );
-        mBuilder.setContentIntent(resultPendingIntent);
-        NotificationManager mNotificationManager =
-                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-
-        // mNotificationId is a unique integer your app uses to identify the
-        // notification. For example, to cancel the notification, you can pass its ID
-        // number to NotificationManager.cancel().
-        mNotificationManager.notify(0,mBuilder.build());
-    }
 
     class ReviewsAdapter extends ArrayAdapter<Reviews> {
         ArrayList<Reviews> reviewsArrayList;
@@ -346,5 +336,86 @@ public class ProfileActivity extends NavigationDrawerActivity {
                     "Message title: " +  reviewsArrayList.get(position).getTitle());
             return v;
         }
+    }
+
+    private void checkingForNotif(){
+
+        mReference = FirebaseDatabase.getInstance().getReference().child("Booking");
+        mReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String placeNameNotif;
+                String dateNotif;
+                int numberOfPoint = 0;
+                Booking trueBook = new Booking();
+                for (DataSnapshot child : dataSnapshot.getChildren()) {
+                    Booking book = child.getValue(Booking.class);
+                    if (book.getUserIDreceiving().equals(mCurrentUser.getId()) && !book.isBookingEffectued()) {
+                        trueBook = book;
+                        for(HostingPlace place : placeList){
+                            if(place.getPlaceID().equals(trueBook.getPlaceID())){
+                                placeNameNotif = place.getPlacename();
+                                dateNotif = trueBook.getDate();
+                                for(Service service : place.getListService()){
+                                    numberOfPoint += service.getValue();
+                                }
+                                getNotification(placeNameNotif, dateNotif, numberOfPoint, trueBook);
+                            }
+                        }
+
+                    }
+                }
+
+
+
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+    }
+
+
+
+
+
+
+
+    private void getNotification(String placename, String date, int value, Booking book){
+// prepare intent which is triggered if the
+// notification is selected
+
+        int flag = Notification.FLAG_AUTO_CANCEL;
+
+        Intent yesIntent = new Intent(this, AcceptBookingActivity.class);
+        yesIntent.putExtra("value", value);
+        yesIntent.putExtra("beforeValue", mCurrentUser.getNumberOfPoints());
+        yesIntent.putExtra("booking", book);
+        Intent noIntent  = new Intent(this, RefuseBookingActivity.class);
+        noIntent.putExtra("value", value);
+        noIntent.putExtra("beforeValue", mCurrentUser.getNumberOfPoints());
+        noIntent.putExtra("booking", book);
+// use System.currentTimeMillis() to have a unique ID for the pending intent
+        PendingIntent pIntent1 = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), yesIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+        PendingIntent pIntent2 = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), noIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+// build notification
+// the addAction re-use the same intent to keep the example short
+        Notification n  = new Notification.Builder(this)
+                .setContentTitle("New booking request")
+                .setContentText(placename + " has a request to be booked on the " + date + " for " + value + " coins")
+                .setSmallIcon(R.drawable.ic_valise)
+                .setAutoCancel(true)
+                .addAction(R.drawable.ic_done, "Accept", pIntent1).setAutoCancel(true)
+                .addAction(R.drawable.ic_cross, "Refuse", pIntent2).setAutoCancel(true)
+                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)).build();
+        n.flags = flag;
+
+
+        NotificationManager notificationManager =
+                (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
+        notificationManager.notify(0, n);
     }
 }
