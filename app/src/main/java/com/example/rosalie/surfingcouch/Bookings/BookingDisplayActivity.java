@@ -1,4 +1,4 @@
-package com.example.rosalie.surfingcouch;
+package com.example.rosalie.surfingcouch.Bookings;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.example.rosalie.surfingcouch.Database.Booking;
 import com.example.rosalie.surfingcouch.Places.DisplayPlaceActivity;
+import com.example.rosalie.surfingcouch.R;
 
 public class BookingDisplayActivity extends AppCompatActivity {
     Booking actualBooking;

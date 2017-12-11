@@ -1,4 +1,4 @@
-package com.example.rosalie.surfingcouch;
+package com.example.rosalie.surfingcouch.Bookings;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -10,11 +10,10 @@ import android.widget.CheckBox;
 import android.widget.Toast;
 
 import com.example.rosalie.surfingcouch.Database.Booking;
-import com.example.rosalie.surfingcouch.Database.HostingPlace;
+import com.example.rosalie.surfingcouch.ProfileActivity;
+import com.example.rosalie.surfingcouch.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.ArrayList;
 
 public class AddBookingActivity extends AppCompatActivity {
 

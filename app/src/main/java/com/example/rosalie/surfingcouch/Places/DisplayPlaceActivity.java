@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.rosalie.surfingcouch.AddBookingActivity;
+import com.example.rosalie.surfingcouch.Bookings.AddBookingActivity;
 import com.example.rosalie.surfingcouch.Database.HostingPlace;
 import com.example.rosalie.surfingcouch.Database.Service;
 import com.example.rosalie.surfingcouch.NavigationDrawerActivity;
