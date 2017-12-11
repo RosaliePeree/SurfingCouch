@@ -1,5 +1,8 @@
 package com.example.rosalie.surfingcouch;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -21,12 +24,16 @@ import android.widget.Toast;
 import com.example.rosalie.surfingcouch.Database.User;
 import com.example.rosalie.surfingcouch.Messages.MessagesActivity;
 import com.example.rosalie.surfingcouch.Reviews.AddingReviewActivity;
+import com.firebase.client.Firebase;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class NavigationDrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -113,8 +120,31 @@ public class NavigationDrawerActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_trips) {
-            Intent intent = new Intent(this,AddingReviewActivity.class);
-            startActivity(intent);
+
+            NotificationManager notificationManager = (NotificationManager)
+                    getSystemService(NOTIFICATION_SERVICE);
+
+            // prepare intent which is triggered if the
+// notification is selected
+
+            Intent intent = new Intent(this, AddBookingActivity.class);
+// use System.currentTimeMillis() to have a unique ID for the pending intent
+            PendingIntent pIntent = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), intent, 0);
+
+// build notification
+// the addAction re-use the same intent to keep the example short
+            Notification n  = new Notification.Builder(this)
+                    .setContentTitle("New mail from " + "test@gmail.com")
+                    .setContentText("Subject")
+                    .setSmallIcon(R.drawable.ic_around_me)
+                    .setContentIntent(pIntent)
+                    .setAutoCancel(true)
+                    .addAction(R.drawable.ic_menu_camera, "add booking", pIntent)
+                    .build();
+
+            notificationManager.notify(0, n);
+            /*Intent intent = new Intent(this,AddingReviewActivity.class);
+            startActivity(intent);*/
         } else if (id == R.id.nav_all_users) {
             Intent intent = new Intent(this,ListOfUsersActivity.class);
             startActivity(intent);

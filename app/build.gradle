@@ -39,7 +39,7 @@ dependencies {
     compile 'com.google.firebase:firebase-auth:11.6.2'
     compile 'com.google.firebase:firebase-database:11.6.2'
     compile 'com.google.firebase:firebase-core:11.6.2'
-    compile 'com.google.firebase:firebase-messaging:11.6.2'
+    compile 'com.google.firebase:firebase-messaging:11.6.2' //The string required to make Firebase Cloud Messaging available
 }
 
 
