@@ -29,7 +29,7 @@ public class DisplayPlaceActivity extends NavigationDrawerActivity {
     private ArrayList<HostingPlace> mPlacesList;
     private ArrayList<Service> mServiceList;
     private HostingPlace mCurrentPlace;
-
+    private Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,39 +43,13 @@ public class DisplayPlaceActivity extends NavigationDrawerActivity {
 
         mPlacesList = new ArrayList<>();
         mServiceList = new ArrayList<>();
+        button = findViewById(R.id.place_booking_button);
         Bundle b = getIntent().getExtras();
         getAllPlaces(b);
 
-        Button button = findViewById(R.id.place_booking_button);
 
-        if(mCurrentUser.getId() == mCurrentPlace.getUserID())
-            button.setVisibility(View.GONE);
-        else
-            button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), AddBookingActivity.class);
-                intent.putExtra("placeOwnerID", mCurrentPlace.getUserID());
-                intent.putExtra("placeName", mCurrentPlace.getPlacename());
-                intent.putExtra("placeID", mCurrentPlace.getPlaceID());
-                intent.putExtra("Shower", false);
-                intent.putExtra("Laundry", false);
-                intent.putExtra("Sleep", false);
-                for(Service serv : mCurrentPlace.getListService()){
-                    if(Objects.equals(serv.getName(), "Shower")){
-                        intent.putExtra("Shower", true);
-                    }
-                    if(Objects.equals(serv.getName(), "Laundry")){
-                        intent.putExtra("Laundry", true);
-                    }
-                    if(Objects.equals(serv.getName(), "Sleep")){
-                        intent.putExtra("Sleep", true);
-                    }
 
-                }
-                startActivity(intent);
-                }
-        });
+
     }
 
 
@@ -96,6 +70,9 @@ public class DisplayPlaceActivity extends NavigationDrawerActivity {
                 }
                 DisplayPlaceActivity.ServicesAdapter myAdapter = new DisplayPlaceActivity.ServicesAdapter(getApplicationContext(), R.layout.list_view_services, mServiceList);
                 mServiceListView.setAdapter(myAdapter);
+
+                buttonHandler();
+
             }
 
             @Override
@@ -137,5 +114,36 @@ public class DisplayPlaceActivity extends NavigationDrawerActivity {
             textView.setText(mServiceList.get(position).getName());
             return v;
         }
+    }
+
+    public void buttonHandler(){
+        if(Objects.equals(mCurrentUser.getId(), mCurrentPlace.getUserID()))
+            button.setVisibility(View.GONE);
+        else
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getApplicationContext(), AddBookingActivity.class);
+                    intent.putExtra("placeOwnerID", mCurrentPlace.getUserID());
+                    intent.putExtra("placeName", mCurrentPlace.getPlacename());
+                    intent.putExtra("placeID", mCurrentPlace.getPlaceID());
+                    intent.putExtra("Shower", false);
+                    intent.putExtra("Laundry", false);
+                    intent.putExtra("Sleep", false);
+                    for(Service serv : mCurrentPlace.getListService()){
+                        if(Objects.equals(serv.getName(), "Shower")){
+                            intent.putExtra("Shower", true);
+                        }
+                        if(Objects.equals(serv.getName(), "Laundry")){
+                            intent.putExtra("Laundry", true);
+                        }
+                        if(Objects.equals(serv.getName(), "Sleep")){
+                            intent.putExtra("Sleep", true);
+                        }
+
+                    }
+                    startActivity(intent);
+                }
+            });
     }
 }

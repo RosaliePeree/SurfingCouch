@@ -310,7 +310,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         FirebaseUser user = mAuth.getCurrentUser();
         HashMap<String,String> dummyList = new HashMap<>();
         dummyList.put("undefined","undefined");
-        User newUser = new User(placeName, mEmailField.getText().toString(), null, user.getUid(), 0, dummyList, dummyList, dummyList, dummyList, username, dummyList);
+        HashMap<String,String> dummyListChat = new HashMap<>();
+        dummyListChat.put("General Chat","General Chat");
+        User newUser = new User(placeName, mEmailField.getText().toString(), null, user.getUid(), 0, dummyList, dummyList, dummyList, dummyList, username, dummyListChat);
         if (radiobuttonId == R.id.gender_male)
             newUser.setGender("Male");
         else

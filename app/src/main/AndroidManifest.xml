@@ -39,6 +39,7 @@
         <activity android:name=".Reviews.AddingReviewActivity" />
         <activity android:name=".Messages.CheckConversationActivity" />
         <activity android:name=".AddBookingActivity" />
+        <activity android:name=".BookingDisplayActivity"></activity>
     </application>
 
 </manifest>
