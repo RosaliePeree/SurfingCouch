@@ -77,13 +77,10 @@ public class ProfileActivity extends NavigationDrawerActivity {
             }
         });
 
-
-
         reviewsListView = findViewById(R.id.profile_reviews_list);
         reviewsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(getApplicationContext(),"test reviews",Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(),DisplayReviewActivity.class);
                 Bundle b = new Bundle();
                 Reviews review = (Reviews) adapterView.getItemAtPosition(i);
@@ -112,7 +109,6 @@ public class ProfileActivity extends NavigationDrawerActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 User use = dataSnapshot.getValue(User.class);
-                //Log.i(use.getName(), " user");
                 displayedUser = mCurrentUser = use;
                 if(mCurrentUser.getPlaces().size() >= 1) {
                     getPlacesLinked();
@@ -172,15 +168,12 @@ public class ProfileActivity extends NavigationDrawerActivity {
                     if(place.getUserID().equals(displayedUser.getId()))
                         placeList.add(place);
                 }
-                //Log.i(use.getName(), " user");
 
                 ProfileActivity.PlacesAdapter myAdapter = new ProfileActivity.PlacesAdapter(getApplicationContext(),R.layout.list_view_places,placeList);
                 placesListView.setAdapter(myAdapter);
 
                 if (displayedUser.getReviews() == null)
                     displayUser(displayedUser);
-
-
             }
 
             @Override
@@ -228,7 +221,6 @@ public class ProfileActivity extends NavigationDrawerActivity {
         TextView gender = findViewById(R.id.profile_gender);
         gender.setText(user.getGender());
         Button button = findViewById(R.id.profile_button);
-        Button button2 = findViewById(R.id.profile_button2);
         if (displayedUser == mCurrentUser || displayedUser.getId().equals(mCurrentUser.getId())) {
             button.setText("Add place");
             checkingForNotif();
@@ -241,7 +233,6 @@ public class ProfileActivity extends NavigationDrawerActivity {
             });
             findViewById(R.id.profile_button_add_review).setVisibility(View.GONE);
         } else {
-
             Button buttonAddReview = findViewById(R.id.profile_button_add_review);
             buttonAddReview.setText("Add a review");
             buttonAddReview.setOnClickListener(new View.OnClickListener() {
@@ -264,21 +255,8 @@ public class ProfileActivity extends NavigationDrawerActivity {
                     startActivity(intent);
                 }
             });
-            button2.setVisibility(View.VISIBLE);
-            button2.setText("Send a Review");
-            button2.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(getApplicationContext(), AddingReviewActivity.class);
-                    intent.putExtra("username", mCurrentUser.getUsername());
-                    intent.putExtra("receiverID", displayedUser.getId());
-                    startActivity(intent);
-                }
-            });
         }
     }
-
-
 
     class PlacesAdapter extends ArrayAdapter<HostingPlace> {
         ArrayList<HostingPlace> placeArrayList;
@@ -362,13 +340,8 @@ public class ProfileActivity extends NavigationDrawerActivity {
                                 getNotification(placeNameNotif, dateNotif, numberOfPoint, trueBook);
                             }
                         }
-
                     }
                 }
-
-
-
-
             }
 
             @Override
@@ -376,12 +349,6 @@ public class ProfileActivity extends NavigationDrawerActivity {
             }
         });
     }
-
-
-
-
-
-
 
     private void getNotification(String placename, String date, int value, Booking book){
 // prepare intent which is triggered if the

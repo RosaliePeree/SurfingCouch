@@ -31,6 +31,7 @@
         <activity android:name=".Places.AddHostingPlaceActivity" />
         <activity android:name=".Places.DisplayPlaceActivity" />
         <activity android:name=".Reviews.AddingReviewActivity" />
+        <activity android:name=".Reviews.DisplayReviewActivity" />
         <activity android:name=".Messages.CheckConversationActivity" />
         <activity android:name=".Bookings.AddBookingActivity" />
 
