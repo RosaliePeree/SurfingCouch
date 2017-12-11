@@ -1,25 +1,40 @@
 package com.example.rosalie.surfingcouch.Database;
 
+import java.io.Serializable;
+
 /**
  * Created by infer on 10/12/2017.
  */
 
-public class Booking {
+public class Booking implements Serializable {
     private String id;
     private String date;
     private String userIDbooking;
     private String userIDreceiving;
     private String place;
+    private String placeID;
     private boolean bookingEffectued;
 
+    public Booking() {
+    }
 
-    public Booking(String id, String date, String userIDbooking, String userIDreceiving, String place, boolean bookingEffectued) {
+    public Booking(String id, String date, String userIDbooking, String userIDreceiving, String place, String placeID, boolean bookingEffectued) {
         this.id = id;
         this.date = date;
         this.userIDbooking = userIDbooking;
         this.userIDreceiving = userIDreceiving;
         this.place = place;
+        this.placeID = placeID;
         this.bookingEffectued = bookingEffectued;
+    }
+
+
+    public String getPlaceID() {
+        return placeID;
+    }
+
+    public void setPlaceID(String placeID) {
+        this.placeID = placeID;
     }
 
     public String getId() {

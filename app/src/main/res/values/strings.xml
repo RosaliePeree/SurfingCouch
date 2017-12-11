@@ -126,4 +126,14 @@
     <string name="booking_send"> SEND BOOKING</string>
     <string name="service_to_check"> Check the desired services</string>
 
+    <!-- DISPLAY BOOKING STRINGS -->
+    <string name="booking_date"> Date of Booking :</string>
+    <string name="booking_place"> Name of the place booked :</string>
+    <string name="booking_button"> Go to the place</string>
+    <string name="booking_approveYes"> Your booking has been approved </string>
+    <string name="booking_approveNo"> Your booking has not been approved, wait for the confirmation </string>
+
+    <!-- TRIP STRINGS -->
+    <string name="trip_list"> List of your bookings :</string>
+
 </resources>

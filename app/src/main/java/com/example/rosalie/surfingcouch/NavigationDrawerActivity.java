@@ -145,6 +145,8 @@ public class NavigationDrawerActivity extends AppCompatActivity
             notificationManager.notify(0, n);
             /*Intent intent = new Intent(this,AddingReviewActivity.class);
             startActivity(intent);*/
+            Intent intent = new Intent(this,TripActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_all_users) {
             Intent intent = new Intent(this,ListOfUsersActivity.class);
             startActivity(intent);
@@ -153,9 +155,9 @@ public class NavigationDrawerActivity extends AppCompatActivity
             startActivity(intent);
         } else if (id == R.id.nav_profile) {
             Intent intent = new Intent(this,ProfileActivity.class);
-            /*Bundle b = new Bundle();
+            Bundle b = new Bundle();
             b.putString ("userID", mCurrentUser.getId()); //Your id
-            intent.putExtras(b); //Put your id to your next Intent*/
+            intent.putExtras(b); //Put your id to your next Intent
             startActivity(intent);
         } else if (id == R.id.nav_settings) {
             Intent intent = new Intent(this,SettingsActivity.class);

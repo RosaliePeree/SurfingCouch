@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.example.rosalie.surfingcouch"
-        minSdkVersion 19
+        minSdkVersion 19 //minimum
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -41,6 +41,7 @@ dependencies {
     compile 'com.google.firebase:firebase-core:11.6.2'
     compile 'com.google.firebase:firebase-messaging:11.6.2' //The string required to make Firebase Cloud Messaging available
 }
+
 
 
 
