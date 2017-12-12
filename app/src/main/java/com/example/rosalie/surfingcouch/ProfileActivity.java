@@ -238,10 +238,22 @@ public class ProfileActivity extends NavigationDrawerActivity {
             buttonAddReview.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(getApplicationContext(), AddingReviewActivity.class);
-                    intent.putExtra("receiverID", displayedUser.getId());
-                    intent.putExtra("username", mCurrentUser.getUsername());
-                    startActivity(intent);
+                    boolean alreadyReviewed = false;
+                    for(Reviews rev : reviewsList) {
+
+                        if(rev.getPosterID().equals(mCurrentUser.getId())){
+                            alreadyReviewed = true;
+                        }
+                    }
+                    if(!alreadyReviewed) {
+                        Intent intent = new Intent(getApplicationContext(), AddingReviewActivity.class);
+                        intent.putExtra("receiverID", displayedUser.getId());
+                        intent.putExtra("username", mCurrentUser.getUsername());
+                        startActivity(intent);
+                    }else{
+                        Toast.makeText(getApplicationContext(), "You already reviewed this User", Toast.LENGTH_SHORT).show();
+                    }
+
                 }
             });
             button.setText("Send a message");

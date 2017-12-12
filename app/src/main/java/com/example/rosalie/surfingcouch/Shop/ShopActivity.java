@@ -100,7 +100,11 @@ public class ShopActivity extends NavigationDrawerActivity {
             v = inflater.inflate(R.layout.list_view_rewards, null);
             TextView textView = (TextView)v.findViewById(R.id.list_rewards_text);
             ImageView imageView = (ImageView)v.findViewById(R.id.list_rewards_image);
-            textView.setText(rewardsArrayList.get(position).getName() + " (" + rewardsArrayList.get(position).getCost() + " points)\n Availability: " +rewardsArrayList.get(position).isAvailability());
+            if(rewardsArrayList.get(position).isAvailability()) {
+                textView.setText(rewardsArrayList.get(position).getName() + " (" + rewardsArrayList.get(position).getCost() + " points)\n Is available");
+            }else{
+                textView.setText(rewardsArrayList.get(position).getName() + " (" + rewardsArrayList.get(position).getCost() + " points)\n Is not available");
+            }
             imageView.setImageResource(R.mipmap.ic_gift);
             if(rewardsArrayList.get(position).isAvailability() == false) {
                 v.setEnabled(false);
