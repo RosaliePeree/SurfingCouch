@@ -41,14 +41,14 @@ public class AddingReviewActivity extends AppCompatActivity {
         //receivingUser = "tOeyT5B5hMeDqZz7K2We6tGb1Ie2";
         if (reviewTitle.getText().toString().trim().length() == 0 ||
                 reviewText.getText().toString().trim().length() == 0 ||
-                rate.getNumStars() == 0 || receivingUser == null) {
+                rate.getRating() == 0.0 || receivingUser == null) {
             Toast.makeText(AddingReviewActivity.this, R.string.add_hosting_place_empty, Toast.LENGTH_SHORT).show();
         } else {
 
             String currentUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
             String key = FirebaseDatabase.getInstance().getReference().push().getKey();
-            Reviews review = new Reviews(reviewText.getText().toString(),rate.getNumStars(), key, currentUser, receivingUser, reviewTitle.getText().toString(), username );
+            Reviews review = new Reviews(reviewText.getText().toString(), ( Math.round(rate.getRating())), key, currentUser, receivingUser, reviewTitle.getText().toString(), username );
             FirebaseDatabase.getInstance().getReference().child("Reviews").child(key).setValue(review);
             FirebaseDatabase.getInstance().getReference().child("User/"+receivingUser+"/reviews").child(key).setValue(key);
 
