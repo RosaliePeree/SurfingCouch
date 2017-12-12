@@ -1,0 +1,147 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Example: Project Report
+%
+% Source: http://www.howtotex.com
+%
+% Feel free to distribute this example, but please keep the referral
+% to howtotex.com
+% Date: March 2011
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% How to use writeLaTeX:
+%
+% You edit the source code here on the left, and the preview on the
+% right shows you the result within a few seconds.
+%
+% Bookmark this page and share the URL with your co-authors. They can
+% edit at the same time!
+%
+% You can upload figures, bibliographies, custom classes and
+% styles using the files menu.
+%
+% If you're new to LaTeX, the wikibook is a great place to start:
+% http://en.wikibooks.org/wiki/LaTeX
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Edit the title below to update the display in My Documents
+%\title{Project Report}
+%
+%%% Preamble
+\documentclass[paper=a4, fontsize=12pt,DIV=14]{scrartcl}    % scrartcl = article-typed dcmt using pckg Koma-script
+\usepackage[utf8]{inputenc}
+
+\usepackage[english]{babel}							 % English language/hyphenation
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage[pdftex]{graphicx}	
+\linespread{1}
+\usepackage{array}
+\usepackage{pdfpages}                               % Packages used to include pdf files
+\usepackage{rotating}                               % Allow landscape mode for certain pages
+
+%%% Custom sectioning
+\usepackage{sectsty}
+\allsectionsfont{\fontfamily{cmss}\selectfont}
+\sectionfont{\sectionrule{3ex}{1pt}{-1.5ex}{1pt}}
+\subsectionfont{\hspace*{2.5em}}
+\paragraphfont{\hspace*{0.5em}}
+\subsubsectionfont{\hspace*{5em}}
+
+%%% Custom headers/footers (fancyhdr package)
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+\fancyhead[L]{R. Peree, G. Cartier}	% Left page header
+\fancyhead[R]{\includegraphics[scale=0.2]{img/logo.png}\includegraphics[scale=0.2]{img/via_logo.png}}           % Right page header
+\fancyfoot[L]{Autumn 2017}								        % Empty0
+\fancyfoot[C]{}									            	% Empty
+\fancyfoot[R]{\thepage}							            	% Page numbering
+\renewcommand{\headrulewidth}{0pt}		                        % Remove header underlines
+\renewcommand{\footrulewidth}{0pt}		                    	% Remove footer underlines
+\setlength{\headheight}{20.4pt}
+\setcounter{page}{-1}                                           % Starts the page numbering at -1
+
+
+%%% Begin document
+\begin{document}
+
+	\input{titlepage} %% Titlepage set in titlepage.tex
+    \tableofcontents
+    \thispagestyle{empty}           %used to remove the page number
+
+    \newpage
+        \section{Abstract}
+        % COMPLETE SECTION TO DO
+        % PROOF READ TO DO
+
+
+    \newpage
+        \section{Introduction}
+        % COMPLETE SECTION TO DO
+        % PROOF READ TO DO
+        	\subsection{Background Description}
+        	\subsection{Problem Description}
+        	\subsection{Limitations and Delimitations}
+
+
+    \newpage
+        \section{Methods}
+        % COMPLETE SECTION TO DO
+        % PROOF READ TO DO
+
+
+    \newpage
+        \section{Requirements}
+        % COMPLETE SECTION TO DO
+        % PROOF READ TO DO
+        	\subsection{List of Requirements}
+        		\subsubsection{Functional Requirements}
+        		\subsubsection{Non-Functional Requirements}
+
+
+    \newpage
+        \section{Analysis}
+        % COMPLETE SECTION TO DO
+        % PROOF READ TO DO
+
+
+    \newpage
+        \section{Design}
+        % COMPLETE SECTION TO DO
+        % PROOF READ TO DO
+        	\subsection{Architecture}
+        	\subsection{Technologies}
+        	\subsection{Design Patterns, Class Diagram, Sequence Diagrams}
+
+
+    \newpage
+        \section{Implementation}
+        % COMPLETE SECTION TO DO
+        % PROOF READ TO DO
+
+
+
+    \newpage
+        \section{Test}
+        % COMPLETE SECTION TO DO
+        % PROOF READ TO DO
+        	\subsection{Test Specifications}
+        	\subsection{White Box Testing}
+
+
+
+    \newpage
+        \section{Results \& Discussion}
+        % COMPLETE SECTION TO DO
+        % PROOF READ TO DO
+
+
+
+    \newpage
+        \section{Conclusion}
+        % COMPLETE SECTION TO DO
+        % PROOF READ TO DO
+
+
+        %\input{bib.tex}                             % Adding the sources page
+
+%%% End document
+\end{document} 
