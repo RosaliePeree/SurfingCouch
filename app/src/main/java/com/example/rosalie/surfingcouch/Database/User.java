@@ -16,7 +16,6 @@ public class User implements Serializable {
     private int numberOfPoints;
     private Map<String, String> places;
     private Map<String, String> reviews;
-    private Map<String, String>  trips;
     private Map<String, String> unlockedRewards;
     private String username;
     private Map<String, String> conversations;
@@ -25,7 +24,7 @@ public class User implements Serializable {
     }
 
 
-    public User(String comefrom, String email, String gender, String id, int numberOfPoints, Map<String, String> places, Map<String, String> reviews, Map<String, String> trips, Map<String, String> unlockedRewards, String username, Map<String, String> conversations) {
+    public User(String comefrom, String email, String gender, String id, int numberOfPoints, Map<String, String> places, Map<String, String> reviews, Map<String, String> unlockedRewards, String username, Map<String, String> conversations) {
         this.comefrom = comefrom;
         this.email = email;
         this.gender = gender;
@@ -33,7 +32,6 @@ public class User implements Serializable {
         this.numberOfPoints = numberOfPoints;
         this.places = places;
         this.reviews = reviews;
-        this.trips = trips;
         this.unlockedRewards = unlockedRewards;
         this.username = username;
         this.conversations = conversations;
@@ -53,14 +51,6 @@ public class User implements Serializable {
 
     public void setReviews(Map<String, String> reviews) {
         this.reviews = reviews;
-    }
-
-    public Map<String, String> getTrips() {
-        return trips;
-    }
-
-    public void setTrips(Map<String, String> trips) {
-        this.trips = trips;
     }
 
     public Map<String, String> getUnlockedRewards() {
