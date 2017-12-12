@@ -81,6 +81,7 @@ public class DisplayItemShopActivity extends NavigationDrawerActivity {
                 public void onClick(View view) {
                     mReference = FirebaseDatabase.getInstance().getReference().child("User/" + FirebaseAuth.getInstance().getCurrentUser().getUid());
                     mReference.child("numberOfPoints").setValue(mCurrentUser.getNumberOfPoints() - reward.getCost());
+                    mReference.child("unlockedRewards").push().setValue(reward.getName());
                     createNotification();
                 }
             });
