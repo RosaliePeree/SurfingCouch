@@ -312,7 +312,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dummyList.put("undefined","undefined");
         HashMap<String,String> dummyListChat = new HashMap<>();
         dummyListChat.put("General Chat","General Chat");
-        User newUser = new User(placeName, mEmailField.getText().toString(), null, user.getUid(), 0, dummyList, dummyList, dummyList, username, dummyListChat);
+        User newUser = new User(placeName, mEmailField.getText().toString(), null, user.getUid(), 0, dummyList, dummyList,null, username, dummyListChat);
         if (radiobuttonId == R.id.gender_male)
             newUser.setGender("Male");
         else
