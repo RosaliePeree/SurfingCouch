@@ -11,6 +11,8 @@
 \contentsline {paragraph}{\nonumberline Use cases:}{5}
 \contentsline {paragraph}{\nonumberline Activity Diagrams:}{8}
 \contentsline {subsubsection}{\numberline {4.1.2}Non-Functional Requirements}{10}
+\contentsline {paragraph}{\nonumberline Security}{10}
+\contentsline {paragraph}{\nonumberline Usability}{10}
 \contentsline {section}{\numberline {5}Analysis}{11}
 \contentsline {section}{\numberline {6}Design}{12}
 \contentsline {subsection}{\numberline {6.1}Architecture}{12}

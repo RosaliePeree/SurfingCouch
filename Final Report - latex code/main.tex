@@ -211,12 +211,18 @@
 
 		                \paragraph{}The second activity diagram groups some activities together. The activities that are merged together on the diagram are distinct activities, but have the same behavior and thus can be grouped together. This is done to avoid this diagram to become too complicated to read.
 
-
-
         		\subsubsection{Non-Functional Requirements}
-
+        			\paragraph{Security}
         			\begin{itemize}
-        				\item 
+        				\item Password requirements (set up by Firebase)
+        				\item Password security (hashed)
+        				\item Password not saved unencrypted
+        				\item If password lost, email to make a new one (handled by Firebase)
+        			\end{itemize}
+        			\paragraph{Usability}
+        			\begin{itemize}
+        				\item User friendly
+        				\item Possible translation of the application due to avoiding hard-coded strings
         			\end{itemize}
 
 
