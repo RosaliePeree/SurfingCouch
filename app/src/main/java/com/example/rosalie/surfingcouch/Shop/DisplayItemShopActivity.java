@@ -30,7 +30,6 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class DisplayItemShopActivity extends NavigationDrawerActivity {
-    private ArrayList<Rewards> mRewardList;
     private Rewards mCurrentReward;
 
     @Override
@@ -42,7 +41,6 @@ public class DisplayItemShopActivity extends NavigationDrawerActivity {
         View contentView = inflater.inflate(R.layout.activity_display_item_shop, null, false);
         drawer.addView(contentView, 0);
 
-        mRewardList = new ArrayList<>();
         Bundle b = getIntent().getExtras();
         getAllRewards(b);
     }

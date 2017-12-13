@@ -220,8 +220,85 @@
         % COMPLETE SECTION TO DO
         % PROOF READ TO DO
         	\subsection{Architecture}
+We used the Adapter in Android which is close to a Pattern Adapter.
+
+\begin{figure}[!htbp]
+							\center
+		                    \includegraphics[scale=0.5]{img/adapterpattern.png}
+		                    \caption{Adapter Pattern Template (\textit{softwarepassion.com})}
+\end{figure}
+
+We used those Adapters to populate the listViews with ArrayList and make clickable. Those Adapters are customizable, and help to display the content of the Objects that are kept in the database \\
+
+We also wanted to use a MVC (Model View Controller), which is a MVP (Model View Presenter) but the scope of the project was too short to implement it correctly, and we didn't studied it during the Android course.
+
+
+
+        	\newpage
         	\subsection{Technologies}
-        	\subsection{Design Patterns, Class Diagram, Sequence Diagrams}
+        		
+\textbf{Surfing Couch} uses different technologies :\\
+To do deal with all of the data manipulated by the users, the applications uses \textbf{Firebase} as database : \\
+\begin{itemize}
+\item Pros :
+	\begin{itemize}
+	\item 	Firebase provides an easy implementation on an Android application, there is not that much of a setup to do, the read and write functions are really easy to implement
+	\item 	Firebase use JSON which permits an implementation of data in a fairly effortless way. That create a database that is flexible, well-structured and easy to read to some extent.
+	\item 	Firebase gives useful tools, including a user authentication that deals with the security of database thanks to its data hashing. Firebase is also loaded with email confirmation, data analytics, and stability tools, which helps to make the user experience better.
+	\item 	Made by Google
+	\end{itemize}
+
+\item Cons :
+	\begin{itemize}
+	\item	When the data structure starts to be a bit complex, it becomes quite hard to navigate through all of the data. Especially if you have a lot of data.
+	\item	The querying and indexing is very limited due to the use of the JSON. It makes the search of data is very redundant.
+	\item	Firebase is a bit high level, so you don’t feel you have that much of control over it
+	\item	Made by Google
+	\end{itemize}
+\end{itemize}
+
+One of the alternative to Firebase could be to use a more “classical” database management system like \textbf{SQLite} :
+\begin{itemize}
+\item Pros :
+	\begin{itemize}
+		\item	Classical way to store data, you can do SQL queries on it to retrieve data with more efficiency. Include also a good indexing of the data.
+		\item	Is better than Firebase at storing huge load of data.
+	\end{itemize}
+\item Cons :
+	\begin{itemize}
+\item	You don’t have the tools proposed by Firebase, so you can really analyze your data usage and you must make all of the part of the security by yourself
+\item	Harder to use and implement than Firebase.
+	\end{itemize}
+\end{itemize}
+
+The application must be developed natively on Android, so \textbf{Android Studio} was a default choice to develop the application. But it's interesting to point out that there is alternatives to Android Studio such as \textbf{Xamarin} or \textbf{Cordova}.\\
+\subsection{Design Patterns, Class Diagram, Sequence Diagrams}
+
+Like said earlier, we are not using a specific design pattern.
+
+\begin{figure}[!htbp]
+							\center
+		                    \includegraphics[scale=0.6]{img/class_diagram.png}
+		                    \caption{Class Diagram of the database } 
+\end{figure}
+
+The database\footnote{We made a class diagram for the databse because the data is kept in a JSON} is pretty straightforward, everything is based around the User. However, we must highlight some details. By default, when a user is created, the bookings are null, so not present in the database JSON. The list is created with the first booking he makes.
+Also, a default chat is assigned to each user which is the “General Chat” so can talk all together. The other List are defined as “undefined” and taken as HashMaps inside of the app.
+
+
+
+\newpage
+
+
+\begin{figure}[!htbp]
+							\center
+		                    \includegraphics[scale=0.5, angle = 90]{img/activity.png}
+		                    \caption{Class Diagram of the Activities of the application} 
+
+\end{figure}
+\textit{See the annex file for better version}
+
+
 
 
     \newpage

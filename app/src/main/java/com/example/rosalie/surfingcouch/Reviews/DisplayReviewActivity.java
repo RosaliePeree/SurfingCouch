@@ -22,7 +22,6 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class DisplayReviewActivity extends NavigationDrawerActivity {
-    private ArrayList<Reviews> mReviewsList;
     private Reviews mCurrentReview;
 
     @Override
@@ -34,7 +33,6 @@ public class DisplayReviewActivity extends NavigationDrawerActivity {
         View contentView = inflater.inflate(R.layout.activity_display_review, null, false);
         drawer.addView(contentView, 0);
 
-        mReviewsList = new ArrayList<>();
         Bundle b = getIntent().getExtras();
         getAllReviews(b);
     }

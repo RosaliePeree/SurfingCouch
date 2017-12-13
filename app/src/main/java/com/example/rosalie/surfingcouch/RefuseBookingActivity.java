@@ -37,7 +37,7 @@ public class RefuseBookingActivity extends NavigationDrawerActivity {
 
         FirebaseDatabase.getInstance().getReference().child("Booking/" + book.getId() ).setValue(null);
         FirebaseDatabase.getInstance().getReference().child("User/" + book.getUserIDbooking() + "/booking/" + book.getId()).setValue(null);
-        FirebaseDatabase.getInstance().getReference().child("HostingPlace/" + book.getPlaceID() + "/booking/" + book.getId()).removeValue();
+        FirebaseDatabase.getInstance().getReference().child("HostingPlace/" + book.getPlaceID() +    "/booking/" + book.getId()).removeValue();
 
         NotificationManager notificationManager =
                 (NotificationManager) getSystemService(NOTIFICATION_SERVICE);

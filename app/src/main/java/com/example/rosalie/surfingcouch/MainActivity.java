@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
     }
 
-    // [START on_start_check_user]
+
     @Override
     public void onStart() {
         super.onStart();
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
     }
-    // [END on_start_check_user]
+
 
     @Override
     public void onStop() {
@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         showProgressDialog();
 
-        // [START create_user_with_email]
+
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -138,12 +138,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             updateUI(null);
                         }
 
-                        // [START_EXCLUDE]
+
                         hideProgressDialog();
-                        // [END_EXCLUDE]
+
                     }
                 });
-        // [END create_user_with_email]
+
     }
 
     private void signIn(String email, String password) {
@@ -153,31 +153,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         showProgressDialog();
-
-        // [START sign_in_with_email]
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            Toast.makeText(getApplicationContext(), "signInWithEmail:success", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_SHORT).show();
                             updateUI(mAuth.getCurrentUser());
                         } else {
                             // If sign in fails, display a message to the user.
-                            Toast.makeText(getApplicationContext(), "signInWithEmail:failure" + task.getException(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "failure" + task.getException(), Toast.LENGTH_SHORT).show();
                             updateUI(null);
                         }
 
-                        // [START_EXCLUDE]
                         if (!task.isSuccessful()) {
                             mStatusTextView.setText(R.string.main_failed);
                         }
                         hideProgressDialog();
-                        // [END_EXCLUDE]
+
                     }
                 });
-        // [END sign_in_with_email]
+
     }
 
     private void signOut() {
@@ -190,13 +187,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.verify_email_button).setEnabled(false);
 
         // Send verification email
-        // [START send_email_verification]
+
         final FirebaseUser user = mAuth.getCurrentUser();
         user.sendEmailVerification()
                 .addOnCompleteListener(this, new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        // [START_EXCLUDE]
+
                         // Re-enable button
                         findViewById(R.id.verify_email_button).setEnabled(true);
 
@@ -210,10 +207,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     "Failed to send verification email.",
                                     Toast.LENGTH_SHORT).show();
                         }
-                        // [END_EXCLUDE]
+
                     }
                 });
-        // [END send_email_verification]
+
     }
 
     private boolean validateForm() {

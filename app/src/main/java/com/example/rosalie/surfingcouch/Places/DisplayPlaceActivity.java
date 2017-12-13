@@ -26,7 +26,6 @@ import java.util.Objects;
 
 public class DisplayPlaceActivity extends NavigationDrawerActivity {
     private ListView mServiceListView;
-    private ArrayList<HostingPlace> mPlacesList;
     private ArrayList<Service> mServiceList;
     private HostingPlace mCurrentPlace;
     private Button button;
@@ -41,7 +40,6 @@ public class DisplayPlaceActivity extends NavigationDrawerActivity {
 
         mServiceListView = findViewById(R.id.list_services);
 
-        mPlacesList = new ArrayList<>();
         mServiceList = new ArrayList<>();
         button = findViewById(R.id.place_booking_button);
         Bundle b = getIntent().getExtras();

@@ -57,7 +57,7 @@ public class ShopActivity extends NavigationDrawerActivity {
                 ShopActivity.RewardsAdapter myAdapter=new ShopActivity.RewardsAdapter(getApplicationContext(),R.layout.list_view_rewards,rewardsList);
                 shopListView.setAdapter(myAdapter);
 
-                shopListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                shopListView.setOnItemClickListener(    new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                         if(view.isEnabled()) {

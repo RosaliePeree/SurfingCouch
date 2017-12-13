@@ -20,7 +20,6 @@ import java.util.Objects;
 public class CheckConversationActivity extends AppCompatActivity {
 
     ArrayList<String> allChats;
-    ArrayList<String> allChats2;
     User user;
 
 

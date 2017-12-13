@@ -54,7 +54,7 @@ public class MessagesActivity extends NavigationDrawerActivity {
                         Toast.makeText(getApplicationContext(), R.string.message_empty, Toast.LENGTH_SHORT).show();
 
                     } else {
-                        allChats.clear();
+                            allChats.clear();
                         for (String value : user.getConversations().values()) {
                             allChats.add(value); //This also add in adapter at the same time
                             listOfChats.setAdapter(adapter);

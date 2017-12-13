@@ -25,7 +25,6 @@ public class AddBookingActivity extends NavigationDrawerActivity {
 
     CalendarView calendar;
     CheckBox laundryService, showerService, sleepService;
-    Button addBooking;
     String curDate;
     int dayT, monthT, yearT, curDayT, curMonthT, curYearT;
 

@@ -29,7 +29,6 @@ public class AddHostingPlaceActivity extends NavigationDrawerActivity {
     private Place mPlaceField;
     private EditText numberOfPeople, placenameText;
     private CheckBox showerService, laundryService, sleepService;
-    private Button addPlace;
     private String TAG = "AddHostingPlaceActivity";
 
 
@@ -51,7 +50,6 @@ public class AddHostingPlaceActivity extends NavigationDrawerActivity {
         showerService = findViewById(R.id.checkBoxShower);
         laundryService = findViewById(R.id.checkBoxLaundry);
         sleepService = findViewById(R.id.checkBoxSleeping);
-        addPlace = findViewById(R.id.addhost);
 
         PlaceAutocompleteFragment autocompleteFragment = (PlaceAutocompleteFragment)
                 getFragmentManager().findFragmentById(R.id.addplace_autocomplete_fragment);

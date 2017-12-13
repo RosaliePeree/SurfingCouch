@@ -1,8 +1,10 @@
 package com.example.rosalie.surfingcouch.Reviews;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,15 +12,15 @@ import android.widget.RatingBar;
 import android.widget.Toast;
 
 import com.example.rosalie.surfingcouch.Database.Reviews;
+import com.example.rosalie.surfingcouch.NavigationDrawerActivity;
 import com.example.rosalie.surfingcouch.ProfileActivity;
 import com.example.rosalie.surfingcouch.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class AddingReviewActivity extends AppCompatActivity {
+public class AddingReviewActivity extends NavigationDrawerActivity {
 
     private EditText reviewTitle, reviewText;
-    private Button addReview;
     private RatingBar rate;
     private String TAG = "AddingReviewPlaceActivity";
     private String username;
@@ -26,11 +28,14 @@ public class AddingReviewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_adding_review);
+        LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        //inflate your activity layout here!
+        View contentView = inflater.inflate(R.layout.activity_adding_review, null, false);
+        drawer.addView(contentView, 0);
 
         reviewText = (EditText) findViewById(R.id.review_edittext);
         reviewTitle = (EditText) findViewById(R.id.review_edittitle);
-        addReview = (Button) findViewById(R.id.button_adding_review);
         rate = (RatingBar) findViewById(R.id.ratingBar);
         username = getIntent().getExtras().getString("username");
     }

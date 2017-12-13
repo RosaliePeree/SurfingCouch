@@ -23,7 +23,6 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".TripActivity" />
-        <activity android:name=".AroundMe" />
         <activity android:name=".Messages.MessagesActivity" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".ListOfUsersActivity" />
