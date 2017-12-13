@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2016.9.4)  13 DEC 2017 12:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2016.9.4)  13 DEC 2017 13:28
 entering extended mode
 **./main.tex
 (main.tex
@@ -858,11 +858,11 @@ Package pdftex.def Info: img/shop.png used on input line 190.
 (pdftex.def)             Requested size: 375.46431pt x 325.77881pt.
 File: img/logo.png Graphic file (type png)
  <use img/logo.png>
-Package pdftex.def Info: img/logo.png used on input line 202.
+Package pdftex.def Info: img/logo.png used on input line 197.
 (pdftex.def)             Requested size: 92.34335pt x 30.91495pt.
 File: img/via_logo.png Graphic file (type png)
  <use img/via_logo.png>
-Package pdftex.def Info: img/via_logo.png used on input line 202.
+Package pdftex.def Info: img/via_logo.png used on input line 197.
 (pdftex.def)             Requested size: 76.03271pt x 25.59517pt.
 
 
@@ -874,11 +874,11 @@ Package Fancyhdr Warning: \headheight is too small (20.4pt):
 [5 <./img/enter_application.png>]
 File: img/logo.png Graphic file (type png)
  <use img/logo.png>
-Package pdftex.def Info: img/logo.png used on input line 202.
+Package pdftex.def Info: img/logo.png used on input line 197.
 (pdftex.def)             Requested size: 92.34335pt x 30.91495pt.
 File: img/via_logo.png Graphic file (type png)
  <use img/via_logo.png>
-Package pdftex.def Info: img/via_logo.png used on input line 202.
+Package pdftex.def Info: img/via_logo.png used on input line 197.
 (pdftex.def)             Requested size: 76.03271pt x 25.59517pt.
 
 
@@ -890,12 +890,12 @@ Package Fancyhdr Warning: \headheight is too small (20.4pt):
 [6 <./img/send_message.png> <./img/leave_review.png>]
 File: img/logo.png Graphic file (type png)
  <use img/logo.png>
-Package pdftex.def Info: img/logo.png used on input line 202.
+Package pdftex.def Info: img/logo.png used on input line 197.
 (pdftex.def)             Requested size: 92.34335pt x 30.91495pt.
 File: img/via_logo.png Graphic file (type png)
 
 <use img/via_logo.png>
-Package pdftex.def Info: img/via_logo.png used on input line 202.
+Package pdftex.def Info: img/via_logo.png used on input line 197.
 (pdftex.def)             Requested size: 76.03271pt x 25.59517pt.
 
 
@@ -904,14 +904,19 @@ Package Fancyhdr Warning: \headheight is too small (20.4pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[7 <./img/shop.png>]
+[7 <./img/shop.png>] <img/act_login.png, id=50, 466.74374pt x 524.71031pt>
+File: img/act_login.png Graphic file (type png)
+
+<use img/act_login.png>
+Package pdftex.def Info: img/act_login.png used on input line 201.
+(pdftex.def)             Requested size: 466.7426pt x 524.70901pt.
 File: img/logo.png Graphic file (type png)
  <use img/logo.png>
-Package pdftex.def Info: img/logo.png used on input line 202.
+Package pdftex.def Info: img/logo.png used on input line 212.
 (pdftex.def)             Requested size: 92.34335pt x 30.91495pt.
 File: img/via_logo.png Graphic file (type png)
  <use img/via_logo.png>
-Package pdftex.def Info: img/via_logo.png used on input line 202.
+Package pdftex.def Info: img/via_logo.png used on input line 212.
 (pdftex.def)             Requested size: 76.03271pt x 25.59517pt.
 
 
@@ -920,14 +925,14 @@ Package Fancyhdr Warning: \headheight is too small (20.4pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[8]
+[8 <./img/act_login.png>]
 File: img/logo.png Graphic file (type png)
  <use img/logo.png>
-Package pdftex.def Info: img/logo.png used on input line 208.
+Package pdftex.def Info: img/logo.png used on input line 218.
 (pdftex.def)             Requested size: 92.34335pt x 30.91495pt.
 File: img/via_logo.png Graphic file (type png)
  <use img/via_logo.png>
-Package pdftex.def Info: img/via_logo.png used on input line 208.
+Package pdftex.def Info: img/via_logo.png used on input line 218.
 (pdftex.def)             Requested size: 76.03271pt x 25.59517pt.
 
 
@@ -939,11 +944,11 @@ Package Fancyhdr Warning: \headheight is too small (20.4pt):
 [9]
 File: img/logo.png Graphic file (type png)
  <use img/logo.png>
-Package pdftex.def Info: img/logo.png used on input line 217.
+Package pdftex.def Info: img/logo.png used on input line 227.
 (pdftex.def)             Requested size: 92.34335pt x 30.91495pt.
 File: img/via_logo.png Graphic file (type png)
  <use img/via_logo.png>
-Package pdftex.def Info: img/via_logo.png used on input line 217.
+Package pdftex.def Info: img/via_logo.png used on input line 227.
 (pdftex.def)             Requested size: 76.03271pt x 25.59517pt.
 
 
@@ -955,11 +960,11 @@ Package Fancyhdr Warning: \headheight is too small (20.4pt):
 [10]
 File: img/logo.png Graphic file (type png)
  <use img/logo.png>
-Package pdftex.def Info: img/logo.png used on input line 224.
+Package pdftex.def Info: img/logo.png used on input line 234.
 (pdftex.def)             Requested size: 92.34335pt x 30.91495pt.
 File: img/via_logo.png Graphic file (type png)
  <use img/via_logo.png>
-Package pdftex.def Info: img/via_logo.png used on input line 224.
+Package pdftex.def Info: img/via_logo.png used on input line 234.
 (pdftex.def)             Requested size: 76.03271pt x 25.59517pt.
 
 
@@ -971,11 +976,11 @@ Package Fancyhdr Warning: \headheight is too small (20.4pt):
 [11]
 File: img/logo.png Graphic file (type png)
  <use img/logo.png>
-Package pdftex.def Info: img/logo.png used on input line 233.
+Package pdftex.def Info: img/logo.png used on input line 243.
 (pdftex.def)             Requested size: 92.34335pt x 30.91495pt.
 File: img/via_logo.png Graphic file (type png)
  <use img/via_logo.png>
-Package pdftex.def Info: img/via_logo.png used on input line 233.
+Package pdftex.def Info: img/via_logo.png used on input line 243.
 (pdftex.def)             Requested size: 76.03271pt x 25.59517pt.
 
 
@@ -987,11 +992,11 @@ Package Fancyhdr Warning: \headheight is too small (20.4pt):
 [12]
 File: img/logo.png Graphic file (type png)
  <use img/logo.png>
-Package pdftex.def Info: img/logo.png used on input line 240.
+Package pdftex.def Info: img/logo.png used on input line 250.
 (pdftex.def)             Requested size: 92.34335pt x 30.91495pt.
 File: img/via_logo.png Graphic file (type png)
  <use img/via_logo.png>
-Package pdftex.def Info: img/via_logo.png used on input line 240.
+Package pdftex.def Info: img/via_logo.png used on input line 250.
 (pdftex.def)             Requested size: 76.03271pt x 25.59517pt.
 
 
@@ -1003,11 +1008,11 @@ Package Fancyhdr Warning: \headheight is too small (20.4pt):
 [13]
 File: img/logo.png Graphic file (type png)
  <use img/logo.png>
-Package pdftex.def Info: img/logo.png used on input line 249.
+Package pdftex.def Info: img/logo.png used on input line 259.
 (pdftex.def)             Requested size: 92.34335pt x 30.91495pt.
 File: img/via_logo.png Graphic file (type png)
  <use img/via_logo.png>
-Package pdftex.def Info: img/via_logo.png used on input line 249.
+Package pdftex.def Info: img/via_logo.png used on input line 259.
 (pdftex.def)             Requested size: 76.03271pt x 25.59517pt.
 
 
@@ -1018,13 +1023,13 @@ Package Fancyhdr Warning: \headheight is too small (20.4pt):
 
 [14] (main.aux) ) 
 Here is how much of TeX's memory you used:
- 7496 strings out of 493334
- 121246 string characters out of 3129357
+ 7501 strings out of 493334
+ 121346 string characters out of 3129357
  323553 words of memory out of 3000000
- 10839 multiletter control sequences out of 15000+200000
+ 10843 multiletter control sequences out of 15000+200000
  13118 words of font info for 71 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 49i,16n,51p,8844b,324s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 49i,16n,51p,8844b,326s stack positions out of 5000i,500n,10000p,200000b,50000s
 <D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
 bx12.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pf
 b><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/Pro
@@ -1033,9 +1038,9 @@ es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss17.pfb><D:/Program Files/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><D:/Program Files/MiKTeX 2.9/
 fonts/type1/public/amsfonts/cm/cmssi17.pfb><D:/Program Files/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (16 pages, 249808 bytes).
+Output written on main.pdf (16 pages, 277248 bytes).
 PDF statistics:
- 98 PDF objects out of 1000 (max. 8388607)
+ 100 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 20511 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 20516 words of extra memory for PDF output out of 20736 (max. 10000000)
 

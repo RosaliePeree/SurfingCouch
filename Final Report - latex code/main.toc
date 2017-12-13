@@ -9,6 +9,7 @@
 \contentsline {subsection}{\numberline {4.1}List of Requirements}{5}
 \contentsline {subsubsection}{\numberline {4.1.1}Functional Requirements}{5}
 \contentsline {paragraph}{\nonumberline Use cases:}{5}
+\contentsline {paragraph}{\nonumberline Activity Diagrams:}{8}
 \contentsline {subsubsection}{\numberline {4.1.2}Non-Functional Requirements}{8}
 \contentsline {section}{\numberline {5}Analysis}{9}
 \contentsline {section}{\numberline {6}Design}{10}
