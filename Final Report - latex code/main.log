@@ -1,49 +1,66 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.12)  13 DEC 2017 22:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2016.9.4)  13 DEC 2017 17:56
 entering extended mode
 **./main.tex
 (main.tex
-LaTeX2e <2017-04-15>
-Babel <3.15> and hyphenation patterns for 75 language(s) loaded.
-("C:\Program Files\MiKTeX 2.9\tex\latex\koma-script\scrartcl.cls"
-Document Class: scrartcl 2017/09/07 v3.24 KOMA-Script document class (article)
-("C:\Program Files\MiKTeX 2.9\tex\latex\koma-script\scrkbase.sty"
-Package: scrkbase 2017/09/07 v3.24 KOMA-Script package (KOMA-Script-dependent b
+LaTeX2e <2016/03/31> patch level 3
+Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
+
+("D:\Users\Rosalie\AppData\Local\Programs\MiKTeX 2.9\tex\latex\koma-script\scra
+rtcl.cls"
+Document Class: scrartcl 2017/01/03 v3.22 KOMA-Script document class (article)
+
+("D:\Users\Rosalie\AppData\Local\Programs\MiKTeX 2.9\tex\latex\koma-script\scrk
+base.sty"
+Package: scrkbase 2017/01/03 v3.22 KOMA-Script package (KOMA-Script-dependent b
 asics and keyval usage)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\koma-script\scrbase.sty"
-Package: scrbase 2017/09/07 v3.24 KOMA-Script package (KOMA-Script-independent 
+("D:\Users\Rosalie\AppData\Local\Programs\MiKTeX 2.9\tex\latex\koma-script\scrb
+ase.sty"
+Package: scrbase 2017/01/03 v3.22 KOMA-Script package (KOMA-Script-independent 
 basics and keyval usage)
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+ ("D:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\koma-script\scrlfile.sty"
-Package: scrlfile 2017/09/07 v3.24 KOMA-Script package (loading files)
+("D:\Users\Rosalie\AppData\Local\Programs\MiKTeX 2.9\tex\latex\koma-script\scrl
+file.sty"
+Package: scrlfile 2017/01/03 v3.22 KOMA-Script package (loading files)
+
+Package scrlfile, 2017/01/03 v3.22 KOMA-Script package (loading files)
+                  Copyright (C) Markus Kohm
+
 )))
-("C:\Program Files\MiKTeX 2.9\tex\latex\koma-script\tocbasic.sty"
-Package: tocbasic 2017/09/07 v3.24 KOMA-Script package (handling toc-files)
+("D:\Users\Rosalie\AppData\Local\Programs\MiKTeX 2.9\tex\latex\koma-script\tocb
+asic.sty"
+Package: tocbasic 2017/01/03 v3.22 KOMA-Script package (handling toc-files)
 \scr@dte@tocline@numberwidth=\skip41
 \scr@dte@tocline@numbox=\box26
 )
 Package tocbasic Info: omitting babel extension for `toc'
 (tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `toc' on input line 133.
+(tocbasic)             for `toc' on input line 130.
 Package tocbasic Info: omitting babel extension for `lof'
 (tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `lof' on input line 135.
+(tocbasic)             for `lof' on input line 131.
 Package tocbasic Info: omitting babel extension for `lot'
 (tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `lot' on input line 136.
+(tocbasic)             for `lot' on input line 132.
 Class scrartcl Info: File `scrsize12pt.clo' used to setup font sizes on input l
-ine 2080.
+ine 2053.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\koma-script\scrsize12pt.clo"
-File: scrsize12pt.clo 2017/09/07 v3.24 KOMA-Script font size class option (12pt
+("D:\Users\Rosalie\AppData\Local\Programs\MiKTeX 2.9\tex\latex\koma-script\scrs
+ize12pt.clo"
+File: scrsize12pt.clo 2017/01/03 v3.22 KOMA-Script font size class option (12pt
 )
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\koma-script\typearea.sty"
-Package: typearea 2017/09/07 v3.24 KOMA-Script package (type area)
+("D:\Users\Rosalie\AppData\Local\Programs\MiKTeX 2.9\tex\latex\koma-script\type
+area.sty"
+Package: typearea 2017/01/03 v3.22 KOMA-Script package (type area)
+
+Package typearea, 2017/01/03 v3.22 KOMA-Script package (type area)
+                  Copyright (C) Frank Neukam, 1992-1994
+                  Copyright (C) Markus Kohm, 1994-
+
 \ta@bcor=\skip42
 \ta@div=\count79
 \ta@hblk=\skip43
@@ -66,7 +83,7 @@ Package typearea Info: These are the values describing the layout:
 (typearea)              \topskip        = 12.0pt
 (typearea)              \footskip       = 50.75pt
 (typearea)              \baselineskip   = 14.5pt
-(typearea)              on input line 1686.
+(typearea)              on input line 1583.
 )
 \c@part=\count80
 \c@section=\count81
@@ -80,29 +97,28 @@ Package typearea Info: These are the values describing the layout:
 \scr@dte@subsubsection@maxnumwidth=\skip50
 \scr@dte@paragraph@maxnumwidth=\skip51
 \scr@dte@subparagraph@maxnumwidth=\skip52
-LaTeX Info: Redefining \textsubscript on input line 4161.
+LaTeX Info: Redefining \textsubscript on input line 4076.
 \abovecaptionskip=\skip53
 \belowcaptionskip=\skip54
 \c@pti@nb@sid@b@x=\box27
 \c@figure=\count86
 \c@table=\count87
-Class scrartcl Info: Redefining `\numberline' on input line 5319.
+Class scrartcl Info: Redefining `\numberline' on input line 5125.
 \bibindent=\dimen102
-)
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+) ("D:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
-File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
+("D:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
+File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
-File: t1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
+("D:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
+File: t1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -314,8 +330,6 @@ File: t1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+0219 (decimal 537)
    defining Unicode char U+021A (decimal 538)
    defining Unicode char U+021B (decimal 539)
-   defining Unicode char U+0232 (decimal 562)
-   defining Unicode char U+0233 (decimal 563)
    defining Unicode char U+1E02 (decimal 7682)
    defining Unicode char U+1E03 (decimal 7683)
    defining Unicode char U+200C (decimal 8204)
@@ -336,14 +350,12 @@ File: t1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+2039 (decimal 8249)
    defining Unicode char U+203A (decimal 8250)
    defining Unicode char U+2423 (decimal 9251)
-   defining Unicode char U+1E20 (decimal 7712)
-   defining Unicode char U+1E21 (decimal 7713)
 )
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
-File: ot1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
+("D:\Program Files\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
+File: ot1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -383,8 +395,8 @@ File: ot1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
-File: omsenc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
+("D:\Program Files\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
+File: omsenc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
    defining Unicode char U+00B7 (decimal 183)
@@ -407,28 +419,21 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
-Package: babel 2017/11/03 3.15 The Babel package
+("D:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
+Package: babel 2016/04/23 3.9r The Babel package
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\switch.def"
-File: switch.def 2017/11/03 3.15 Babel switching mechanism
-)
 *************************************
 * Local config file bblopts.cfg used
 *
-("C:\Program Files\MiKTeX 2.9\tex\latex\arabi\bblopts.cfg"
+("D:\Program Files\MiKTeX 2.9\tex\latex\arabi\bblopts.cfg"
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\babel-english\english.ldf"
-Language: english 2017/06/06 v3.3r English support from the babel system
+("D:\Program Files\MiKTeX 2.9\tex\latex\babel-english\english.ldf"
+Language: english 2017/01/24 v3.3q English support from the babel system
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
-File: babel.def 2017/11/03 3.15 Babel common definitions
-
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\switch.def"
-File: switch.def 2017/11/03 3.15 Babel switching mechanism
-)
+("D:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
+File: babel.def 2016/04/23 3.9r Babel common definitions
 \babel@savecnt=\count88
 \U@D=\dimen103
 )
@@ -436,47 +441,58 @@ File: switch.def 2017/11/03 3.15 Babel switching mechanism
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\microtype.sty"
-Package: microtype 2017/07/07 v2.7 Micro-typographical refinements (RS)
+("D:\Users\Rosalie\AppData\Local\Programs\MiKTeX 2.9\tex\latex\microtype\microt
+ype.sty"
+Package: microtype 2016/05/14 v2.6a Micro-typographical refinements (RS)
 \MT@toks=\toks17
 \MT@count=\count89
-LaTeX Info: Redefining \textls on input line 789.
+LaTeX Info: Redefining \textls on input line 774.
 \MT@outer@kern=\dimen104
-LaTeX Info: Redefining \textmicrotypecontext on input line 1334.
+LaTeX Info: Redefining \textmicrotypecontext on input line 1310.
 \MT@listname@count=\count90
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\microtype-pdftex.def"
-File: microtype-pdftex.def 2017/07/07 v2.7 Definitions specific to pdftex (RS)
-LaTeX Info: Redefining \lsstyle on input line 912.
-LaTeX Info: Redefining \lslig on input line 912.
+("D:\Users\Rosalie\AppData\Local\Programs\MiKTeX 2.9\tex\latex\microtype\microt
+ype-pdftex.def"
+File: microtype-pdftex.def 2016/05/14 v2.6a Definitions specific to pdftex (RS)
+
+LaTeX Info: Redefining \lsstyle on input line 916.
+LaTeX Info: Redefining \lslig on input line 916.
 \MT@outer@space=\skip55
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\microtype.cfg"
-File: microtype.cfg 2017/07/07 v2.7 microtype main configuration file (RS)
-))
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
-Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+("D:\Users\Rosalie\AppData\Local\Programs\MiKTeX 2.9\tex\latex\microtype\microt
+ype.cfg"
+File: microtype.cfg 2016/05/14 v2.6a microtype main configuration file (RS)
+)) ("D:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
-Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+("D:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2016/10/09 v1.0u Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+("D:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
+("D:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
-File: pdftex.def 2017/06/24 v1.0g Graphics/color driver for pdftex
+("D:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
+File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
+
+("D:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+("D:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count91
 ))
 \Gin@req@height=\dimen105
 \Gin@req@width=\dimen106
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
+("D:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
 Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
 \col@sep=\dimen107
 \extrarowheight=\dimen108
@@ -484,44 +500,38 @@ Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
 \extratabsurround=\skip56
 \backup@length=\skip57
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\pdfpages\pdfpages.sty"
-Package: pdfpages 2017/10/31 v0.5l Insert pages of external PDF documents (AM)
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+("D:\Users\Rosalie\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pdfpages\pdfpage
+s.sty"
+Package: pdfpages 2017/01/14 v0.5h Insert pages of external PDF documents (AM)
+ ("D:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty"
+("D:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty"
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count91
-\calc@Bcount=\count92
+\calc@Acount=\count92
+\calc@Bcount=\count93
 \calc@Adimen=\dimen109
 \calc@Bdimen=\dimen110
 \calc@Askip=\skip58
 \calc@Bskip=\skip59
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count93
+\calc@Ccount=\count94
 \calc@Cskip=\skip60
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\eso-pic\eso-pic.sty"
+("D:\Program Files\MiKTeX 2.9\tex\latex\eso-pic\eso-pic.sty"
 Package: eso-pic 2015/07/21 v2.0g eso-pic (RN)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\atbegshi.sty"
+("D:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\atbegshi.sty"
 Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
-)
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
-)
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
-Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+("D:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
+("D:\Program Files\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\color.cfg"
+("D:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\color.cfg"
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -538,24 +548,24 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 \AM@pagewidth=\dimen111
 \AM@pageheight=\dimen112
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\pdfpages\pppdftex.def"
-File: pppdftex.def 2017/10/31 v0.5l Pdfpages driver for pdfTeX (AM)
+("D:\Users\Rosalie\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pdfpages\pppdfte
+x.def"
+File: pppdftex.def 2017/01/14 v0.5h Pdfpages driver for pdfTeX (AM)
 )
 \AM@pagebox=\box28
 \AM@global@opts=\toks19
 \AM@toc@title=\toks20
-\c@AM@survey=\count94
+\c@AM@survey=\count95
 \AM@templatesizebox=\box29
-)
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\rotating.sty"
+) ("D:\Program Files\MiKTeX 2.9\tex\latex\graphics\rotating.sty"
 Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
-\c@r@tfl@t=\count95
+\c@r@tfl@t=\count96
 \rotFPtop=\skip61
 \rotFPbot=\skip62
 \rot@float@box=\box30
 \rot@mess@toks=\toks21
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\sectsty\sectsty.sty"
+("D:\Program Files\MiKTeX 2.9\tex\latex\sectsty\sectsty.sty"
 Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading sty
 les
 )
@@ -563,28 +573,21 @@ les
 Class scrartcl Warning: Usage of package `fancyhdr' together
 (scrartcl)              with a KOMA-Script class is not recommended.
 (scrartcl)              I'd suggest to use 
-(scrartcl)              package `scrlayer' or `scrlayer-scrpage', because
-(scrartcl)              they support KOMA-Script classes.
-(scrartcl)              With `fancyhdr' several features of class `scrartcl'
-(scrartcl)              like options `headsepline', `footsepline' or command
-(scrartcl)              `\MakeMarkcase' and the commands `\setkomafont' and
-(scrartcl)              `\addtokomafont' for the page style elements need
-(scrartcl)              explicite user intervention to work.
+(scrartcl)              package `scrlayer-scrpage'.
 (scrartcl)              Nevertheless, using requested
 (scrartcl)              package `fancyhdr' on input line 51.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
-Package: fancyhdr 2017/06/30 v3.9a Extensive control of page headers and footer
-s
-\f@nch@headwidth=\skip63
-\f@nch@O@elh=\skip64
-\f@nch@O@erh=\skip65
-\f@nch@O@olh=\skip66
-\f@nch@O@orh=\skip67
-\f@nch@O@elf=\skip68
-\f@nch@O@erf=\skip69
-\f@nch@O@olf=\skip70
-\f@nch@O@orf=\skip71
+("D:\Program Files\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
+Package: fancyhdr 2016/09/06 3.8 Extensive control of page headers and footers
+\fancy@headwidth=\skip63
+\f@ncyO@elh=\skip64
+\f@ncyO@erh=\skip65
+\f@ncyO@olh=\skip66
+\f@ncyO@orh=\skip67
+\f@ncyO@elf=\skip68
+\f@ncyO@erf=\skip69
+\f@ncyO@olf=\skip70
+\f@ncyO@orf=\skip71
 ) (main.aux)
 \openout1 = `main.aux'.
 
@@ -611,89 +614,88 @@ Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-cmr.cfg"
+("D:\Users\Rosalie\AppData\Local\Programs\MiKTeX 2.9\tex\latex\microtype\mt-cmr
+.cfg"
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
-)
-("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+) ("D:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count96
+\scratchcounter=\count97
 \scratchdimen=\dimen113
 \scratchbox=\box31
-\nofMPsegments=\count97
-\nofMParguments=\count98
+\nofMPsegments=\count98
+\nofMParguments=\count99
 \everyMPshowfont=\toks22
-\MPscratchCnt=\count99
+\MPscratchCnt=\count100
 \MPscratchDim=\dimen114
-\MPnumerator=\count100
-\makeMPintoPDFobject=\count101
+\MPnumerator=\count101
+\makeMPintoPDFobject=\count102
 \everyMPtoPDFconversion=\toks23
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
-Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+) ("D:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
+Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
-Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
-
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-))
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
-
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
-
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+("D:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
-)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
-Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
+("D:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("D:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+("D:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+("D:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+("D:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+("D:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 38.
 Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 \AtBeginShipoutBox=\box32
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\pdflscape.sty"
+("D:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\pdflscape.sty"
 Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\lscape.sty"
+("D:\Program Files\MiKTeX 2.9\tex\latex\graphics\lscape.sty"
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+("D:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )) (titlepage.tex
-Package microtype Info: Loading generic protrusion settings for font family
+Package microtype Info: Loading generic settings for font family
 (microtype)             `cmss' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 <img/via_logo.png, id=1, 380.17032pt x 127.97812pt>
 File: img/via_logo.png Graphic file (type png)
-<use img/via_logo.png>
-Package pdftex.def Info: img/via_logo.png  used on input line 13. on input line
- 13.
-Package pdftex.def Info: Requested size: 266.1174pt x 89.58406pt on input line 
-13.
+ <use img/via_logo.png>
+Package pdftex.def Info: img/via_logo.png used on input line 13.
+(pdftex.def)             Requested size: 266.1174pt x 89.58406pt.
+
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <12> not available
 (Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 15.
@@ -704,11 +706,10 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <17.28> not available
 
 <img/logo.png, id=3, 461.725pt x 154.5775pt>
 File: img/logo.png Graphic file (type png)
-<use img/logo.png>
-Package pdftex.def Info: img/logo.png  used on input line 22. on input line 22.
+ <use img/logo.png>
+Package pdftex.def Info: img/logo.png used on input line 22.
+(pdftex.def)             Requested size: 346.29291pt x 115.93282pt.
 
-Package pdftex.def Info: Requested size: 346.29291pt x 115.93282pt on input lin
-e 22.
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <14.4> not available
 (Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 27.
@@ -725,8 +726,8 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <17.28> not available
 
 [-1
 
-{C:/Users/infer/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./img/via_l
-ogo.png> <./img/logo.png>])
+{C:/Users/Rosalie/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./img/via
+_logo.png> <./img/logo.png>])
 
 Class scrartcl Warning: incompatible usage of \@ssect detected.
 (scrartcl)              You've used the KOMA-Script implementation of \@ssect
@@ -743,17 +744,13 @@ Package tocbasic Info: character protrusion at toc deactivated on input line 67
 
  [0]
 File: img/logo.png Graphic file (type png)
-<use img/logo.png>
-Package pdftex.def Info: img/logo.png  used on input line 76. on input line 76.
-
-Package pdftex.def Info: Requested size: 92.34335pt x 30.91495pt on input line 
-76.
+ <use img/logo.png>
+Package pdftex.def Info: img/logo.png used on input line 76.
+(pdftex.def)             Requested size: 92.34335pt x 30.91495pt.
 File: img/via_logo.png Graphic file (type png)
-<use img/via_logo.png>
-Package pdftex.def Info: img/via_logo.png  used on input line 76. on input line
- 76.
-Package pdftex.def Info: Requested size: 76.03271pt x 25.59517pt on input line 
-76.
+ <use img/via_logo.png>
+Package pdftex.def Info: img/via_logo.png used on input line 76.
+(pdftex.def)             Requested size: 76.03271pt x 25.59517pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (20.4pt): 
@@ -763,17 +760,13 @@ Package Fancyhdr Warning: \headheight is too small (20.4pt):
 
 [1]
 File: img/logo.png Graphic file (type png)
-<use img/logo.png>
-Package pdftex.def Info: img/logo.png  used on input line 85. on input line 85.
-
-Package pdftex.def Info: Requested size: 92.34335pt x 30.91495pt on input line 
-85.
+ <use img/logo.png>
+Package pdftex.def Info: img/logo.png used on input line 85.
+(pdftex.def)             Requested size: 92.34335pt x 30.91495pt.
 File: img/via_logo.png Graphic file (type png)
-<use img/via_logo.png>
-Package pdftex.def Info: img/via_logo.png  used on input line 85. on input line
- 85.
-Package pdftex.def Info: Requested size: 76.03271pt x 25.59517pt on input line 
-85.
+ <use img/via_logo.png>
+Package pdftex.def Info: img/via_logo.png used on input line 85.
+(pdftex.def)             Requested size: 76.03271pt x 25.59517pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (20.4pt): 
@@ -808,16 +801,13 @@ Overfull \hbox (6.67067pt too wide) in paragraph at lines 124--158
 
 File: img/logo.png Graphic file (type png)
 <use img/logo.png>
-Package pdftex.def Info: img/logo.png  used on input line 160. on input line 16
-0.
-Package pdftex.def Info: Requested size: 92.34335pt x 30.91495pt on input line 
-160.
+Package pdftex.def Info: img/logo.png used on input line 160.
+(pdftex.def)             Requested size: 92.34335pt x 30.91495pt.
 File: img/via_logo.png Graphic file (type png)
-<use img/via_logo.png>
-Package pdftex.def Info: img/via_logo.png  used on input line 160. on input lin
-e 160.
-Package pdftex.def Info: Requested size: 76.03271pt x 25.59517pt on input line 
-160.
+ <use img/via_logo.png>
+Package pdftex.def Info: img/via_logo.png used on input line 160.
+(pdftex.def)             Requested size: 76.03271pt x 25.59517pt.
+
 
 Package Fancyhdr Warning: \headheight is too small (20.4pt): 
  Make it at least 35.26498pt.
@@ -826,17 +816,13 @@ Package Fancyhdr Warning: \headheight is too small (20.4pt):
 
 [3]
 File: img/logo.png Graphic file (type png)
-<use img/logo.png>
-Package pdftex.def Info: img/logo.png  used on input line 160. on input line 16
-0.
-Package pdftex.def Info: Requested size: 92.34335pt x 30.91495pt on input line 
-160.
+ <use img/logo.png>
+Package pdftex.def Info: img/logo.png used on input line 160.
+(pdftex.def)             Requested size: 92.34335pt x 30.91495pt.
 File: img/via_logo.png Graphic file (type png)
-<use img/via_logo.png>
-Package pdftex.def Info: img/via_logo.png  used on input line 160. on input lin
-e 160.
-Package pdftex.def Info: Requested size: 76.03271pt x 25.59517pt on input line 
-160.
+ <use img/via_logo.png>
+Package pdftex.def Info: img/via_logo.png used on input line 160.
+(pdftex.def)             Requested size: 76.03271pt x 25.59517pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (20.4pt): 
@@ -844,47 +830,40 @@ Package Fancyhdr Warning: \headheight is too small (20.4pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[4]
-<img/enter_application.png, id=33, 497.60907pt x 436.63126pt>
+[4] <img/enter_application.png, id=33, 497.60907pt x 436.63126pt>
 File: img/enter_application.png Graphic file (type png)
+
 <use img/enter_application.png>
-Package pdftex.def Info: img/enter_application.png  used on input line 172. on 
-input line 172.
-Package pdftex.def Info: Requested size: 373.20589pt x 327.47264pt on input lin
-e 172.
+Package pdftex.def Info: img/enter_application.png used on input line 172.
+(pdftex.def)             Requested size: 373.20589pt x 327.47264pt.
+
 <img/send_message.png, id=34, 481.8pt x 405.76593pt>
 File: img/send_message.png Graphic file (type png)
+
 <use img/send_message.png>
-Package pdftex.def Info: img/send_message.png  used on input line 178. on input
- line 178.
-Package pdftex.def Info: Requested size: 337.25769pt x 284.03421pt on input lin
-e 178.
+Package pdftex.def Info: img/send_message.png used on input line 178.
+(pdftex.def)             Requested size: 337.25769pt x 284.03421pt.
+
 <img/leave_review.png, id=35, 490.08093pt x 446.41782pt>
 File: img/leave_review.png Graphic file (type png)
+
 <use img/leave_review.png>
-Package pdftex.def Info: img/leave_review.png  used on input line 184. on input
- line 184.
-Package pdftex.def Info: Requested size: 343.05432pt x 312.49033pt on input lin
-e 184.
-<img/shop.png, id=36, 500.62032pt x 434.37282pt>
+Package pdftex.def Info: img/leave_review.png used on input line 184.
+(pdftex.def)             Requested size: 343.05432pt x 312.49033pt.
+ <img/shop.png, id=36, 500.62032pt x 434.37282pt>
 File: img/shop.png Graphic file (type png)
+
 <use img/shop.png>
-Package pdftex.def Info: img/shop.png  used on input line 190. on input line 19
-0.
-Package pdftex.def Info: Requested size: 375.46431pt x 325.77881pt on input lin
-e 190.
+Package pdftex.def Info: img/shop.png used on input line 190.
+(pdftex.def)             Requested size: 375.46431pt x 325.77881pt.
 File: img/logo.png Graphic file (type png)
-<use img/logo.png>
-Package pdftex.def Info: img/logo.png  used on input line 197. on input line 19
-7.
-Package pdftex.def Info: Requested size: 92.34335pt x 30.91495pt on input line 
-197.
+ <use img/logo.png>
+Package pdftex.def Info: img/logo.png used on input line 197.
+(pdftex.def)             Requested size: 92.34335pt x 30.91495pt.
 File: img/via_logo.png Graphic file (type png)
-<use img/via_logo.png>
-Package pdftex.def Info: img/via_logo.png  used on input line 197. on input lin
-e 197.
-Package pdftex.def Info: Requested size: 76.03271pt x 25.59517pt on input line 
-197.
+ <use img/via_logo.png>
+Package pdftex.def Info: img/via_logo.png used on input line 197.
+(pdftex.def)             Requested size: 76.03271pt x 25.59517pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (20.4pt): 
@@ -894,17 +873,13 @@ Package Fancyhdr Warning: \headheight is too small (20.4pt):
 
 [5 <./img/enter_application.png>]
 File: img/logo.png Graphic file (type png)
-<use img/logo.png>
-Package pdftex.def Info: img/logo.png  used on input line 197. on input line 19
-7.
-Package pdftex.def Info: Requested size: 92.34335pt x 30.91495pt on input line 
-197.
+ <use img/logo.png>
+Package pdftex.def Info: img/logo.png used on input line 197.
+(pdftex.def)             Requested size: 92.34335pt x 30.91495pt.
 File: img/via_logo.png Graphic file (type png)
-<use img/via_logo.png>
-Package pdftex.def Info: img/via_logo.png  used on input line 197. on input lin
-e 197.
-Package pdftex.def Info: Requested size: 76.03271pt x 25.59517pt on input line 
-197.
+ <use img/via_logo.png>
+Package pdftex.def Info: img/via_logo.png used on input line 197.
+(pdftex.def)             Requested size: 76.03271pt x 25.59517pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (20.4pt): 
@@ -914,17 +889,14 @@ Package Fancyhdr Warning: \headheight is too small (20.4pt):
 
 [6 <./img/send_message.png> <./img/leave_review.png>]
 File: img/logo.png Graphic file (type png)
-<use img/logo.png>
-Package pdftex.def Info: img/logo.png  used on input line 197. on input line 19
-7.
-Package pdftex.def Info: Requested size: 92.34335pt x 30.91495pt on input line 
-197.
+ <use img/logo.png>
+Package pdftex.def Info: img/logo.png used on input line 197.
+(pdftex.def)             Requested size: 92.34335pt x 30.91495pt.
 File: img/via_logo.png Graphic file (type png)
+
 <use img/via_logo.png>
-Package pdftex.def Info: img/via_logo.png  used on input line 197. on input lin
-e 197.
-Package pdftex.def Info: Requested size: 76.03271pt x 25.59517pt on input line 
-197.
+Package pdftex.def Info: img/via_logo.png used on input line 197.
+(pdftex.def)             Requested size: 76.03271pt x 25.59517pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (20.4pt): 
@@ -932,26 +904,20 @@ Package Fancyhdr Warning: \headheight is too small (20.4pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[7 <./img/shop.png>]
-<img/act_login.png, id=50, 466.74374pt x 524.71031pt>
+[7 <./img/shop.png>] <img/act_login.png, id=50, 466.74374pt x 523.9575pt>
 File: img/act_login.png Graphic file (type png)
+
 <use img/act_login.png>
-Package pdftex.def Info: img/act_login.png  used on input line 201. on input li
-ne 201.
-Package pdftex.def Info: Requested size: 466.7426pt x 524.70901pt on input line
- 201.
+Package pdftex.def Info: img/act_login.png used on input line 201.
+(pdftex.def)             Requested size: 466.7426pt x 523.95622pt.
 File: img/logo.png Graphic file (type png)
-<use img/logo.png>
-Package pdftex.def Info: img/logo.png  used on input line 212. on input line 21
-2.
-Package pdftex.def Info: Requested size: 92.34335pt x 30.91495pt on input line 
-212.
+ <use img/logo.png>
+Package pdftex.def Info: img/logo.png used on input line 204.
+(pdftex.def)             Requested size: 92.34335pt x 30.91495pt.
 File: img/via_logo.png Graphic file (type png)
-<use img/via_logo.png>
-Package pdftex.def Info: img/via_logo.png  used on input line 212. on input lin
-e 212.
-Package pdftex.def Info: Requested size: 76.03271pt x 25.59517pt on input line 
-212.
+ <use img/via_logo.png>
+Package pdftex.def Info: img/via_logo.png used on input line 204.
+(pdftex.def)             Requested size: 76.03271pt x 25.59517pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (20.4pt): 
@@ -960,97 +926,67 @@ Package Fancyhdr Warning: \headheight is too small (20.4pt):
  This may cause the page layout to be inconsistent, however.
 
 [8 <./img/act_login.png>]
-File: img/logo.png Graphic file (type png)
-<use img/logo.png>
-Package pdftex.def Info: img/logo.png  used on input line 218. on input line 21
-8.
-Package pdftex.def Info: Requested size: 92.34335pt x 30.91495pt on input line 
-218.
-File: img/via_logo.png Graphic file (type png)
-<use img/via_logo.png>
-Package pdftex.def Info: img/via_logo.png  used on input line 218. on input lin
-e 218.
-Package pdftex.def Info: Requested size: 76.03271pt x 25.59517pt on input line 
-218.
+<img/act_navigation.png, id=55, 520.94624pt x 618.81187pt>
+File: img/act_navigation.png Graphic file (type png)
 
+<use img/act_navigation.png>
+Package pdftex.def Info: img/act_navigation.png used on input line 208.
+(pdftex.def)             Requested size: 520.94498pt x 618.81036pt.
 
-Package Fancyhdr Warning: \headheight is too small (20.4pt): 
- Make it at least 35.26498pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[9]
-<img/adapterpattern.png, id=58, 920.43875pt x 321.2pt>
-File: img/adapterpattern.png Graphic file (type png)
-<use img/adapterpattern.png>
-Package pdftex.def Info: img/adapterpattern.png  used on input line 227. on inp
-ut line 227.
-Package pdftex.def Info: Requested size: 460.21825pt x 160.59961pt on input lin
-e 227.
-
-Underfull \hbox (badness 10000) in paragraph at lines 231--232
-
- []
-
-File: img/logo.png Graphic file (type png)
-<use img/logo.png>
-Package pdftex.def Info: img/logo.png  used on input line 237. on input line 23
-7.
-Package pdftex.def Info: Requested size: 92.34335pt x 30.91495pt on input line 
-237.
-File: img/via_logo.png Graphic file (type png)
-<use img/via_logo.png>
-Package pdftex.def Info: img/via_logo.png  used on input line 237. on input lin
-e 237.
-Package pdftex.def Info: Requested size: 76.03271pt x 25.59517pt on input line 
-237.
-
-Package Fancyhdr Warning: \headheight is too small (20.4pt): 
- Make it at least 35.26498pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[10 <./img/adapterpattern.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 240--242
-
- []
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 243.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 243.
-
-Underfull \hbox (badness 10000) in paragraph at lines 274--275
-
- []
-
-<img/class_diagram.png, id=63, 848.4197pt x 578.16pt>
-File: img/class_diagram.png Graphic file (type png)
-<use img/class_diagram.png>
-Package pdftex.def Info: img/class_diagram.png  used on input line 281. on inpu
-t line 281.
-Package pdftex.def Info: Requested size: 509.05576pt x 346.89867pt on input lin
-e 281.
-
-Overfull \hbox (39.58524pt too wide) in paragraph at lines 281--282
+Overfull \hbox (51.47446pt too wide) in paragraph at lines 208--209
  [] 
  []
 
 File: img/logo.png Graphic file (type png)
 <use img/logo.png>
-Package pdftex.def Info: img/logo.png  used on input line 283. on input line 28
-3.
-Package pdftex.def Info: Requested size: 92.34335pt x 30.91495pt on input line 
-283.
+Package pdftex.def Info: img/logo.png used on input line 213.
+(pdftex.def)             Requested size: 92.34335pt x 30.91495pt.
 File: img/via_logo.png Graphic file (type png)
+ <use img/via_logo.png>
+Package pdftex.def Info: img/via_logo.png used on input line 213.
+(pdftex.def)             Requested size: 76.03271pt x 25.59517pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (20.4pt): 
+ Make it at least 35.26498pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[9 <./img/act_navigation.png>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 217.
+
+
+("D:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 217.
+File: img/logo.png Graphic file (type png)
+ <use img/logo.png>
+Package pdftex.def Info: img/logo.png used on input line 229.
+(pdftex.def)             Requested size: 92.34335pt x 30.91495pt.
+File: img/via_logo.png Graphic file (type png)
+
 <use img/via_logo.png>
-Package pdftex.def Info: img/via_logo.png  used on input line 283. on input lin
-e 283.
-Package pdftex.def Info: Requested size: 76.03271pt x 25.59517pt on input line 
-283.
+Package pdftex.def Info: img/via_logo.png used on input line 229.
+(pdftex.def)             Requested size: 76.03271pt x 25.59517pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (20.4pt): 
+ Make it at least 35.26498pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[10]
+File: img/logo.png Graphic file (type png)
+ <use img/logo.png>
+Package pdftex.def Info: img/logo.png used on input line 235.
+(pdftex.def)             Requested size: 92.34335pt x 30.91495pt.
+File: img/via_logo.png Graphic file (type png)
+ <use img/via_logo.png>
+Package pdftex.def Info: img/via_logo.png used on input line 235.
+(pdftex.def)             Requested size: 76.03271pt x 25.59517pt.
+
 
 Package Fancyhdr Warning: \headheight is too small (20.4pt): 
  Make it at least 35.26498pt.
@@ -1058,22 +994,14 @@ Package Fancyhdr Warning: \headheight is too small (20.4pt):
  This may cause the page layout to be inconsistent, however.
 
 [11]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 285.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 285.
 File: img/logo.png Graphic file (type png)
-<use img/logo.png>
-Package pdftex.def Info: img/logo.png  used on input line 290. on input line 29
-0.
-Package pdftex.def Info: Requested size: 92.34335pt x 30.91495pt on input line 
-290.
+ <use img/logo.png>
+Package pdftex.def Info: img/logo.png used on input line 244.
+(pdftex.def)             Requested size: 92.34335pt x 30.91495pt.
 File: img/via_logo.png Graphic file (type png)
-<use img/via_logo.png>
-Package pdftex.def Info: img/via_logo.png  used on input line 290. on input lin
-e 290.
-Package pdftex.def Info: Requested size: 76.03271pt x 25.59517pt on input line 
-290.
+ <use img/via_logo.png>
+Package pdftex.def Info: img/via_logo.png used on input line 244.
+(pdftex.def)             Requested size: 76.03271pt x 25.59517pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (20.4pt): 
@@ -1081,26 +1009,15 @@ Package Fancyhdr Warning: \headheight is too small (20.4pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[12 <./img/class_diagram.png>]
-<img/activity.png, id=76, 1156.32pt x 599.23875pt>
-File: img/activity.png Graphic file (type png)
-<use img/activity.png>
-Package pdftex.def Info: img/activity.png  used on input line 295. on input lin
-e 295.
-Package pdftex.def Info: Requested size: 578.15858pt x 299.61864pt on input lin
-e 295.
+[12]
 File: img/logo.png Graphic file (type png)
-<use img/logo.png>
-Package pdftex.def Info: img/logo.png  used on input line 304. on input line 30
-4.
-Package pdftex.def Info: Requested size: 92.34335pt x 30.91495pt on input line 
-304.
+ <use img/logo.png>
+Package pdftex.def Info: img/logo.png used on input line 251.
+(pdftex.def)             Requested size: 92.34335pt x 30.91495pt.
 File: img/via_logo.png Graphic file (type png)
-<use img/via_logo.png>
-Package pdftex.def Info: img/via_logo.png  used on input line 304. on input lin
-e 304.
-Package pdftex.def Info: Requested size: 76.03271pt x 25.59517pt on input line 
-304.
+ <use img/via_logo.png>
+Package pdftex.def Info: img/via_logo.png used on input line 251.
+(pdftex.def)             Requested size: 76.03271pt x 25.59517pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (20.4pt): 
@@ -1108,19 +1025,15 @@ Package Fancyhdr Warning: \headheight is too small (20.4pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[13 <./img/activity.png>]
+[13]
 File: img/logo.png Graphic file (type png)
-<use img/logo.png>
-Package pdftex.def Info: img/logo.png  used on input line 311. on input line 31
-1.
-Package pdftex.def Info: Requested size: 92.34335pt x 30.91495pt on input line 
-311.
+ <use img/logo.png>
+Package pdftex.def Info: img/logo.png used on input line 260.
+(pdftex.def)             Requested size: 92.34335pt x 30.91495pt.
 File: img/via_logo.png Graphic file (type png)
-<use img/via_logo.png>
-Package pdftex.def Info: img/via_logo.png  used on input line 311. on input lin
-e 311.
-Package pdftex.def Info: Requested size: 76.03271pt x 25.59517pt on input line 
-311.
+ <use img/via_logo.png>
+Package pdftex.def Info: img/via_logo.png used on input line 260.
+(pdftex.def)             Requested size: 76.03271pt x 25.59517pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (20.4pt): 
@@ -1130,17 +1043,13 @@ Package Fancyhdr Warning: \headheight is too small (20.4pt):
 
 [14]
 File: img/logo.png Graphic file (type png)
-<use img/logo.png>
-Package pdftex.def Info: img/logo.png  used on input line 320. on input line 32
-0.
-Package pdftex.def Info: Requested size: 92.34335pt x 30.91495pt on input line 
-320.
+ <use img/logo.png>
+Package pdftex.def Info: img/logo.png used on input line 267.
+(pdftex.def)             Requested size: 92.34335pt x 30.91495pt.
 File: img/via_logo.png Graphic file (type png)
-<use img/via_logo.png>
-Package pdftex.def Info: img/via_logo.png  used on input line 320. on input lin
-e 320.
-Package pdftex.def Info: Requested size: 76.03271pt x 25.59517pt on input line 
-320.
+ <use img/via_logo.png>
+Package pdftex.def Info: img/via_logo.png used on input line 267.
+(pdftex.def)             Requested size: 76.03271pt x 25.59517pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (20.4pt): 
@@ -1150,17 +1059,13 @@ Package Fancyhdr Warning: \headheight is too small (20.4pt):
 
 [15]
 File: img/logo.png Graphic file (type png)
-<use img/logo.png>
-Package pdftex.def Info: img/logo.png  used on input line 327. on input line 32
-7.
-Package pdftex.def Info: Requested size: 92.34335pt x 30.91495pt on input line 
-327.
+ <use img/logo.png>
+Package pdftex.def Info: img/logo.png used on input line 276.
+(pdftex.def)             Requested size: 92.34335pt x 30.91495pt.
 File: img/via_logo.png Graphic file (type png)
-<use img/via_logo.png>
-Package pdftex.def Info: img/via_logo.png  used on input line 327. on input lin
-e 327.
-Package pdftex.def Info: Requested size: 76.03271pt x 25.59517pt on input line 
-327.
+ <use img/via_logo.png>
+Package pdftex.def Info: img/via_logo.png used on input line 276.
+(pdftex.def)             Requested size: 76.03271pt x 25.59517pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (20.4pt): 
@@ -1168,49 +1073,27 @@ Package Fancyhdr Warning: \headheight is too small (20.4pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[16]
-File: img/logo.png Graphic file (type png)
-<use img/logo.png>
-Package pdftex.def Info: img/logo.png  used on input line 336. on input line 33
-6.
-Package pdftex.def Info: Requested size: 92.34335pt x 30.91495pt on input line 
-336.
-File: img/via_logo.png Graphic file (type png)
-<use img/via_logo.png>
-Package pdftex.def Info: img/via_logo.png  used on input line 336. on input lin
-e 336.
-Package pdftex.def Info: Requested size: 76.03271pt x 25.59517pt on input line 
-336.
-
-
-Package Fancyhdr Warning: \headheight is too small (20.4pt): 
- Make it at least 35.26498pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[17] (main.aux) ) 
+[16] (main.aux) ) 
 Here is how much of TeX's memory you used:
- 7644 strings out of 493312
- 123385 string characters out of 3138898
- 326041 words of memory out of 3000000
- 10976 multiletter control sequences out of 15000+200000
- 13612 words of font info for 81 fonts, out of 3000000 for 9000
+ 7529 strings out of 493334
+ 121845 string characters out of 3129357
+ 323553 words of memory out of 3000000
+ 10865 multiletter control sequences out of 15000+200000
+ 13167 words of font info for 72 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 51i,16n,51p,8844b,346s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-bx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmss17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmssi17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy1
-0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (19 pages, 466891 bytes).
+ 49i,16n,51p,8844b,326s stack positions out of 5000i,500n,10000p,200000b,50000s
+<D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+bx12.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pf
+b><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb><D:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss17.pfb><D:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><D:/Program Files/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmssi17.pfb><D:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmsy10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmti12.pfb>
+Output written on main.pdf (18 pages, 364217 bytes).
 PDF statistics:
- 132 PDF objects out of 1000 (max. 8388607)
+ 112 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 23603 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 20521 words of extra memory for PDF output out of 20736 (max. 10000000)
 
