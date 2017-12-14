@@ -57,9 +57,10 @@ public class AddingReviewActivity extends NavigationDrawerActivity {
             FirebaseDatabase.getInstance().getReference().child("Reviews").child(key).setValue(review);
             FirebaseDatabase.getInstance().getReference().child("User/"+receivingUser+"/reviews").child(key).setValue(key);
 
-            Intent returnback = new Intent(this,ProfileActivity.class);
-            Toast.makeText(getApplicationContext(),"review added", Toast.LENGTH_LONG).show();
-            startActivity(returnback);
+            //Intent returnback = new Intent(this,ProfileActivity.class);
+            Toast.makeText(getApplicationContext(),R.string.review_added, Toast.LENGTH_LONG).show();
+            finish();
+
 
         }
     }

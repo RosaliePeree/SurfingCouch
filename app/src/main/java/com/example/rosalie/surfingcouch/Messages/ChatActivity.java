@@ -58,7 +58,6 @@ public class ChatActivity extends NavigationDrawerActivity {
         sendButton = (ImageView) findViewById(R.id.sendButton);
         sendText = (EditText) findViewById(R.id.messageArea);
 
-        fab.setVisibility(View.GONE);
 
         Intent intent = getIntent();
         chatName = intent.getStringExtra("chatName");
@@ -102,17 +101,16 @@ public class ChatActivity extends NavigationDrawerActivity {
                 }
             }
         });
+
+
     }
 
     private void showAllOldMessages() {
-        loggedInUserName = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        Log.d("Main", "user id: " + loggedInUserName);
 
         ListAdapter adapter = new MessageAdapter(this, Message.class, R.layout.item_message_sender, FirebaseDatabase.getInstance().getReference().getRoot().child("Conversation/" + chatName +"/listOfMessages"));
 
         listView.setAdapter(adapter);
     }
-
 
 
 }

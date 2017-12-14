@@ -101,9 +101,9 @@ public class ShopActivity extends NavigationDrawerActivity {
             TextView textView = (TextView)v.findViewById(R.id.list_rewards_text);
             ImageView imageView = (ImageView)v.findViewById(R.id.list_rewards_image);
             if(rewardsArrayList.get(position).isAvailability()) {
-                textView.setText(rewardsArrayList.get(position).getName() + " (" + rewardsArrayList.get(position).getCost() + " points)\n Is available");
+                textView.setText(getString(R.string.reward_available,rewardsArrayList.get(position).getName() ,rewardsArrayList.get(position).getCost()));
             }else{
-                textView.setText(rewardsArrayList.get(position).getName() + " (" + rewardsArrayList.get(position).getCost() + " points)\n Is not available");
+                textView.setText(getString(R.string.reward_notavailable,rewardsArrayList.get(position).getName() ,rewardsArrayList.get(position).getCost()));
             }
             imageView.setImageResource(R.mipmap.ic_gift);
             if(rewardsArrayList.get(position).isAvailability() == false) {

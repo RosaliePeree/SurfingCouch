@@ -1,17 +1,11 @@
 package com.example.rosalie.surfingcouch;
 
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.content.IntentCompat;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -23,7 +17,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.rosalie.surfingcouch.Bookings.AddBookingActivity;
+import com.example.rosalie.surfingcouch.Bookings.TripActivity;
 import com.example.rosalie.surfingcouch.Database.User;
 import com.example.rosalie.surfingcouch.Messages.MessagesActivity;
 import com.example.rosalie.surfingcouch.Shop.*;
@@ -41,7 +35,6 @@ public class NavigationDrawerActivity extends AppCompatActivity
     protected Toolbar toolbar;
     protected static DatabaseReference mReference;
     protected static User mCurrentUser;
-    protected FloatingActionButton fab;
 
     public static SharedPreferences getSharedPreferences(Context ctxt) {
         return ctxt.getSharedPreferences("FILE", 0);
@@ -55,17 +48,6 @@ public class NavigationDrawerActivity extends AppCompatActivity
         toolbar.setTitle("");
 
         setSupportActionBar(toolbar);
-
-        fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
-        fab.setVisibility(View.GONE);
 
         drawer = findViewById(R.id.drawer_layout);
 
@@ -143,7 +125,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
             Intent intent = new Intent(this,SettingsActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_log_ut) {
-            Toast.makeText(getApplicationContext(),"Logging out", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),R.string.logging_out, Toast.LENGTH_LONG).show();
             FirebaseAuth.getInstance().signOut();
             Intent intent = new Intent (NavigationDrawerActivity.this, MainActivity.class);
             ComponentName cn = intent.getComponent();
@@ -166,7 +148,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
                     TextView label = findViewById(R.id.navdraw_number_points_label);
                     label.setText(use.getUsername());
                     TextView points = findViewById(R.id.navdraw_number_points);
-                    points.setText("Points: " + use.getNumberOfPoints());
+                    points.setText(getString(R.string.pointy_points, use.getNumberOfPoints()));
                 }
             }
 

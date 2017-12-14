@@ -34,7 +34,6 @@ public class CheckConversationActivity extends AppCompatActivity {
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
         DatabaseReference ref = reference.child("User/"+ FirebaseAuth.getInstance().getCurrentUser().getUid()+"/conversations");
         DatabaseReference ref2 = reference.child("User/" + getIntent().getExtras().getString("userID")  +"/conversations" );
-        //DatabaseReference ref3 = reference.child("Conversation");
 
         Intent intent = getIntent();
 
@@ -47,10 +46,11 @@ public class CheckConversationActivity extends AppCompatActivity {
             {
                 for (String conv : currentUser.getConversations().values()) {
                     for (String conv2 : displayedUser.getConversations().values()) {
-                        if (Objects.equals(conv, conv2) && !Objects.equals(conv, "undefined")) {
+                        if (Objects.equals(conv, conv2) && !Objects.equals(conv, "General Chat")) {
 
                             intent.putExtra("chatName", conv2);
                             startActivity(intent);
+                            finish();
                             break loop;
                         }
                     }
@@ -60,6 +60,7 @@ public class CheckConversationActivity extends AppCompatActivity {
                 ref2.child(currentUser.getUsername() + " - " + displayedUser.getUsername()).setValue(currentUser.getUsername() + " - " + displayedUser.getUsername());
                 intent.putExtra("chatName", currentUser.getUsername() + " - " + displayedUser.getUsername());
                 startActivity(intent);
+                finish();
             }
 
         }else {
@@ -67,6 +68,7 @@ public class CheckConversationActivity extends AppCompatActivity {
             ref2.child(currentUser.getUsername() + " - " + displayedUser.getUsername()).setValue(currentUser.getUsername() + " - " + displayedUser.getUsername());
             intent.putExtra("chatName", currentUser.getUsername() + " - " + displayedUser.getUsername() );
             startActivity(intent);
+            finish();
         }
 
 

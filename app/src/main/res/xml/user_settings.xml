@@ -28,6 +28,7 @@
             android:summary="Location"
             android:key="location"
             android:defaultValue=" "
+            android:editable="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </PreferenceCategory>
@@ -43,14 +44,17 @@
             android:summaryOff="@string/settings_notification_push_not_activated"
             android:key="push_notification"
             android:clickable="false"
+            android:focusable="false"
             android:defaultValue="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <SwitchPreference
             android:title="@string/settings_notification_email"
             android:summaryOn="@string/settings_notification_email_activated"
-            android:summaryOff="@string/settings_notification_email_not_activated"
+            android:summaryOff="@string/not_implemented"
             android:key="email_notification"
+            android:clickable="false"
+            android:enabled="false"
             android:defaultValue="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />

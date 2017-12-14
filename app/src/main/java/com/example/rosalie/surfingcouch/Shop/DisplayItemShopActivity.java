@@ -6,28 +6,20 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.media.RingtoneManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.example.rosalie.surfingcouch.AcceptBookingActivity;
-import com.example.rosalie.surfingcouch.Database.Booking;
-import com.example.rosalie.surfingcouch.Database.Reviews;
 import com.example.rosalie.surfingcouch.Database.Rewards;
 import com.example.rosalie.surfingcouch.NavigationDrawerActivity;
 import com.example.rosalie.surfingcouch.ProfileActivity;
 import com.example.rosalie.surfingcouch.R;
-import com.example.rosalie.surfingcouch.RefuseBookingActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
 
 public class DisplayItemShopActivity extends NavigationDrawerActivity {
     private Rewards mCurrentReward;
@@ -93,14 +85,14 @@ public class DisplayItemShopActivity extends NavigationDrawerActivity {
 
         int flag = Notification.FLAG_AUTO_CANCEL;
 
-        Intent intent = new Intent(this, ProfileActivity.class);
+        Intent intent = new Intent(this, DisplayRewardActivity.class);
         // use System.currentTimeMillis() to have a unique ID for the pending intent
         PendingIntent pIntent = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), intent, PendingIntent.FLAG_CANCEL_CURRENT);
         // build notification
         // the addAction re-use the same intent to keep the example short
         Notification n  = new Notification.Builder(this)
-                .setContentTitle("Purchase confirmed")
-                .setContentText(mCurrentReward.getName() + " has successfully be bought from the application for " + mCurrentReward.getCost() + " points. It will be sent to you very soon")
+                .setContentTitle(getString(R.string.item_buy))
+                .setContentText(getString(R.string.notif_buy))
                 .setSmallIcon(R.drawable.ic_done)
                 .setAutoCancel(true)
                 .addAction(R.drawable.ic_done,"Thanks for your trust",pIntent).setAutoCancel(true)
@@ -110,6 +102,6 @@ public class DisplayItemShopActivity extends NavigationDrawerActivity {
         NotificationManager notificationManager =
                 (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
-        notificationManager.notify(0, n);
+        notificationManager.notify(1, n);
     }
 }

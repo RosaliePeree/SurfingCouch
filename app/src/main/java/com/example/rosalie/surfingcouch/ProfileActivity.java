@@ -3,15 +3,10 @@ package com.example.rosalie.surfingcouch;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Notification;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.media.RingtoneManager;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.TaskStackBuilder;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,12 +19,13 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.rosalie.surfingcouch.Bookings.AcceptBookingActivity;
+import com.example.rosalie.surfingcouch.Bookings.RefuseBookingActivity;
 import com.example.rosalie.surfingcouch.Database.Booking;
 import com.example.rosalie.surfingcouch.Database.HostingPlace;
 import com.example.rosalie.surfingcouch.Database.Reviews;
 import com.example.rosalie.surfingcouch.Database.Service;
 import com.example.rosalie.surfingcouch.Database.User;
-import com.example.rosalie.surfingcouch.Messages.ChatActivity;
 import com.example.rosalie.surfingcouch.Messages.CheckConversationActivity;
 import com.example.rosalie.surfingcouch.Places.AddHostingPlaceActivity;
 import com.example.rosalie.surfingcouch.Places.DisplayPlaceActivity;
@@ -222,7 +218,7 @@ public class ProfileActivity extends NavigationDrawerActivity {
         gender.setText(user.getGender());
         Button button = findViewById(R.id.profile_button);
         if (displayedUser == mCurrentUser || displayedUser.getId().equals(mCurrentUser.getId())) {
-            button.setText("Add place");
+            button.setText(R.string.add_a_place);
             checkingForNotif();
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -256,7 +252,7 @@ public class ProfileActivity extends NavigationDrawerActivity {
 
                 }
             });
-            button.setText("Send a message");
+            button.setText(R.string.send_a_message);
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -294,9 +290,7 @@ public class ProfileActivity extends NavigationDrawerActivity {
             String servicesProvided = "";
             for(Service service : placeArrayList.get(position).getListService())
                 servicesProvided += service.getName() + " ";
-            textView.setText("Property name: " + placeArrayList.get(position).getPlacename() + " " +
-                    "(can host " + placeArrayList.get(position).getNumberOfPossiblePeople() + "people) \n" +
-                    "Services provided: " +  servicesProvided);
+            textView.setText(getString(R.string.hostplace, placeArrayList.get(position).getPlacename(),placeArrayList.get(position).getNumberOfPossiblePeople(),servicesProvided ));
             return v;
         }
     }
@@ -322,8 +316,7 @@ public class ProfileActivity extends NavigationDrawerActivity {
             LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             v = inflater.inflate(R.layout.list_view_reviews, parent, false);
             TextView textView = v.findViewById(R.id.list_reviews_text);
-            textView.setText("Grade: " + reviewsArrayList.get(position).getGrade() + " \n " +
-                    "Message title: " +  reviewsArrayList.get(position).getTitle());
+            textView.setText(getString(R.string.reviewlul, reviewsArrayList.get(position).getGrade(), reviewsArrayList.get(position).getTitle()));
             return v;
         }
     }
@@ -382,12 +375,12 @@ public class ProfileActivity extends NavigationDrawerActivity {
 // build notification
 // the addAction re-use the same intent to keep the example short
         Notification n  = new Notification.Builder(this)
-                .setContentTitle("New booking request")
-                .setContentText(placename + " has a request to be booked on the " + date + " for " + value + " coins")
+                .setContentTitle(getString(R.string.notif_name))
+                .setContentText(getString(R.string.notif_value,placename,date,value))
                 .setSmallIcon(R.drawable.ic_valise)
                 .setAutoCancel(true)
-                .addAction(R.drawable.ic_done, "Accept", pIntent1).setAutoCancel(true)
-                .addAction(R.drawable.ic_cross, "Refuse", pIntent2).setAutoCancel(true)
+                .addAction(R.drawable.ic_done, getString(R.string.notif_accept), pIntent1).setAutoCancel(true)
+                .addAction(R.drawable.ic_cross, getString(R.string.notif_refuse), pIntent2).setAutoCancel(true)
                 .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)).build();
         n.flags = flag;
 

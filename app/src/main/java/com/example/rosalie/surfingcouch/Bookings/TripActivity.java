@@ -1,4 +1,4 @@
-package com.example.rosalie.surfingcouch;
+package com.example.rosalie.surfingcouch.Bookings;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,6 +16,8 @@ import android.widget.Toast;
 
 import com.example.rosalie.surfingcouch.Bookings.BookingDisplayActivity;
 import com.example.rosalie.surfingcouch.Database.Booking;
+import com.example.rosalie.surfingcouch.NavigationDrawerActivity;
+import com.example.rosalie.surfingcouch.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

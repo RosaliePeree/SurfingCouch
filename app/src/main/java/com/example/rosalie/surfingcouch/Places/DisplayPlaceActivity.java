@@ -62,10 +62,13 @@ public class DisplayPlaceActivity extends NavigationDrawerActivity {
                     HostingPlace place = child.getValue(HostingPlace.class);
                     if (value.equals(place.getPlaceID())) {
                         mCurrentPlace = place;
-                        for(Service serv : mCurrentPlace.getListService())
+                        for(Service serv : mCurrentPlace.getListService()) {
                             mServiceList.add(serv);
+                            displayPlace(place);
+                        }
+
                     }
-                    displayPlace(place);
+
                 }
                 DisplayPlaceActivity.ServicesAdapter myAdapter = new DisplayPlaceActivity.ServicesAdapter(getApplicationContext(), R.layout.list_view_services, mServiceList);
                 mServiceListView.setAdapter(myAdapter);
@@ -87,7 +90,7 @@ public class DisplayPlaceActivity extends NavigationDrawerActivity {
         TextView location = findViewById(R.id.place_location);
         location.setText(place.getLocation());
         TextView numberPeople = findViewById(R.id.place_number_people);
-        numberPeople.setText(place.getNumberOfPossiblePeople() + "");
+        numberPeople.setText(String.valueOf(place.getNumberOfPossiblePeople()));
     }
 
     class ServicesAdapter extends ArrayAdapter<Service> {

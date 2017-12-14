@@ -28,12 +28,14 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "MainActivity";
     private TextView mStatusTextView;
     private EditText mEmailField;
     private EditText mPasswordField;
+    private EditText mConfirmPasswordField;
     private EditText mUsernameField;
     private RadioGroup mGenderField;
     private Place mPlaceField;
@@ -49,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mStatusTextView = findViewById(R.id.status);
         mEmailField = findViewById(R.id.field_email);
         mPasswordField = findViewById(R.id.field_password);
+        mConfirmPasswordField = findViewById(R.id.confirm_password);
         mUsernameField = findViewById(R.id.field_username);
         mGenderField = findViewById(R.id.field_gender);
 
@@ -59,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.verify_email_button).setOnClickListener(this);
         findViewById(R.id.save_data_new_user).setOnClickListener(this);
         findViewById(R.id.updateIU_button).setOnClickListener(this);
+        findViewById(R.id.return_back).setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -68,13 +72,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
             public void onPlaceSelected(Place place) {
-                Log.i(TAG, "Place: " + place.getName());
+                Log.i(TAG, getString(R.string.place_name, place));
                 mPlaceField = place;
             }
 
             @Override
             public void onError(Status status) {
-                Log.i(TAG, "An error occurred: " + status);
+                Log.i(TAG, getString(R.string.error, status));
             }
         });
     }
@@ -101,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void showProgressDialog() {
         if (mProgressDialog == null) {
             mProgressDialog = new ProgressDialog(this);
-            mProgressDialog.setMessage("loading");
+            mProgressDialog.setMessage(getString(R.string.loading_main));
             mProgressDialog.setIndeterminate(true);
         }
 
@@ -115,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void createAccount(String email, String password) {
-        Log.d(TAG, "createAccount:" + email);
+        Log.d(TAG, getString(R.string.account_created, email));
         if (!validateForm()) {
             return;
         }
@@ -130,11 +134,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             saveNewUser(mUsernameField.getText().toString(), mEmailField.getText().toString(), mGenderField.getCheckedRadioButtonId(), mPlaceField.getName().toString());
-                            Toast.makeText(getApplicationContext(), "createUserWithEmail:success", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), R.string.account_created_success, Toast.LENGTH_SHORT).show();
 
                         } else {
                             // If sign in fails, display a message to the user.
-                            Toast.makeText(getApplicationContext(), "signInWithEmail:failure" + task.getException(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), getString(R.string.account_created_fail, task.getException()), Toast.LENGTH_SHORT).show();
                             updateUI(null);
                         }
 
@@ -159,11 +163,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(),R.string.account_connection_success , Toast.LENGTH_SHORT).show();
                             updateUI(mAuth.getCurrentUser());
                         } else {
                             // If sign in fails, display a message to the user.
-                            Toast.makeText(getApplicationContext(), "failure" + task.getException(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), getString(R.string.account_connection_fail, task.getException()), Toast.LENGTH_SHORT).show();
                             updateUI(null);
                         }
 
@@ -199,12 +203,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                         if (task.isSuccessful()) {
                             Toast.makeText(getApplicationContext(),
-                                    "Verification email sent to " + user.getEmail(),
+                                    getString(R.string.email_verif_send, user.getEmail()),
                                     Toast.LENGTH_SHORT).show();
                         } else {
                             Log.e(TAG, "sendEmailVerification", task.getException());
                             Toast.makeText(getApplicationContext(),
-                                    "Failed to send verification email.",
+                                    R.string.email_send_fail,
                                     Toast.LENGTH_SHORT).show();
                         }
 
@@ -218,7 +222,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         String email = mEmailField.getText().toString();
         if (TextUtils.isEmpty(email)) {
-            mEmailField.setError("Required.");
+            mEmailField.setError(getString(R.string.required));
             valid = false;
         } else {
             mEmailField.setError(null);
@@ -226,7 +230,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         String password = mPasswordField.getText().toString();
         if (TextUtils.isEmpty(password)) {
-            mPasswordField.setError("Required.");
+            mPasswordField.setError(getString(R.string.required));
+            Toast.makeText(getApplicationContext(),"Not the same password", Toast.LENGTH_SHORT).show();
             valid = false;
         } else {
             mPasswordField.setError(null);
@@ -242,11 +247,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mStatusTextView.setText(getString(R.string.emailpassword_status_fmt,
                         user.getEmail(), user.isEmailVerified()));
 
-                mStatusTextView.setText(user.getEmail() + " - Please verify your email to continue");
+                mStatusTextView.setText(getString(R.string.verif_email,user.getEmail()));
 
                 findViewById(R.id.email_password_buttons).setVisibility(View.GONE);
                 findViewById(R.id.email_password_fields).setVisibility(View.GONE);
                 findViewById(R.id.signed_in_buttons).setVisibility(View.VISIBLE);
+                findViewById(R.id.welcome_layout).setVisibility(View.GONE);
                 findViewById(R.id.create_account_update_data).setVisibility(View.GONE);
 
                 findViewById(R.id.verify_email_button).setEnabled(!user.isEmailVerified());
@@ -259,15 +265,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             findViewById(R.id.email_password_buttons).setVisibility(View.VISIBLE);
             findViewById(R.id.email_password_fields).setVisibility(View.VISIBLE);
+            findViewById(R.id.welcome_layout).setVisibility(View.VISIBLE);
             findViewById(R.id.signed_in_buttons).setVisibility(View.GONE);
+            findViewById(R.id.create_account_update_data).setVisibility(View.GONE);
         }
     }
 
     @Override
     public void onClick(View v) {
         int i = v.getId();
+        String password = mPasswordField.getText().toString();
+        String confirmPassword = mConfirmPasswordField.getText().toString();
         if (i == R.id.email_create_account_button) {
-            displayCreateAccount();
+            if (mEmailField.getText().toString().trim().length() == 0 || mPasswordField.getText().toString().trim().length() == 0) {
+                Toast.makeText(getApplicationContext(), R.string.fill_field, Toast.LENGTH_SHORT).show();
+            } else {
+                displayCreateAccount();
+            }
         } else if (i == R.id.email_sign_in_button) {
             signIn(mEmailField.getText().toString(), mPasswordField.getText().toString());
         } else if (i == R.id.sign_out_button) {
@@ -276,11 +290,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             sendEmailVerification();
             //Intent intent = new Intent(this, ProfileActivity.class); // Debug purpose
             //startActivity(intent);
+        } else if (i == R.id.return_back) {
+            updateUI(null);
         } else if (i == R.id.save_data_new_user) {
             if (mUsernameField.getText().toString().trim().length() == 0
                     || mGenderField.getCheckedRadioButtonId() == -1
-                    || mPlaceField.getName().toString().trim().length() == 0)
-                Toast.makeText(getApplicationContext(), "Please fill in all the fields", Toast.LENGTH_SHORT).show();
+                    || mPlaceField == null
+                    || mPlaceField.getName().toString().trim().length() == 0
+                    || mConfirmPasswordField.getText().toString().trim().length() == 0
+                    || !Objects.equals(password, confirmPassword))
+                Toast.makeText(getApplicationContext(), R.string.fill_field, Toast.LENGTH_SHORT).show();
             else
                 createAccount(mEmailField.getText().toString(), mPasswordField.getText().toString());
         } else if (i == R.id.updateIU_button) {
@@ -290,6 +309,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 findViewById(R.id.updateIU_button).setEnabled(false);
                 Intent intent = new Intent(this, ProfileActivity.class);
                 startActivity(intent);
+
+
             } else {
                 Toast.makeText(this, mAuth.getCurrentUser().getEmail() + " _ " + mAuth.getCurrentUser().isEmailVerified(), Toast.LENGTH_SHORT).show();
             }
@@ -301,6 +322,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.email_password_fields).setVisibility(View.GONE);
         findViewById(R.id.signed_in_buttons).setVisibility(View.GONE);
         findViewById(R.id.create_account_update_data).setVisibility(View.VISIBLE);
+        findViewById(R.id.welcome_layout).setVisibility(View.GONE);
     }
 
     public void saveNewUser(String username, String email, int radiobuttonId, String placeName) {

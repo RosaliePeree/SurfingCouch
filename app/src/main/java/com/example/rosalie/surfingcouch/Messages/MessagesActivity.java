@@ -43,7 +43,6 @@ public class MessagesActivity extends NavigationDrawerActivity {
         user = new User();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
         DatabaseReference ref = reference.child("User/"+FirebaseAuth.getInstance().getCurrentUser().getUid());
-        //FirebaseDatabase.getInstance().getReference().keepSynced(true); <- This cache all of the database so not good
 
             ref.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
@@ -54,7 +53,7 @@ public class MessagesActivity extends NavigationDrawerActivity {
                         Toast.makeText(getApplicationContext(), R.string.message_empty, Toast.LENGTH_SHORT).show();
 
                     } else {
-                            allChats.clear();
+                                allChats.clear();
                         for (String value : user.getConversations().values()) {
                             allChats.add(value); //This also add in adapter at the same time
                             listOfChats.setAdapter(adapter);

@@ -58,6 +58,8 @@ public class ListOfUsersActivity extends NavigationDrawerActivity {
         int clearButtonId = com.google.android.gms.R.id.place_autocomplete_clear_button;
         View mClearAutoCompleteButton = AutoCompleteFragmentView.findViewById(clearButtonId);
 
+        autocompleteFragment.setHint(getString(R.string.search_city));
+
         mClearAutoCompleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,7 +75,7 @@ public class ListOfUsersActivity extends NavigationDrawerActivity {
         autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
             public void onPlaceSelected(Place place) {
-                Log.i(TAG, "Place: " + place.getName());
+                Log.i(TAG, getString(R.string.place_name,place.getName()));
                 placeChoice = place.getName().toString();
                 filter();
 
@@ -82,7 +84,7 @@ public class ListOfUsersActivity extends NavigationDrawerActivity {
 
             @Override
             public void onError(Status status) {
-                Log.i(TAG, "An error occurred: " + status);
+                Log.i(TAG, getString(R.string.error, status));
             }
         });
 
@@ -149,7 +151,7 @@ public class ListOfUsersActivity extends NavigationDrawerActivity {
             v = inflater.inflate(R.layout.list_view_users, null);
             TextView textView = (TextView) v.findViewById(R.id.list_user_item_text);
             ImageView imageView = (ImageView) v.findViewById(R.id.list_user_item_image);
-            textView.setText(userArrayList.get(position).getUsername() + " (" + userArrayList.get(position).getComefrom() + ")");
+            textView.setText(getString(R.string.get_user, userArrayList.get(position).getUsername(), userArrayList.get(position).getComefrom()));
             imageView.setImageResource(R.mipmap.profile_user_image);
             return v;
         }

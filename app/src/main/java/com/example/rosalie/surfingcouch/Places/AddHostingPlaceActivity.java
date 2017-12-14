@@ -57,13 +57,13 @@ public class AddHostingPlaceActivity extends NavigationDrawerActivity {
         autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
             public void onPlaceSelected(Place place) {
-                Log.i(TAG, "Place: " + place.getName());
+                Log.i(TAG, getString(R.string.place_name,place.getName()));
                 mPlaceField = place;
             }
 
             @Override
             public void onError(Status status) {
-                Log.i(TAG, "An error occurred: " + status);
+                Log.i(TAG,  getString(R.string.error, status));
             }
         });
     }
@@ -87,33 +87,15 @@ public class AddHostingPlaceActivity extends NavigationDrawerActivity {
                 services.add(new Service("Laundry", 50));
             }
             String currentUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
-/*
-            DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
-            DatabaseReference cineIndustryRef = rootRef.child("cineIndustry").push();
-            String key = cineIndustryRef.getKey();
-            Map<String, Object> map = new HashMap<>();
-            map.put(key, "Hollywood");
-//and os on
-            cineIndustryRef.updateChildren(map);*/
 
-            //FirebaseDatabase.getInstance().getReference().child("HostingPlace").child(key).setValue(new HostingPlace( services, mPlaceField.getName().toString(),Integer.parseInt(numberOfPeople.getText().toString()), placenameText.getText().toString(), currentUser));
-            //FirebaseDatabase.getInstance().getReference().child("User/"+currentUser+"/places").push().setValue(key);
-
-
-
-            //HashMap<String, HostingPlace> hostToAdd = new HashMap<String,HostingPlace>();
-            //hostToAdd.put(placenameText.getText().toString(),place);
-            //HashMap<String, String> hostKeyToAdd = new HashMap<String,String>();
-            //HostKeyToAdd.put(placenameText.getText().toString(), placenameText.getText().toString());
 
             String key = FirebaseDatabase.getInstance().getReference().push().getKey();
             HostingPlace place = new HostingPlace( services, mPlaceField.getName().toString(),Integer.parseInt(numberOfPeople.getText().toString()), placenameText.getText().toString(), currentUser, key );
             FirebaseDatabase.getInstance().getReference().child("HostingPlace").child(key).setValue(place);
             FirebaseDatabase.getInstance().getReference().child("User/"+currentUser+"/places").child(key).setValue(placenameText.getText().toString());
 
-            Intent intent = new Intent(this,ProfileActivity.class);
-            Toast.makeText(getApplicationContext(),"Place added", Toast.LENGTH_LONG).show();
-            startActivity(intent);
+            Toast.makeText(getApplicationContext(),R.string.place_added, Toast.LENGTH_LONG).show();
+            finish();
 
         }
     }

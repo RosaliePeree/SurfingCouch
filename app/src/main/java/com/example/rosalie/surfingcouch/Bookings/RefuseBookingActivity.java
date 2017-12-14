@@ -1,4 +1,4 @@
-package com.example.rosalie.surfingcouch;
+package com.example.rosalie.surfingcouch.Bookings;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.rosalie.surfingcouch.Database.Booking;
+import com.example.rosalie.surfingcouch.NavigationDrawerActivity;
+import com.example.rosalie.surfingcouch.R;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class RefuseBookingActivity extends NavigationDrawerActivity {

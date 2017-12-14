@@ -1,8 +1,10 @@
 package com.example.rosalie.surfingcouch.Bookings;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
@@ -31,7 +33,11 @@ public class AddBookingActivity extends NavigationDrawerActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_booking);
+        LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        //inflate your activity layout here!
+        View contentView = inflater.inflate(R.layout.activity_add_booking, null, false);
+        drawer.addView(contentView, 0);
 
         calendar = (CalendarView) findViewById(R.id.calendarView);
         laundryService = (CheckBox) findViewById(R.id.checkBoxLaundryBooking);
@@ -103,9 +109,9 @@ public class AddBookingActivity extends NavigationDrawerActivity {
                 FirebaseDatabase.getInstance().getReference().child("HostingPlace/"+ choosedPlace +"/booking").child(key).setValue(key);
                 FirebaseDatabase.getInstance().getReference().child("User/" + currentUser +"/booking").child(key).setValue(key);
 
-                Intent intent = new Intent(this,ProfileActivity.class);
-                Toast.makeText(getApplicationContext(),"Booking added, waiting for confirmation", Toast.LENGTH_LONG).show();
-                startActivity(intent);
+                //Intent intent = new Intent(this,ProfileActivity.class);
+                Toast.makeText(getApplicationContext(),R.string.awaiting_confirmation, Toast.LENGTH_LONG).show();
+                finish();
 
             }
         }

@@ -1,5 +1,6 @@
-package com.example.rosalie.surfingcouch;
+package com.example.rosalie.surfingcouch.Shop;
 
+import android.app.NotificationManager;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +11,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.example.rosalie.surfingcouch.NavigationDrawerActivity;
+import com.example.rosalie.surfingcouch.R;
 
 import java.util.ArrayList;
 
@@ -37,6 +41,11 @@ public class DisplayRewardActivity extends NavigationDrawerActivity {
         }else{
             Toast.makeText(getApplicationContext(), R.string.no_reward, Toast.LENGTH_SHORT).show();
         }
+
+        NotificationManager notificationManager =
+                (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
+        notificationManager.cancel(1);
 
 
 

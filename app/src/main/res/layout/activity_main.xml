@@ -8,11 +8,13 @@
     android:weightSum="5">
 
     <LinearLayout
+        android:id="@+id/welcome_layout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="visible">
 
         <ImageView
             android:id="@+id/icon"
@@ -33,14 +35,107 @@
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"/>
 
+
     </LinearLayout>
 
+
+    <RelativeLayout
+        android:id="@+id/create_account_update_data"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#e1e1e1"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/confirm_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="203dp"
+            android:layout_weight="1"
+            android:hint="@string/confirm_password"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/field_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/confirm_password"
+            android:layout_weight="1"
+            android:hint="@string/main_username"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/text_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/field_username"
+            android:text="@string/main_enter_city" />
+
+        <fragment
+            android:id="@+id/place_autocomplete_fragment"
+            android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_city"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/text_gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/main_enter_gender"
+            android:layout_below="@+id/place_autocomplete_fragment"/>
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/field_gender"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/text_gender"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/gender_male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/main_male" />
+
+            <RadioButton
+                android:id="@+id/gender_female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/main_female" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/save_data_new_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/field_gender"
+            android:layout_weight="1"
+            android:text="@string/main_save" />
+
+        <Button
+            android:id="@+id/return_back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/save_data_new_user"
+            android:layout_weight="1"
+            android:text="@string/return_back" />
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
         android:background="#e1e1e1"
+        android:visibility="visible"
         android:gravity="center_vertical">
 
         <LinearLayout
@@ -130,66 +225,6 @@
                     android:layout_weight="1.0"
                     android:text="@string/main_re_send_email" />
             </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/create_account_update_data"
-            android:orientation="vertical"
-            android:visibility="gone"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp">
-
-            <EditText
-                android:id="@+id/field_username"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="@string/main_username"
-                android:inputType="text" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/text_city"
-                android:text="@string/main_enter_city"/>
-
-            <fragment
-                android:id="@+id/place_autocomplete_fragment"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
-                />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/text_gender"
-                android:text="@string/main_enter_gender"/>
-
-            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/field_gender"
-                android:orientation="horizontal">
-                <RadioButton android:id="@+id/gender_male"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/main_male"/>
-                <RadioButton android:id="@+id/gender_female"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/main_female"/>
-            </RadioGroup>
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/save_data_new_user"
-                android:layout_weight="1"
-                android:text="@string/main_save"/>
         </LinearLayout>
 
     </RelativeLayout>

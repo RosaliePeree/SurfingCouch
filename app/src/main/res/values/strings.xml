@@ -9,7 +9,18 @@
 
     <string name="emailpassword_status_fmt">Email User: %1$s (verified: %2$b)</string>
     <string name="firebase_status_fmt">Firebase User: %s</string>
-
+    <string name="logging_out">Logging out</string>
+    <string name="pointy_points">Points : %d</string>
+    <string name="my_bookings">My bookings</string>
+    <string name="see_your_rewards">See your rewards</string>
+    <string name="go_to_shop">Go to the shop</string>
+    <string name="communicate">Communicate</string>
+    <string name="messages">Messages</string>
+    <string name="all_user">All users</string>
+    <string name="my_account">My Account</string>
+    <string name="settings">Settings</string>
+    <string name="my_profile">My Profile</string>
+    <string name="log_out">Log Out</string>
 
     <!-- MAIN SCREEN STRINGS -->
     <string name="main_connection_menu">CONNECTION MENU</string>
@@ -27,6 +38,19 @@
     <string name="main_male">Male</string>
     <string name="main_female">Female</string>
     <string name="main_save">Save</string>
+    <string name="loading_main">Loading</string>
+    <string name="account_created">Account created with the address : %s</string>
+    <string name="account_created_success">Account created with success</string>
+    <string name="account_created_fail">Account creation failed : %s</string>
+    <string name="account_connection_success">Account connected with success</string>
+    <string name="account_connection_fail">Account connection failed : %s</string>
+    <string name="email_verif_send"> "Verification email sent to %s</string>
+    <string name="email_send_fail"> "Verification email failed to send</string>
+    <string name="required">Required.</string>
+    <string name="verif_email">%s : Please verify your email to continue</string>
+    <string name="fill_field">Please fill all of the fields</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="return_back"> Return</string>
 
     <!-- SETTINGS SCREEN STRINGS -->
     <string name="action_settings">Settings</string>
@@ -42,6 +66,7 @@
     <string name="settings_title_account">Account</string>
     <string name="settings_title_notifications">Notification settings</string>
     <string name="main_failed">failed</string>
+    <string name="not_implemented">Currently not implemented</string>
 
     <!-- PROFILE SCREEN STRINGS -->
     <string name="profile_username_label">Username:</string>
@@ -52,8 +77,16 @@
     <string name="profile_gender">Gender</string>
     <string name="profile_score_label">Score:</string>
     <string name="profile_reviews_label">Reviews:</string>
-    <string name="profile_places_label">Places:</string>
-
+    <string name="profile_places_label">Hosting Place:</string>
+    <string name="send_a_message">Send a message</string>
+    <string name="add_a_review">Add a review</string>
+    <string name="add_a_place">Add a Place</string>
+    <string name="hostplace"> Property name: %s can host %d person(s) \n Services provided: %s </string>
+    <string name="reviewlul">Grade: %d \n Message title: %s</string>
+    <string name="notif_name">New booking request</string>
+    <string name="notif_value"> %s : Booking on the %s for %d coins</string>
+    <string name="notif_accept"> Accept </string>
+    <string name="notif_refuse"> Decline </string>
     <!-- PLACE SCREEN STRINGS -->
     <string name="place_place_name_label">Place name:</string>
     <string name="place_place_name">Place name</string>
@@ -112,12 +145,14 @@
     <string name="add_hosting_place_service2"> Sleeping</string>
     <string name="add_hosting_place_service3"> Laundry</string>
     <string name="add_hosting_place_servicetext"> Choose which services can be provided by this place (You need at least one)</string>
-    <string name="add_hosting_place_numberppltext"> How much people maximum can stay at the same time ?</string>
+    <string name="add_hosting_place_numberppltext"> How many people maximum can stay at the same time ?</string>
     <string name="add_hosting_place_empty"> Please fill out the form correctly </string>
     <string name="add_hosting_place_pplhint"> Number of people…</string>
     <string name="add_hosting_place_send">Add Hosting Place</string>
     <string name="enter_placename">Enter a name for your place</string>
     <string name="input_placename">Place name…</string>
+    <string name="place_name"> Place : %s</string>
+    <string name="place_added"> Place Added</string>
 
     <!-- ADD REVIEW STRINGS -->
 
@@ -126,6 +161,7 @@
     <string name="review_text"> Review :</string>
     <string name="review_textcontent"> Enter a Review…</string>
     <string name="review_send"> SEND REVIEW</string>
+    <string name="review_added"> Review Added</string>
 
     <!-- ADD BOOKING STRINGS -->
 
@@ -142,8 +178,37 @@
 
     <!-- TRIP STRINGS -->
     <string name="trip_list"> List of your bookings :</string>
-
+    <string name="one_booking">Date %s Place : %s</string>
+    <string name="no_booking">No booking to display</string>
 
     <string name="calendar"> Pick a correct date please</string>
     <string name="reward_list">Your rewards : </string>
+
+    <!-- ADD BOOKING ACTIVITY STRINGS -->
+
+    <string name="awaiting_confirmation"> Booking added, waiting for confirmation </string>
+
+
+    <!-- REWARD DISPLAY ACTIVITY STRINGS -->
+
+    <string name="no_reward"> No reward to display</string>
+
+    <!-- ACCEPTED ACTIVITY STRINGS -->
+    <string name="accepted_booking">Thanks you for accepting \n You won %d points for the booking of your place</string>
+
+    <!-- REFUSED ACTIVITY STRINGS -->
+    <string name="refused_booking"> "You refused the booking :'("</string>
+
+    <!-- LIST OF USER ACTIVITY STINGS -->
+    <string name="get_user">%s (%s)</string>
+    <string name="search_city">Search for a city</string>
+
+    <!-- SHOP ACTIVITY STRINGS -->
+    <string name="reward_available"> %s (%d points)\n  available" </string>
+    <string name="reward_notavailable"> %s (%d points)\n  Not available" </string>
+    <string name="item_buy">Purchase confirmed</string>
+    <string name="notif_buy"> %s has successfully be bought from the application.</string>
+
+
+    <string name="error"> An error has occurred : %s</string>
 </resources>
