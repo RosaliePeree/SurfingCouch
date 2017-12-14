@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <EditTextPreference
+        <Preference
             android:title="@string/setting_location"
             android:summary="Location"
             android:key="location"

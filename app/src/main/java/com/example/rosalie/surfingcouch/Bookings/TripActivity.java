@@ -59,7 +59,7 @@ public class TripActivity extends NavigationDrawerActivity {
                         Log.d("bookingList", child.toString());
                     }
                 }
-                if(listBooking == null){
+                if(listBooking.size() == 0 || listBooking == null){
                     Toast.makeText(getApplicationContext(),R.string.no_booking, Toast.LENGTH_SHORT).show();
                 }
                 ListAdapter myAdapter = new BookingAdapter(getApplicationContext(), R.layout.list_view_users, listBooking);
