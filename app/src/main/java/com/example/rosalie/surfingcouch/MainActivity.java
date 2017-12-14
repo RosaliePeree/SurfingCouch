@@ -231,7 +231,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String password = mPasswordField.getText().toString();
         if (TextUtils.isEmpty(password)) {
             mPasswordField.setError(getString(R.string.required));
-            Toast.makeText(getApplicationContext(),"Not the same password", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),R.string.not_same, Toast.LENGTH_SHORT).show();
             valid = false;
         } else {
             mPasswordField.setError(null);
@@ -252,7 +252,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 findViewById(R.id.email_password_buttons).setVisibility(View.GONE);
                 findViewById(R.id.email_password_fields).setVisibility(View.GONE);
                 findViewById(R.id.signed_in_buttons).setVisibility(View.VISIBLE);
-                findViewById(R.id.welcome_layout).setVisibility(View.GONE);
+                findViewById(R.id.welcome_layout).setVisibility(View.VISIBLE);
                 findViewById(R.id.create_account_update_data).setVisibility(View.GONE);
 
                 findViewById(R.id.verify_email_button).setEnabled(!user.isEmailVerified());
@@ -305,7 +305,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (i == R.id.updateIU_button) {
             mAuth.getCurrentUser().reload();
             if (mAuth.getCurrentUser().isEmailVerified()) {
-                Toast.makeText(this, "test", Toast.LENGTH_SHORT).show();
                 findViewById(R.id.updateIU_button).setEnabled(false);
                 Intent intent = new Intent(this, ProfileActivity.class);
                 startActivity(intent);
