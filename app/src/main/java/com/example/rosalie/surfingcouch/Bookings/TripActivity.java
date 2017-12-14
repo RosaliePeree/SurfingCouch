@@ -58,7 +58,7 @@ public class TripActivity extends NavigationDrawerActivity {
                     }
                 }
                 if(listBooking == null){
-                    Toast.makeText(getApplicationContext(),"No booking to display", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),R.string.no_booking, Toast.LENGTH_SHORT).show();
                 }
                 ListAdapter myAdapter = new BookingAdapter(getApplicationContext(), R.layout.list_view_users, listBooking);
                 bookingList.setAdapter(myAdapter);
@@ -103,7 +103,7 @@ public class TripActivity extends NavigationDrawerActivity {
                     LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                     v = inflater.inflate(R.layout.list_view_booking, null);
                     TextView text = (TextView) v.findViewById(R.id.list_booking_text);
-                    text.setText("Date :" + bookingArrayList.get(position).getDate() + " Place :" + bookingArrayList.get(position).getPlace());
+                    text.setText(getString(R.string.one_booking, bookingArrayList.get(position).getDate(), bookingArrayList.get(position).getPlace()));
                     return v;
                 }
             }

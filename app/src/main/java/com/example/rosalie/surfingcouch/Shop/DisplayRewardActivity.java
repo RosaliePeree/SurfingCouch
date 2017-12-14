@@ -35,7 +35,7 @@ public class DisplayRewardActivity extends NavigationDrawerActivity {
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, rewardList);
             rewardListView.setAdapter(adapter);
         }else{
-            Toast.makeText(getApplicationContext(), "No reward to display", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), R.string.no_reward, Toast.LENGTH_SHORT).show();
         }
 
 

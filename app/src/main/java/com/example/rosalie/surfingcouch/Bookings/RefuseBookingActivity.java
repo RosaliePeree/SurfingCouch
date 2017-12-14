@@ -30,7 +30,7 @@ public class RefuseBookingActivity extends NavigationDrawerActivity {
         Bundle b = getIntent().getExtras();
 
 
-        textThanks.setText("You refused the booking :'(");
+        textThanks.setText(R.string.refused_booking);
 
 
         book = (Booking) b.getSerializable("booking");

@@ -30,7 +30,7 @@ public class AcceptBookingActivity extends NavigationDrawerActivity {
         Bundle b = getIntent().getExtras();
 
 
-        textThanks.setText("Thanks you for accepting \n You won " + b.getInt("value") + " points for the booking of your place");
+        textThanks.setText(getString(R.string.accepted_booking, b.getInt("value")));
 
 
         book = (Booking) b.getSerializable("booking");
