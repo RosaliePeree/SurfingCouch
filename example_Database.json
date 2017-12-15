@@ -1,0 +1,243 @@
+{
+  "Booking" : {
+    "-L0MgGhcpY4OaDh5MkoK" : {
+      "bookingEffectued" : false,
+      "date" : "22/12/2017",
+      "id" : "-L0MgGhcpY4OaDh5MkoK",
+      "place" : "SĂBĂ CITY 🏙 TOWERS ",
+      "placeID" : "-L0L7Cql_rFaiB6H2chi",
+      "userIDbooking" : "oFAd53TKsGViflWT7jsX6UolseD3",
+      "userIDreceiving" : "CWZTellunXYBAAUHBubP0QEwdPZ2"
+    },
+    "-L0Mh9d5eBfGywe1IkhC" : {
+      "bookingEffectued" : true,
+      "date" : "22/12/2017",
+      "id" : "-L0Mh9d5eBfGywe1IkhC",
+      "place" : "house",
+      "placeID" : "-L0Mh09ja1cRHZhV7iXj",
+      "userIDbooking" : "PHZVzY1YTsMyi65CbQtQKEbLkXj1",
+      "userIDreceiving" : "oFAd53TKsGViflWT7jsX6UolseD3"
+    }
+  },
+  "Conversation" : {
+    "Bernard - Gregorio" : {
+      "listOfMessages" : {
+        "-L0MgoA3XRQztK2ajb_7" : {
+          "senderID" : "PHZVzY1YTsMyi65CbQtQKEbLkXj1",
+          "senderName" : "Bernard",
+          "text" : "Hello",
+          "timeStamp" : "15/12/2017 - 02:04"
+        },
+        "-L0MhBqhZxrY-cB3GbBV" : {
+          "senderID" : "PHZVzY1YTsMyi65CbQtQKEbLkXj1",
+          "senderName" : "Bernard",
+          "text" : "Nice house",
+          "timeStamp" : "15/12/2017 - 02:05"
+        }
+      }
+    },
+    "General Chat" : {
+      "listOfMessages" : {
+        "-L0MgBhfCtSfGAdB1Anb" : {
+          "senderID" : "oFAd53TKsGViflWT7jsX6UolseD3",
+          "senderName" : "Gregorio",
+          "text" : "Poof",
+          "timeStamp" : "15/12/2017 - 02:01"
+        },
+        "-L0MhEGPmePPBkHjYMKF" : {
+          "senderID" : "PHZVzY1YTsMyi65CbQtQKEbLkXj1",
+          "senderName" : "Bernard",
+          "text" : "Paf",
+          "timeStamp" : "15/12/2017 - 02:06"
+        }
+      }
+    },
+    "Leo ♌  - Gregorio" : {
+      "listOfMessages" : {
+        "-L0L7wyvH6f1g5gFtN0W" : {
+          "senderID" : "CWZTellunXYBAAUHBubP0QEwdPZ2",
+          "senderName" : "Leo ♌ ",
+          "text" : "Hey. Do you have a place for me to do the 3 S? ",
+          "timeStamp" : "14/12/2017 - 18:47"
+        },
+        "-L0L85MZrZtP1QQ4ziqS" : {
+          "senderID" : "oFAd53TKsGViflWT7jsX6UolseD3",
+          "senderName" : "Gregorio",
+          "text" : "What is the 3 S ?",
+          "timeStamp" : "14/12/2017 - 18:48"
+        },
+        "-L0L8Ek7kfb_sulz5f_Y" : {
+          "senderID" : "oFAd53TKsGViflWT7jsX6UolseD3",
+          "senderName" : "Gregorio",
+          "text" : "😅",
+          "timeStamp" : "14/12/2017 - 18:49"
+        }
+      }
+    }
+  },
+  "HostingPlace" : {
+    "-L0L7Cql_rFaiB6H2chi" : {
+      "booking" : {
+        "-L0MgGhcpY4OaDh5MkoK" : "-L0MgGhcpY4OaDh5MkoK"
+      },
+      "listService" : [ {
+        "name" : "Shower",
+        "value" : 50
+      }, {
+        "name" : "Laundry",
+        "value" : 50
+      } ],
+      "location" : "Săbăoani",
+      "numberOfPossiblePeople" : 12,
+      "placeID" : "-L0L7Cql_rFaiB6H2chi",
+      "placename" : "SĂBĂ CITY 🏙 TOWERS ",
+      "userID" : "CWZTellunXYBAAUHBubP0QEwdPZ2"
+    },
+    "-L0L9HHuN_GEhJienqcQ" : {
+      "listService" : [ {
+        "name" : "Sleep",
+        "value" : 200
+      } ],
+      "location" : "Bedford",
+      "numberOfPossiblePeople" : 8,
+      "placeID" : "-L0L9HHuN_GEhJienqcQ",
+      "placename" : "Gucci Mamma ",
+      "userID" : "CWZTellunXYBAAUHBubP0QEwdPZ2"
+    },
+    "-L0Mh09ja1cRHZhV7iXj" : {
+      "booking" : {
+        "-L0Mh9d5eBfGywe1IkhC" : "-L0Mh9d5eBfGywe1IkhC"
+      },
+      "listService" : [ {
+        "name" : "Shower",
+        "value" : 50
+      }, {
+        "name" : "Sleep",
+        "value" : 200
+      }, {
+        "name" : "Laundry",
+        "value" : 50
+      } ],
+      "location" : "Roanne",
+      "numberOfPossiblePeople" : 2,
+      "placeID" : "-L0Mh09ja1cRHZhV7iXj",
+      "placename" : "house",
+      "userID" : "oFAd53TKsGViflWT7jsX6UolseD3"
+    }
+  },
+  "Reviews" : {
+    "-L0MgNnensj1kDi-O61u" : {
+      "content" : "so dank",
+      "grade" : 4,
+      "id" : "-L0MgNnensj1kDi-O61u",
+      "name" : "Gregorio",
+      "posterID" : "oFAd53TKsGViflWT7jsX6UolseD3",
+      "receivingID" : "CWZTellunXYBAAUHBubP0QEwdPZ2",
+      "title" : "nice memes"
+    }
+  },
+  "Rewards" : {
+    "reward1" : {
+      "availability" : true,
+      "cost" : 500,
+      "id" : 0,
+      "name" : "Huge bag"
+    },
+    "reward2" : {
+      "availability" : true,
+      "cost" : 50,
+      "id" : 1,
+      "name" : "bar of soap"
+    },
+    "reward3" : {
+      "availability" : true,
+      "cost" : 1500,
+      "id" : 2,
+      "name" : "Tent"
+    },
+    "reward4" : {
+      "availability" : false,
+      "cost" : 250,
+      "id" : 3,
+      "name" : "cat"
+    },
+    "reward5" : {
+      "availability" : true,
+      "cost" : 25,
+      "id" : 4,
+      "name" : "Bag of quinoa"
+    }
+  },
+  "User" : {
+    "CWZTellunXYBAAUHBubP0QEwdPZ2" : {
+      "comefrom" : "Săbăoani",
+      "conversations" : {
+        "General Chat" : "General Chat",
+        "Leo ♌  - Gregorio" : "Leo ♌  - Gregorio"
+      },
+      "email" : "leoburca@gmail.com",
+      "gender" : "Male",
+      "id" : "CWZTellunXYBAAUHBubP0QEwdPZ2",
+      "numberOfPoints" : 0,
+      "places" : {
+        "-L0L7Cql_rFaiB6H2chi" : "SĂBĂ CITY 🏙 TOWERS ",
+        "-L0L9HHuN_GEhJienqcQ" : "Gucci Mamma ",
+        "undefined" : "undefined"
+      },
+      "reviews" : {
+        "-L0MgNnensj1kDi-O61u" : "-L0MgNnensj1kDi-O61u",
+        "undefined" : "undefined"
+      },
+      "username" : "Leo ♌ "
+    },
+    "PHZVzY1YTsMyi65CbQtQKEbLkXj1" : {
+      "booking" : {
+        "-L0Mh9d5eBfGywe1IkhC" : "-L0Mh9d5eBfGywe1IkhC"
+      },
+      "comefrom" : "Vancouver",
+      "conversations" : {
+        "Bernard - Gregorio" : "Bernard - Gregorio",
+        "General Chat" : "General Chat"
+      },
+      "email" : "yop@yopmail.com",
+      "gender" : "Male",
+      "id" : "PHZVzY1YTsMyi65CbQtQKEbLkXj1",
+      "numberOfPoints" : 0,
+      "places" : {
+        "undefined" : "undefined"
+      },
+      "reviews" : {
+        "undefined" : "undefined"
+      },
+      "username" : "Bernard"
+    },
+    "oFAd53TKsGViflWT7jsX6UolseD3" : {
+      "booking" : {
+        "-L0MgGhcpY4OaDh5MkoK" : "-L0MgGhcpY4OaDh5MkoK"
+      },
+      "comefrom" : "Pouilly-sous-Charlieu",
+      "conversations" : {
+        "Bernard - Gregorio" : "Bernard - Gregorio",
+        "General Chat" : "General Chat",
+        "Leo ♌  - Gregorio" : "Leo ♌  - Gregorio"
+      },
+      "email" : "gregoire.cartier.42@gmail.com",
+      "gender" : "Male",
+      "id" : "oFAd53TKsGViflWT7jsX6UolseD3",
+      "numberOfPoints" : 200,
+      "places" : {
+        "-L0Mh09ja1cRHZhV7iXj" : "house",
+        "undefined" : "undefined"
+      },
+      "reviews" : {
+        "undefined" : "undefined"
+      },
+      "unlockedRewards" : {
+        "-L0MhNwbGoPFcdVjhBib" : "Bag of quinoa",
+        "-L0MhOPFug76l2Ab_pqB" : "Bag of quinoa",
+        "-L0MhWnlKwr9Xb-6STh4" : "bar of soap"
+      },
+      "username" : "Gregorio"
+    }
+  }
+}
