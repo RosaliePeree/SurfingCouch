@@ -12,6 +12,7 @@
     android:layout_marginTop="?attr/actionBarSize">
 
     <ListView
+        android:layout_marginTop="?attr/actionBarSize"
         android:id="@+id/reward_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
